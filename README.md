@@ -19,11 +19,12 @@ is a separate local project, running on FastMCP **4.2** and Python 3.12+.
 | `read_only` | 161 | Cataloged GET operations; default when serving |
 | `agent` | 162 | Same reads plus constrained revision review |
 
-The checks plugin is also supported with `--api checks`, using
-`../gerrit-openapi/plugins/checks/openapi.json`. Its generated catalogs are in
-`generated/checks/`: **9 full tools, 4 read-only tools, and 4 agent tools**.
-Checks writes, including reruns and status/checker updates, require the explicit
-`full` profile. Each API has its own source hash and operation catalog.
+Two plugins are also supported, each with its own source hash and operation
+catalog: **checks** (`--api checks` → `generated/checks/`: 9 full, 4 read-only,
+4 agent tools) and **code-owners** (`--api code-owners` → `generated/code-owners/`:
+13 full, 9 read-only, 9 agent tools). For both, `read_only` and `agent` expose
+only reads; the plugin writes (checks reruns and status/checker updates,
+code-owners config writes) require the explicit `full` profile.
 
 See [Checks and change-screen data](docs/checks-change-screen.md) for commands,
 MCP host configuration, tool names, and the client-side read-only example.
@@ -52,6 +53,7 @@ From this directory, with the sibling `../gerrit-openapi` checkout present:
 uv sync --python 3.12
 uv run gerrit-openapi-mcp generate
 uv run gerrit-openapi-mcp --api checks generate
+uv run gerrit-openapi-mcp --api code-owners generate
 uv run pytest -q
 uv run ruff check .
 ```
@@ -67,17 +69,24 @@ Another source path may be selected with the global `--spec` argument. It must
 match the selected API's catalog; changing the input is not an automatic policy
 update. The default API is `core`.
 
-To serve a stdio MCP endpoint against a site you choose:
+To serve a stdio MCP endpoint against a site you choose — one API, or core plus
+every plugin mounted in a single server:
 
 ```bash
-uv run gerrit-openapi-mcp serve \
-  --base-url https://gerrit.example.com/a/ --profile agent
+# One API (core by default; --api checks / code-owners for a plugin):
+uv run gerrit-openapi-mcp serve --base-url https://gerrit.example.com/a/ --profile agent
+
+# Core plus every plugin in one server (the recommended topology):
+uv run gerrit-openapi-mcp serve-all --base-url https://gerrit.example.com/a/
 ```
 
-The bridge was tested against mock transports, not that example URL or any
-real Gerrit. Serving does not make a request until an MCP tool is invoked.
-Use `/a/` for authenticated Gerrit REST paths; include any site context path.
-`--profile full` deliberately enables the broader operation catalog.
+`serve-all` mounts core unprefixed and each plugin under its name (`checks_`,
+`code_owners_`); drop a plugin the site lacks with `--checks-profile off`. Both
+commands serve from the committed `generated/` specs — no sibling
+`../gerrit-openapi` checkout is needed at serve time, so a `uvx --from git+...`
+install is self-contained — and make no request until a tool is invoked. The
+change-screen skill is served alongside the tools. Use `/a/` for authenticated
+Gerrit REST paths. `--core-profile full` enables the broader operation catalog.
 
 Optional credentials are read from `GERRIT_HTTP_USER` plus
 `GERRIT_HTTP_PASSWORD`, or `GERRIT_COOKIE`. They are server configuration, not
@@ -85,27 +94,34 @@ tool arguments. No existing Gerrit config, gitcookies file, or MCP configuration
 is read. Gitcookies parsing, external authentication helpers, and per-caller
 authentication are not implemented.
 
-Example MCP host configuration:
+Example MCP host configuration — one `gerrit` server exposes core plus the
+plugins, and serves the change-screen skill alongside its tools:
 
 ```json
 {
   "mcpServers": {
-    "gerrit-openapi-bridge": {
-      "command": "/usr/local/bin/uv",
+    "gerrit": {
+      "command": "uv",
       "args": [
-        "--directory", "/Users/Davido/projects/gerrit-openapi-mcp",
-        "run", "--frozen", "gerrit-openapi-mcp", "serve",
-        "--base-url", "https://gerrit.example.com/a/",
-        "--profile", "agent"
-      ]
+        "run", "--project", "/Users/Davido/projects/gerrit-openapi-mcp",
+        "gerrit-openapi-mcp", "serve-all",
+        "--base-url", "https://gerrit.example.com/a/"
+      ],
+      "env": { "GERRIT_COOKIE": "${GERRIT_COOKIE:-}" }
     }
   }
 }
 ```
 
+Add a second server with `--core-profile agent` for the one bounded
+Code-Review ∈ [−1, 1] review write, and a `--core-profile full` one for the
+broader surface including plugin writes (this repo's `.mcp.json` wires all
+three). A `uvx --from git+<repo>` command replaces `uv run --project <path>`
+for a checkout-free install.
+
 ## What is verified
 
-Verification result: **44 tests passed**; Ruff checks and formatting passed.
+Verification result: **49 tests passed**; Ruff checks and formatting passed.
 
 - All 339 full tools register through the actual FastMCP bridge; a subprocess
   stdio MCP client initializes and lists all 339.
@@ -125,6 +141,11 @@ Verification result: **44 tests passed**; Ruff checks and formatting passed.
   checks writes; an explicit full-profile rerun forwards to a mock.
 - The client-side change-screen example composes generated core and checks
   tools, including an empty checks list. Checks CLI generation is subprocess-tested.
+- `serve-all` mounts core unprefixed and the plugins under their names
+  (`checks_`, `code_owners_`); a disabled plugin is omitted, the change-screen
+  skill is served, and every tool that skill calls resolves on the mounted
+  server. The change-screen skill is discoverable via `skills/list` and readable
+  as `skill://` resources.
 
 The tests also exercise **stock FastMCP 4.2 without the custom HTTP guard**.
 With `strict_input_validation=True`, 4.2 rejects only *undeclared top-level*

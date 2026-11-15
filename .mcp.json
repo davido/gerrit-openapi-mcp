@@ -1,70 +1,53 @@
 {
   "mcpServers": {
-    "gerrit-openapi-read-only": {
+    "gerrit": {
       "command": "uv",
       "args": [
         "run",
         "--project",
         "/Users/Davido/projects/gerrit-openapi-mcp",
         "gerrit-openapi-mcp",
-        "serve",
+        "serve-all",
         "--base-url",
-        "https://gerrit-review.googlesource.com/a",
-        "--profile",
-        "read_only"
+        "https://gerrit-review.googlesource.com/a"
       ],
       "env": {
         "GERRIT_COOKIE": "${GERRIT_COOKIE:-}"
       }
     },
-    "gerrit-openapi-agent": {
+    "gerrit-agent": {
       "command": "uv",
       "args": [
         "run",
         "--project",
         "/Users/Davido/projects/gerrit-openapi-mcp",
         "gerrit-openapi-mcp",
-        "serve",
+        "serve-all",
         "--base-url",
         "https://gerrit-review.googlesource.com/a",
-        "--profile",
+        "--core-profile",
         "agent"
       ],
       "env": {
         "GERRIT_COOKIE": "${GERRIT_COOKIE:-}"
       }
     },
-    "gerrit-openapi-full": {
+    "gerrit-full": {
       "command": "uv",
       "args": [
         "run",
         "--project",
         "/Users/Davido/projects/gerrit-openapi-mcp",
         "gerrit-openapi-mcp",
-        "serve",
+        "serve-all",
         "--base-url",
         "https://gerrit-review.googlesource.com/a",
-        "--profile",
+        "--core-profile",
+        "full",
+        "--checks-profile",
+        "full",
+        "--code-owners-profile",
         "full"
-      ],
-      "env": {
-        "GERRIT_COOKIE": "${GERRIT_COOKIE:-}"
-      }
-    },
-    "gerrit-checks-read-only": {
-      "command": "uv",
-      "args": [
-        "run",
-        "--project",
-        "/Users/Davido/projects/gerrit-openapi-mcp",
-        "gerrit-openapi-mcp",
-        "--api",
-        "checks",
-        "serve",
-        "--base-url",
-        "https://gerrit-review.googlesource.com/a",
-        "--profile",
-        "read_only"
       ],
       "env": {
         "GERRIT_COOKIE": "${GERRIT_COOKIE:-}"
