@@ -270,8 +270,15 @@ def test_deriving_agent_does_not_modify_canonical_schema(source):
 
 
 @pytest.mark.parametrize("strict", [False, True])
-async def test_stock_fastmcp_validation_of_derived_bound(source, strict):
-    """Test the pinned framework itself, without the bridge's outgoing guard."""
+async def test_stock_fastmcp_does_not_enforce_nested_bound(source, strict):
+    """FastMCP 4.2's strict_input_validation rejects only undeclared top-level
+    arguments, not nested JSON Schema value bounds or additionalProperties. So
+    stock from_openapi forwards an out-of-range Code-Review and an unlisted
+    Verified vote regardless of strict mode -- the bridge's own GuardedClient is
+    what enforces the agent bound (test_forbidden_vote_never_reaches_transport).
+    This test pins that framework behavior so a future bump that restores the
+    pre-dispatch clamp is noticed.
+    """
     bodies = []
 
     def record(request):
@@ -289,11 +296,7 @@ async def test_stock_fastmcp_validation_of_derived_bound(source, strict):
         )
         async with Client(server) as client:
             args = {"change-id": "123", "revision-id": "current"}
-            await client.call_tool(REVIEW, {**args, "labels": {"Code-Review": 1}})
-            for labels in ({"Code-Review": 2}, {"Verified": 1}):
-                if strict:
-                    with pytest.raises(ToolError):
-                        await client.call_tool(REVIEW, {**args, "labels": labels})
-                else:
-                    await client.call_tool(REVIEW, {**args, "labels": labels})
-    assert len(bodies) == (1 if strict else 3)
+            for labels in ({"Code-Review": 1}, {"Code-Review": 2}, {"Verified": 1}):
+                await client.call_tool(REVIEW, {**args, "labels": labels})
+    # All three reach the transport: the framework does not clamp the bound.
+    assert len(bodies) == 3
