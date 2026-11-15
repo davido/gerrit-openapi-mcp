@@ -1,7 +1,7 @@
 [project]
-name = "gerrit-openapi-mcp-prototype"
+name = "gerrit-openapi-mcp"
 version = "0.1.0"
-description = "Direct Gerrit OpenAPI to MCP prototype, with explicit profiles"
+description = "Direct Gerrit OpenAPI to MCP bridge, with explicit profiles"
 requires-python = ">=3.12"
 dependencies = [
   "fastmcp==3.4.11",

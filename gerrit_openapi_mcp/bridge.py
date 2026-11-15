@@ -105,7 +105,7 @@ class GuardedClient(httpx.AsyncClient):
             ):
                 raise PermissionError("Votes must be integers, without coercion")
         # FastMCP supplies its own Request. HTTPX's cookie jar is not merged by send.
-        # Only server-configured cookies may reach this prototype's upstream.
+        # Only server-configured cookies may reach this bridge's upstream.
         if "Cookie" in self.headers:
             request.headers["Cookie"] = self.headers["Cookie"]
         kwargs["follow_redirects"] = False
@@ -149,7 +149,7 @@ async def bridge(spec: dict, base_url: str, *, transport=None, auth=None, cookie
         server = FastMCP.from_openapi(
             openapi_spec=spec,
             client=client,
-            name="Gerrit OpenAPI prototype",
+            name="Gerrit OpenAPI bridge",
             route_maps=maps,
             strict_input_validation=True,
             # Response compatibility is not established for every endpoint.

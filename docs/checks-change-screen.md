@@ -155,7 +155,7 @@ the names, status, description, and submit impact the screen needs, without
 requiring administrator-only checker enumeration.
 
 All request/response checks used mocks, not a live checks-enabled Gerrit. Output
-schema validation remains disabled as in the core prototype. Missing plugins or
+schema validation remains disabled as in the core bridge. Missing plugins or
 insufficient permissions surface as errors and must not be shown as an empty,
 successful checks list.
 

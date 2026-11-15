@@ -1,7 +1,7 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Gerrit Code Owners Plugin REST API (read_only MCP prototype)",
+    "title": "Gerrit Code Owners Plugin REST API (read_only MCP bridge)",
     "version": "3.16.0-SNAPSHOT",
     "description": "REST endpoints contributed by the code-owners plugin. Paths, parameters and payload schemas are generated statically from the plugin's REST bindings; human-authored summaries, descriptions and examples are mined from the plugin's rest-api.md and merged in at build time."
   },

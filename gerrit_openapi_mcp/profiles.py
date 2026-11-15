@@ -108,7 +108,7 @@ def derive(spec: dict, profile: str, catalog: dict | None = None) -> dict:
                     }
                 }
 
-    result["info"]["title"] += f" ({profile} MCP prototype)"
+    result["info"]["title"] += f" ({profile} MCP bridge)"
     result["x-agent-profile"] = {
         "name": profile,
         "version": 1,

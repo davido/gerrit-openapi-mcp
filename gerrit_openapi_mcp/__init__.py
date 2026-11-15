@@ -1,1 +1,1 @@
-"""Direct OpenAPI to MCP prototype; no generated Gerrit SDK dependency."""
+"""Direct OpenAPI to MCP bridge; no generated Gerrit SDK dependency."""

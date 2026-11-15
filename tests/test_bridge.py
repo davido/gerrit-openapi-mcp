@@ -271,7 +271,7 @@ def test_deriving_agent_does_not_modify_canonical_schema(source):
 
 @pytest.mark.parametrize("strict", [False, True])
 async def test_stock_fastmcp_validation_of_derived_bound(source, strict):
-    """Test the pinned framework itself, without the prototype's outgoing guard."""
+    """Test the pinned framework itself, without the bridge's outgoing guard."""
     bodies = []
 
     def record(request):

@@ -1,7 +1,7 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Gerrit Code Review REST API (agent MCP prototype)",
+    "title": "Gerrit Code Review REST API (agent MCP bridge)",
     "version": "3.16.0-SNAPSHOT",
     "description": "The Gerrit Code Review REST API. Paths, parameters, and payload schemas are generated statically from the server's REST bindings; human-authored summaries and descriptions are supplied here and merged in at build time.",
     "license": {

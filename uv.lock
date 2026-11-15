@@ -421,7 +421,7 @@ server = [
 ]
 
 [[package]]
-name = "gerrit-openapi-mcp-prototype"
+name = "gerrit-openapi-mcp"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [

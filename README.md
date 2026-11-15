@@ -8,7 +8,7 @@ no handwritten endpoint wrappers.** Uses the existing
 Gerrit extraction → core/openapi.json → pinned profile → FastMCP → MCP tools
 ```
 
-The existing Gerrit MCP server and SDK checkouts are unchanged. This prototype
+The existing Gerrit MCP server and SDK checkouts are unchanged. This bridge
 is a separate local project, pinned to FastMCP **3.4.11** and Python 3.12.
 Current v4 documentation uses different dependencies/APIs; this is not a v4
 compatibility claim.
@@ -76,7 +76,7 @@ uv run gerrit-openapi-mcp serve \
   --base-url https://gerrit.example.com/a/ --profile agent
 ```
 
-The prototype was tested against mock transports, not that example URL or any
+The bridge was tested against mock transports, not that example URL or any
 real Gerrit. Serving does not make a request until an MCP tool is invoked.
 Use `/a/` for authenticated Gerrit REST paths; include any site context path.
 `--profile full` deliberately enables the broader operation catalog.
@@ -92,7 +92,7 @@ Example MCP host configuration:
 ```json
 {
   "mcpServers": {
-    "gerrit-openapi-prototype": {
+    "gerrit-openapi-bridge": {
       "command": "/usr/local/bin/uv",
       "args": [
         "--directory", "/Users/Davido/projects/gerrit-openapi-mcp",
@@ -131,7 +131,7 @@ Verification result: **44 tests passed**; Ruff checks and formatting passed.
 The tests also exercise **stock FastMCP 3.4.11 without the custom HTTP guard**.
 With `strict_input_validation=True`, it rejects +2 and other labels against the
 derived schema. In lax mode both reach the mock transport. Strict mode is
-explicitly enabled in the prototype.
+explicitly enabled in the bridge.
 
 ## Existing upstream work and limits
 
@@ -142,7 +142,7 @@ than another OpenAPI parser or MCP implementation.
 The issue search found an open, version-specific report about nested validation
 in FastMCP 4.x: [#6457](https://github.com/PrefectHQ/fastmcp/issues/6457).
 That is not evidence that the tested 3.4.11 strict configuration has the same
-behavior. The prototype validates the final agent-review body independently and
+behavior. The bridge validates the final agent-review body independently and
 preserves strict integer handling.
 
 The pinned release is newer than the documented 3.x fixes for
@@ -162,4 +162,4 @@ included here, while other plugin APIs are not currently configured.
 Profiles do not change Gerrit ACLs. The runtime checks constrain this bridge;
 they require trusted configuration and isolated upstream credentials. Separate
 raw HTTP, SSH, or Git access remains subject to the credential's Gerrit rights.
-This is an explicit prototype, not a replacement for the existing MCP service.
+This is an explicit bridge, not a replacement for the existing MCP service.
