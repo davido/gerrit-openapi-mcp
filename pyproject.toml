@@ -1,0 +1,31 @@
+[project]
+name = "gerrit-openapi-mcp-prototype"
+version = "0.1.0"
+description = "Direct Gerrit OpenAPI to MCP prototype, with explicit profiles"
+requires-python = ">=3.12"
+dependencies = [
+  "fastmcp==3.4.11",
+  "httpx>=0.28,<0.29",
+  "jsonschema>=4.23,<5",
+]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "pytest-asyncio>=0.24,<2", "ruff>=0.9"]
+
+[project.scripts]
+gerrit-openapi-mcp = "gerrit_openapi_mcp.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["gerrit_openapi_mcp"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88

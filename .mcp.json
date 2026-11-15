@@ -1,0 +1,74 @@
+{
+  "mcpServers": {
+    "gerrit-openapi-read-only": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--project",
+        "/Users/Davido/projects/gerrit-openapi-mcp-prototype",
+        "gerrit-openapi-mcp",
+        "serve",
+        "--base-url",
+        "https://gerrit-review.googlesource.com/a",
+        "--profile",
+        "read_only"
+      ],
+      "env": {
+        "GERRIT_COOKIE": "${GERRIT_COOKIE:-}"
+      }
+    },
+    "gerrit-openapi-agent": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--project",
+        "/Users/Davido/projects/gerrit-openapi-mcp-prototype",
+        "gerrit-openapi-mcp",
+        "serve",
+        "--base-url",
+        "https://gerrit-review.googlesource.com/a",
+        "--profile",
+        "agent"
+      ],
+      "env": {
+        "GERRIT_COOKIE": "${GERRIT_COOKIE:-}"
+      }
+    },
+    "gerrit-openapi-full": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--project",
+        "/Users/Davido/projects/gerrit-openapi-mcp-prototype",
+        "gerrit-openapi-mcp",
+        "serve",
+        "--base-url",
+        "https://gerrit-review.googlesource.com/a",
+        "--profile",
+        "full"
+      ],
+      "env": {
+        "GERRIT_COOKIE": "${GERRIT_COOKIE:-}"
+      }
+    },
+    "gerrit-checks-read-only": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--project",
+        "/Users/Davido/projects/gerrit-openapi-mcp-prototype",
+        "gerrit-openapi-mcp",
+        "--api",
+        "checks",
+        "serve",
+        "--base-url",
+        "https://gerrit-review.googlesource.com/a",
+        "--profile",
+        "read_only"
+      ],
+      "env": {
+        "GERRIT_COOKIE": "${GERRIT_COOKIE:-}"
+      }
+    }
+  }
+}

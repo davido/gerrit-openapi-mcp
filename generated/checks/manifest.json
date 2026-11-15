@@ -1,0 +1,20 @@
+{
+  "api": "checks",
+  "fastmcp": "3.4.11",
+  "source_version": "3.16.0-SNAPSHOT",
+  "source_sha256": "a07dcc65655b9f2d4de7a4242457624875c13487bdd832cdb25b2473e7b9a06d",
+  "profiles": {
+    "full": {
+      "operations": 9,
+      "tools": 9
+    },
+    "read_only": {
+      "operations": 4,
+      "tools": 4
+    },
+    "agent": {
+      "operations": 4,
+      "tools": 4
+    }
+  }
+}

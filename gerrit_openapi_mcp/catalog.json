@@ -1,0 +1,2703 @@
+{
+  "note": "Prototype bootstrap catalog: GET operations included; only bounded review may write. This is not a completed sensitivity audit of read endpoints. Future spec changes require explicit review.",
+  "operations": {
+    "deleteAccountsAccountId": {
+      "method": "DELETE",
+      "path": "/accounts/{account-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteAccountsAccountIdActive": {
+      "method": "DELETE",
+      "path": "/accounts/{account-id}/active",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteAccountsAccountIdEmailsEmailId": {
+      "method": "DELETE",
+      "path": "/accounts/{account-id}/emails/{email-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteAccountsAccountIdGpgkeysGpgKeyId": {
+      "method": "DELETE",
+      "path": "/accounts/{account-id}/gpgkeys/{gpg-key-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteAccountsAccountIdName": {
+      "method": "DELETE",
+      "path": "/accounts/{account-id}/name",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteAccountsAccountIdPasswordHttp": {
+      "method": "DELETE",
+      "path": "/accounts/{account-id}/password.http",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteAccountsAccountIdSshkeysSshKeyId": {
+      "method": "DELETE",
+      "path": "/accounts/{account-id}/sshkeys/{ssh-key-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteAccountsAccountIdStarredChangesStarredChangeId": {
+      "method": "DELETE",
+      "path": "/accounts/{account-id}/starred.changes/{starred-change-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteAccountsAccountIdTokensTokenId": {
+      "method": "DELETE",
+      "path": "/accounts/{account-id}/tokens/{token-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteChangesChangeId": {
+      "method": "DELETE",
+      "path": "/changes/{change-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteChangesChangeIdAttentionAttentionSetEntryId": {
+      "method": "DELETE",
+      "path": "/changes/{change-id}/attention/{attention-set-entry-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteChangesChangeIdEdit": {
+      "method": "DELETE",
+      "path": "/changes/{change-id}/edit",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteChangesChangeIdEditChangeEditId": {
+      "method": "DELETE",
+      "path": "/changes/{change-id}/edit/{change-edit-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteChangesChangeIdFlowsFlowId": {
+      "method": "DELETE",
+      "path": "/changes/{change-id}/flows/{flow-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteChangesChangeIdMessagesChangeMessageId": {
+      "method": "DELETE",
+      "path": "/changes/{change-id}/messages/{change-message-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteChangesChangeIdPrivate": {
+      "method": "DELETE",
+      "path": "/changes/{change-id}/private",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteChangesChangeIdReviewersReviewerId": {
+      "method": "DELETE",
+      "path": "/changes/{change-id}/reviewers/{reviewer-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteChangesChangeIdReviewersReviewerIdVotesVoteId": {
+      "method": "DELETE",
+      "path": "/changes/{change-id}/reviewers/{reviewer-id}/votes/{vote-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteChangesChangeIdRevisionsRevisionIdCommentsCommentId": {
+      "method": "DELETE",
+      "path": "/changes/{change-id}/revisions/{revision-id}/comments/{comment-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteChangesChangeIdRevisionsRevisionIdDraftsDraftCommentId": {
+      "method": "DELETE",
+      "path": "/changes/{change-id}/revisions/{revision-id}/drafts/{draft-comment-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteChangesChangeIdRevisionsRevisionIdFilesFileIdReviewed": {
+      "method": "DELETE",
+      "path": "/changes/{change-id}/revisions/{revision-id}/files/{file-id}/reviewed",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteChangesChangeIdRevisionsRevisionIdReviewersReviewerId": {
+      "method": "DELETE",
+      "path": "/changes/{change-id}/revisions/{revision-id}/reviewers/{reviewer-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteChangesChangeIdRevisionsRevisionIdReviewersReviewerIdVotesVoteId": {
+      "method": "DELETE",
+      "path": "/changes/{change-id}/revisions/{revision-id}/reviewers/{reviewer-id}/votes/{vote-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteChangesChangeIdTopic": {
+      "method": "DELETE",
+      "path": "/changes/{change-id}/topic",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteConfigServerTasksTaskId": {
+      "method": "DELETE",
+      "path": "/config/server/tasks/{task-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteGroupsGroupId": {
+      "method": "DELETE",
+      "path": "/groups/{group-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteGroupsGroupIdDescription": {
+      "method": "DELETE",
+      "path": "/groups/{group-id}/description",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteGroupsGroupIdGroupsSubgroupId": {
+      "method": "DELETE",
+      "path": "/groups/{group-id}/groups/{subgroup-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteGroupsGroupIdMembersMemberId": {
+      "method": "DELETE",
+      "path": "/groups/{group-id}/members/{member-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deletePluginsPluginId": {
+      "method": "DELETE",
+      "path": "/plugins/{plugin-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteProjectsProjectIdBranchesBranchId": {
+      "method": "DELETE",
+      "path": "/projects/{project-id}/branches/{branch-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteProjectsProjectIdDashboardsDashboardId": {
+      "method": "DELETE",
+      "path": "/projects/{project-id}/dashboards/{dashboard-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteProjectsProjectIdDescription": {
+      "method": "DELETE",
+      "path": "/projects/{project-id}/description",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteProjectsProjectIdLabelsLabelId": {
+      "method": "DELETE",
+      "path": "/projects/{project-id}/labels/{label-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteProjectsProjectIdSubmitRequirementsSubmitRequirementId": {
+      "method": "DELETE",
+      "path": "/projects/{project-id}/submit_requirements/{submit-requirement-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "deleteProjectsProjectIdTagsTagId": {
+      "method": "DELETE",
+      "path": "/projects/{project-id}/tags/{tag-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "getAccess": {
+      "method": "GET",
+      "path": "/access",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccounts": {
+      "method": "GET",
+      "path": "/accounts",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccountsAccountId": {
+      "method": "GET",
+      "path": "/accounts/{account-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccountsAccountIdActive": {
+      "method": "GET",
+      "path": "/accounts/{account-id}/active",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccountsAccountIdAgreements": {
+      "method": "GET",
+      "path": "/accounts/{account-id}/agreements",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccountsAccountIdAvatar": {
+      "method": "GET",
+      "path": "/accounts/{account-id}/avatar",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccountsAccountIdAvatarChangeUrl": {
+      "method": "GET",
+      "path": "/accounts/{account-id}/avatar.change.url",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccountsAccountIdCapabilities": {
+      "method": "GET",
+      "path": "/accounts/{account-id}/capabilities",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccountsAccountIdCapabilitiesCapabilityId": {
+      "method": "GET",
+      "path": "/accounts/{account-id}/capabilities/{capability-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccountsAccountIdDetail": {
+      "method": "GET",
+      "path": "/accounts/{account-id}/detail",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccountsAccountIdEmails": {
+      "method": "GET",
+      "path": "/accounts/{account-id}/emails",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccountsAccountIdEmailsEmailId": {
+      "method": "GET",
+      "path": "/accounts/{account-id}/emails/{email-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccountsAccountIdExternalIds": {
+      "method": "GET",
+      "path": "/accounts/{account-id}/external.ids",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccountsAccountIdGpgkeys": {
+      "method": "GET",
+      "path": "/accounts/{account-id}/gpgkeys",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccountsAccountIdGpgkeysGpgKeyId": {
+      "method": "GET",
+      "path": "/accounts/{account-id}/gpgkeys/{gpg-key-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccountsAccountIdGroups": {
+      "method": "GET",
+      "path": "/accounts/{account-id}/groups",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccountsAccountIdName": {
+      "method": "GET",
+      "path": "/accounts/{account-id}/name",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccountsAccountIdOauthtoken": {
+      "method": "GET",
+      "path": "/accounts/{account-id}/oauthtoken",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccountsAccountIdPreferences": {
+      "method": "GET",
+      "path": "/accounts/{account-id}/preferences",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccountsAccountIdPreferencesDiff": {
+      "method": "GET",
+      "path": "/accounts/{account-id}/preferences.diff",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccountsAccountIdPreferencesEdit": {
+      "method": "GET",
+      "path": "/accounts/{account-id}/preferences.edit",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccountsAccountIdSshkeys": {
+      "method": "GET",
+      "path": "/accounts/{account-id}/sshkeys",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccountsAccountIdSshkeysSshKeyId": {
+      "method": "GET",
+      "path": "/accounts/{account-id}/sshkeys/{ssh-key-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccountsAccountIdStarredChanges": {
+      "method": "GET",
+      "path": "/accounts/{account-id}/starred.changes",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccountsAccountIdState": {
+      "method": "GET",
+      "path": "/accounts/{account-id}/state",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccountsAccountIdStatus": {
+      "method": "GET",
+      "path": "/accounts/{account-id}/status",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccountsAccountIdTokens": {
+      "method": "GET",
+      "path": "/accounts/{account-id}/tokens",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccountsAccountIdUsername": {
+      "method": "GET",
+      "path": "/accounts/{account-id}/username",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getAccountsAccountIdWatchedProjects": {
+      "method": "GET",
+      "path": "/accounts/{account-id}/watched.projects",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChanges": {
+      "method": "GET",
+      "path": "/changes",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeId": {
+      "method": "GET",
+      "path": "/changes/{change-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdAttention": {
+      "method": "GET",
+      "path": "/changes/{change-id}/attention",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdCheck": {
+      "method": "GET",
+      "path": "/changes/{change-id}/check",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdComments": {
+      "method": "GET",
+      "path": "/changes/{change-id}/comments",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdCustomKeyedValues": {
+      "method": "GET",
+      "path": "/changes/{change-id}/custom_keyed_values",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdDetail": {
+      "method": "GET",
+      "path": "/changes/{change-id}/detail",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdDrafts": {
+      "method": "GET",
+      "path": "/changes/{change-id}/drafts",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdEdit": {
+      "method": "GET",
+      "path": "/changes/{change-id}/edit",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdEditChangeEditId": {
+      "method": "GET",
+      "path": "/changes/{change-id}/edit/{change-edit-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdEditChangeEditIdMeta": {
+      "method": "GET",
+      "path": "/changes/{change-id}/edit/{change-edit-id}/meta",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdEditMessage": {
+      "method": "GET",
+      "path": "/changes/{change-id}/edit:message",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdFlows": {
+      "method": "GET",
+      "path": "/changes/{change-id}/flows",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdFlowsActions": {
+      "method": "GET",
+      "path": "/changes/{change-id}/flows-actions",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdFlowsFlowId": {
+      "method": "GET",
+      "path": "/changes/{change-id}/flows/{flow-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdHashtags": {
+      "method": "GET",
+      "path": "/changes/{change-id}/hashtags",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdIn": {
+      "method": "GET",
+      "path": "/changes/{change-id}/in",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdIsFlowsEnabled": {
+      "method": "GET",
+      "path": "/changes/{change-id}/is-flows-enabled",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdMessage": {
+      "method": "GET",
+      "path": "/changes/{change-id}/message",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdMessages": {
+      "method": "GET",
+      "path": "/changes/{change-id}/messages",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdMessagesChangeMessageId": {
+      "method": "GET",
+      "path": "/changes/{change-id}/messages/{change-message-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdMetaDiff": {
+      "method": "GET",
+      "path": "/changes/{change-id}/meta_diff",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdPureRevert": {
+      "method": "GET",
+      "path": "/changes/{change-id}/pure_revert",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdQuery": {
+      "method": "GET",
+      "path": "/changes/{change-id}/query",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdReviewers": {
+      "method": "GET",
+      "path": "/changes/{change-id}/reviewers",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdReviewersReviewerId": {
+      "method": "GET",
+      "path": "/changes/{change-id}/reviewers/{reviewer-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdReviewersReviewerIdVotes": {
+      "method": "GET",
+      "path": "/changes/{change-id}/reviewers/{reviewer-id}/votes",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionId": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdActions": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/actions",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdArchive": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/archive",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdComments": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/comments",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdCommentsCommentId": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/comments/{comment-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdCommit": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/commit",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdDescription": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/description",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdDrafts": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/drafts",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdDraftsDraftCommentId": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/drafts/{draft-comment-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdFiles": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/files",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdFilesFileIdBlame": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/files/{file-id}/blame",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdFilesFileIdContent": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/files/{file-id}/content",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdFilesFileIdDiff": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/files/{file-id}/diff",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdFilesFileIdDownload": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/files/{file-id}/download",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdFixesFixIdPreview": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/fixes/{fix-id}/preview",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdMergeable": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/mergeable",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdMergelist": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/mergelist",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdPatch": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/patch",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdPortedComments": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/ported_comments",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdPortedDrafts": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/ported_drafts",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdRelated": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/related",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdReview": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/review",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdReviewers": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/reviewers",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdReviewersReviewerId": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/reviewers/{reviewer-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdReviewersReviewerIdVotes": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/reviewers/{reviewer-id}/votes",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdRobotcomments": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/robotcomments",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdRobotcommentsRobotCommentId": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/robotcomments/{robot-comment-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdSubmitType": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/submit_type",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRobotcomments": {
+      "method": "GET",
+      "path": "/changes/{change-id}/robotcomments",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdSubmittedTogether": {
+      "method": "GET",
+      "path": "/changes/{change-id}/submitted_together",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdSuggestReviewers": {
+      "method": "GET",
+      "path": "/changes/{change-id}/suggest_reviewers",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdTopic": {
+      "method": "GET",
+      "path": "/changes/{change-id}/topic",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdValidationOptions": {
+      "method": "GET",
+      "path": "/changes/{change-id}/validation-options",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getConfigServerCaches": {
+      "method": "GET",
+      "path": "/config/server/caches",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getConfigServerCachesCacheId": {
+      "method": "GET",
+      "path": "/config/server/caches/{cache-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getConfigServerCapabilities": {
+      "method": "GET",
+      "path": "/config/server/capabilities",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getConfigServerExperiments": {
+      "method": "GET",
+      "path": "/config/server/experiments",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getConfigServerExperimentsExperimentId": {
+      "method": "GET",
+      "path": "/config/server/experiments/{experiment-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getConfigServerIndexes": {
+      "method": "GET",
+      "path": "/config/server/indexes",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getConfigServerIndexesIndexId": {
+      "method": "GET",
+      "path": "/config/server/indexes/{index-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getConfigServerIndexesIndexIdVersions": {
+      "method": "GET",
+      "path": "/config/server/indexes/{index-id}/versions",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getConfigServerIndexesIndexIdVersionsIndexVersionId": {
+      "method": "GET",
+      "path": "/config/server/indexes/{index-id}/versions/{index-version-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getConfigServerInfo": {
+      "method": "GET",
+      "path": "/config/server/info",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getConfigServerLabels": {
+      "method": "GET",
+      "path": "/config/server/labels",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getConfigServerMetrics": {
+      "method": "GET",
+      "path": "/config/server/metrics",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getConfigServerMetricsMetricId": {
+      "method": "GET",
+      "path": "/config/server/metrics/{metric-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getConfigServerPreferences": {
+      "method": "GET",
+      "path": "/config/server/preferences",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getConfigServerPreferencesDiff": {
+      "method": "GET",
+      "path": "/config/server/preferences.diff",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getConfigServerPreferencesEdit": {
+      "method": "GET",
+      "path": "/config/server/preferences.edit",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getConfigServerSubmitRequirements": {
+      "method": "GET",
+      "path": "/config/server/submit-requirements",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getConfigServerSummary": {
+      "method": "GET",
+      "path": "/config/server/summary",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getConfigServerTasks": {
+      "method": "GET",
+      "path": "/config/server/tasks",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getConfigServerTasksTaskId": {
+      "method": "GET",
+      "path": "/config/server/tasks/{task-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getConfigServerTopMenus": {
+      "method": "GET",
+      "path": "/config/server/top-menus",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getConfigServerVersion": {
+      "method": "GET",
+      "path": "/config/server/version",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getGroups": {
+      "method": "GET",
+      "path": "/groups",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getGroupsGroupId": {
+      "method": "GET",
+      "path": "/groups/{group-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getGroupsGroupIdDescription": {
+      "method": "GET",
+      "path": "/groups/{group-id}/description",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getGroupsGroupIdDetail": {
+      "method": "GET",
+      "path": "/groups/{group-id}/detail",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getGroupsGroupIdGroups": {
+      "method": "GET",
+      "path": "/groups/{group-id}/groups",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getGroupsGroupIdGroupsSubgroupId": {
+      "method": "GET",
+      "path": "/groups/{group-id}/groups/{subgroup-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getGroupsGroupIdLogAudit": {
+      "method": "GET",
+      "path": "/groups/{group-id}/log.audit",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getGroupsGroupIdMembers": {
+      "method": "GET",
+      "path": "/groups/{group-id}/members",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getGroupsGroupIdMembersMemberId": {
+      "method": "GET",
+      "path": "/groups/{group-id}/members/{member-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getGroupsGroupIdName": {
+      "method": "GET",
+      "path": "/groups/{group-id}/name",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getGroupsGroupIdOptions": {
+      "method": "GET",
+      "path": "/groups/{group-id}/options",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getGroupsGroupIdOwner": {
+      "method": "GET",
+      "path": "/groups/{group-id}/owner",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getPlugins": {
+      "method": "GET",
+      "path": "/plugins/",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getPluginsPluginIdGerritStatus": {
+      "method": "GET",
+      "path": "/plugins/{plugin-id}/gerrit~status",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjects": {
+      "method": "GET",
+      "path": "/projects",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectId": {
+      "method": "GET",
+      "path": "/projects/{project-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdAccess": {
+      "method": "GET",
+      "path": "/projects/{project-id}/access",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdBranches": {
+      "method": "GET",
+      "path": "/projects/{project-id}/branches",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdBranchesBranchId": {
+      "method": "GET",
+      "path": "/projects/{project-id}/branches/{branch-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdBranchesBranchIdFilesFileIdContent": {
+      "method": "GET",
+      "path": "/projects/{project-id}/branches/{branch-id}/files/{file-id}/content",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdBranchesBranchIdFilesFileIdDiff": {
+      "method": "GET",
+      "path": "/projects/{project-id}/branches/{branch-id}/files/{file-id}/diff",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdBranchesBranchIdMergeable": {
+      "method": "GET",
+      "path": "/projects/{project-id}/branches/{branch-id}/mergeable",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdBranchesBranchIdReflog": {
+      "method": "GET",
+      "path": "/projects/{project-id}/branches/{branch-id}/reflog",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdBranchesBranchIdSuggestReviewers": {
+      "method": "GET",
+      "path": "/projects/{project-id}/branches/{branch-id}/suggest_reviewers",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdBranchesBranchIdValidationOptions": {
+      "method": "GET",
+      "path": "/projects/{project-id}/branches/{branch-id}/validation-options",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdCheckAccess": {
+      "method": "GET",
+      "path": "/projects/{project-id}/check.access",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdChildren": {
+      "method": "GET",
+      "path": "/projects/{project-id}/children",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdChildrenChildProjectId": {
+      "method": "GET",
+      "path": "/projects/{project-id}/children/{child-project-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdCommitsCommitId": {
+      "method": "GET",
+      "path": "/projects/{project-id}/commits/{commit-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdCommitsCommitIdDiff": {
+      "method": "GET",
+      "path": "/projects/{project-id}/commits/{commit-id}/diff",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdCommitsCommitIdFiles": {
+      "method": "GET",
+      "path": "/projects/{project-id}/commits/{commit-id}/files",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdCommitsCommitIdFilesFileIdContent": {
+      "method": "GET",
+      "path": "/projects/{project-id}/commits/{commit-id}/files/{file-id}/content",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdCommitsCommitIdFilesFileIdDiff": {
+      "method": "GET",
+      "path": "/projects/{project-id}/commits/{commit-id}/files/{file-id}/diff",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdCommitsCommitIdIn": {
+      "method": "GET",
+      "path": "/projects/{project-id}/commits/{commit-id}/in",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdCommitsIn": {
+      "method": "GET",
+      "path": "/projects/{project-id}/commits:in",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdConfig": {
+      "method": "GET",
+      "path": "/projects/{project-id}/config",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdDashboards": {
+      "method": "GET",
+      "path": "/projects/{project-id}/dashboards",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdDashboardsDashboardId": {
+      "method": "GET",
+      "path": "/projects/{project-id}/dashboards/{dashboard-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdDescription": {
+      "method": "GET",
+      "path": "/projects/{project-id}/description",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdHEAD": {
+      "method": "GET",
+      "path": "/projects/{project-id}/HEAD",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdLabels": {
+      "method": "GET",
+      "path": "/projects/{project-id}/labels",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdLabelsLabelId": {
+      "method": "GET",
+      "path": "/projects/{project-id}/labels/{label-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdParent": {
+      "method": "GET",
+      "path": "/projects/{project-id}/parent",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdStatisticsGit": {
+      "method": "GET",
+      "path": "/projects/{project-id}/statistics.git",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdSubmitRequirements": {
+      "method": "GET",
+      "path": "/projects/{project-id}/submit_requirements",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdSubmitRequirementsSubmitRequirementId": {
+      "method": "GET",
+      "path": "/projects/{project-id}/submit_requirements/{submit-requirement-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdSubmitRequirementsTemplates": {
+      "method": "GET",
+      "path": "/projects/{project-id}/submit_requirements_templates",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdSubmitRequirementsTemplatesSubmitRequirementTemplateId": {
+      "method": "GET",
+      "path": "/projects/{project-id}/submit_requirements_templates/{submit-requirement-template-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdTags": {
+      "method": "GET",
+      "path": "/projects/{project-id}/tags",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdTagsTagId": {
+      "method": "GET",
+      "path": "/projects/{project-id}/tags/{tag-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "postAccountsAccountIdDraftsDelete": {
+      "method": "POST",
+      "path": "/accounts/{account-id}/drafts:delete",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postAccountsAccountIdExternalIdsDelete": {
+      "method": "POST",
+      "path": "/accounts/{account-id}/external.ids:delete",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postAccountsAccountIdGpgkeys": {
+      "method": "POST",
+      "path": "/accounts/{account-id}/gpgkeys",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postAccountsAccountIdIndex": {
+      "method": "POST",
+      "path": "/accounts/{account-id}/index",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postAccountsAccountIdSshkeys": {
+      "method": "POST",
+      "path": "/accounts/{account-id}/sshkeys",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postAccountsAccountIdWatchedProjects": {
+      "method": "POST",
+      "path": "/accounts/{account-id}/watched.projects",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postAccountsAccountIdWatchedProjectsDelete": {
+      "method": "POST",
+      "path": "/accounts/{account-id}/watched.projects:delete",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChanges": {
+      "method": "POST",
+      "path": "/changes",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdAbandon": {
+      "method": "POST",
+      "path": "/changes/{change-id}/abandon",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdAttention": {
+      "method": "POST",
+      "path": "/changes/{change-id}/attention",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdAttentionAttentionSetEntryIdDelete": {
+      "method": "POST",
+      "path": "/changes/{change-id}/attention/{attention-set-entry-id}/delete",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdCheck": {
+      "method": "POST",
+      "path": "/changes/{change-id}/check",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdCheckSubmitRequirement": {
+      "method": "POST",
+      "path": "/changes/{change-id}/check.submit_requirement",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdCustomKeyedValues": {
+      "method": "POST",
+      "path": "/changes/{change-id}/custom_keyed_values",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdEdit": {
+      "method": "POST",
+      "path": "/changes/{change-id}/edit",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdEditPublish": {
+      "method": "POST",
+      "path": "/changes/{change-id}/edit:publish",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdEditRebase": {
+      "method": "POST",
+      "path": "/changes/{change-id}/edit:rebase",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdFlows": {
+      "method": "POST",
+      "path": "/changes/{change-id}/flows",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdHashtags": {
+      "method": "POST",
+      "path": "/changes/{change-id}/hashtags",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdIndex": {
+      "method": "POST",
+      "path": "/changes/{change-id}/index",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdMerge": {
+      "method": "POST",
+      "path": "/changes/{change-id}/merge",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdMessagesChangeMessageIdDelete": {
+      "method": "POST",
+      "path": "/changes/{change-id}/messages/{change-message-id}/delete",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdMove": {
+      "method": "POST",
+      "path": "/changes/{change-id}/move",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdPatchApply": {
+      "method": "POST",
+      "path": "/changes/{change-id}/patch:apply",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdPrivate": {
+      "method": "POST",
+      "path": "/changes/{change-id}/private",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdPrivateDelete": {
+      "method": "POST",
+      "path": "/changes/{change-id}/private.delete",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdReady": {
+      "method": "POST",
+      "path": "/changes/{change-id}/ready",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdRebase": {
+      "method": "POST",
+      "path": "/changes/{change-id}/rebase",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdRebaseChain": {
+      "method": "POST",
+      "path": "/changes/{change-id}/rebase:chain",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdRestore": {
+      "method": "POST",
+      "path": "/changes/{change-id}/restore",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdRevert": {
+      "method": "POST",
+      "path": "/changes/{change-id}/revert",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdRevertSubmission": {
+      "method": "POST",
+      "path": "/changes/{change-id}/revert_submission",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdReviewers": {
+      "method": "POST",
+      "path": "/changes/{change-id}/reviewers",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdReviewersReviewerIdDelete": {
+      "method": "POST",
+      "path": "/changes/{change-id}/reviewers/{reviewer-id}/delete",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdReviewersReviewerIdVotesVoteIdDelete": {
+      "method": "POST",
+      "path": "/changes/{change-id}/reviewers/{reviewer-id}/votes/{vote-id}/delete",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdRevisionsRevisionIdCherrypick": {
+      "method": "POST",
+      "path": "/changes/{change-id}/revisions/{revision-id}/cherrypick",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdRevisionsRevisionIdCommentsCommentIdDelete": {
+      "method": "POST",
+      "path": "/changes/{change-id}/revisions/{revision-id}/comments/{comment-id}/delete",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdRevisionsRevisionIdFixApply": {
+      "method": "POST",
+      "path": "/changes/{change-id}/revisions/{revision-id}/fix:apply",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdRevisionsRevisionIdFixPreview": {
+      "method": "POST",
+      "path": "/changes/{change-id}/revisions/{revision-id}/fix:preview",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdRevisionsRevisionIdFixesFixIdApply": {
+      "method": "POST",
+      "path": "/changes/{change-id}/revisions/{revision-id}/fixes/{fix-id}/apply",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdRevisionsRevisionIdRebase": {
+      "method": "POST",
+      "path": "/changes/{change-id}/revisions/{revision-id}/rebase",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdRevisionsRevisionIdReview": {
+      "method": "POST",
+      "path": "/changes/{change-id}/revisions/{revision-id}/review",
+      "profiles": [
+        "full",
+        "agent"
+      ]
+    },
+    "postChangesChangeIdRevisionsRevisionIdReviewers": {
+      "method": "POST",
+      "path": "/changes/{change-id}/revisions/{revision-id}/reviewers",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdRevisionsRevisionIdReviewersReviewerIdDelete": {
+      "method": "POST",
+      "path": "/changes/{change-id}/revisions/{revision-id}/reviewers/{reviewer-id}/delete",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdRevisionsRevisionIdReviewersReviewerIdVotesVoteIdDelete": {
+      "method": "POST",
+      "path": "/changes/{change-id}/revisions/{revision-id}/reviewers/{reviewer-id}/votes/{vote-id}/delete",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdRevisionsRevisionIdSubmit": {
+      "method": "POST",
+      "path": "/changes/{change-id}/revisions/{revision-id}/submit",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdRevisionsRevisionIdTestSubmitRule": {
+      "method": "POST",
+      "path": "/changes/{change-id}/revisions/{revision-id}/test.submit_rule",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdRevisionsRevisionIdTestSubmitType": {
+      "method": "POST",
+      "path": "/changes/{change-id}/revisions/{revision-id}/test.submit_type",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdSubmit": {
+      "method": "POST",
+      "path": "/changes/{change-id}/submit",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdWip": {
+      "method": "POST",
+      "path": "/changes/{change-id}/wip",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postConfigServerCaches": {
+      "method": "POST",
+      "path": "/config/server/caches",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postConfigServerCachesCacheIdFlush": {
+      "method": "POST",
+      "path": "/config/server/caches/{cache-id}/flush",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postConfigServerCheckConsistency": {
+      "method": "POST",
+      "path": "/config/server/check.consistency",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postConfigServerCleanupDraftComments": {
+      "method": "POST",
+      "path": "/config/server/cleanup.draft.comments",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postConfigServerDeactivateStaleAccounts": {
+      "method": "POST",
+      "path": "/config/server/deactivate.stale.accounts",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postConfigServerIndexChanges": {
+      "method": "POST",
+      "path": "/config/server/index.changes",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postConfigServerIndexesIndexIdFlush": {
+      "method": "POST",
+      "path": "/config/server/indexes/{index-id}/flush",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postConfigServerIndexesIndexIdSnapshot": {
+      "method": "POST",
+      "path": "/config/server/indexes/{index-id}/snapshot",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postConfigServerIndexesIndexIdVersionsIndexVersionIdReindex": {
+      "method": "POST",
+      "path": "/config/server/indexes/{index-id}/versions/{index-version-id}/reindex",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postConfigServerIndexesIndexIdVersionsIndexVersionIdSnapshot": {
+      "method": "POST",
+      "path": "/config/server/indexes/{index-id}/versions/{index-version-id}/snapshot",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postConfigServerPasswordsToTokens": {
+      "method": "POST",
+      "path": "/config/server/passwords.to.tokens",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postConfigServerReduceTokenLifetime": {
+      "method": "POST",
+      "path": "/config/server/reduce.token.lifetime",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postConfigServerReload": {
+      "method": "POST",
+      "path": "/config/server/reload",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postConfigServerSnapshotIndexes": {
+      "method": "POST",
+      "path": "/config/server/snapshot.indexes",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postGroupsGroupIdGroups": {
+      "method": "POST",
+      "path": "/groups/{group-id}/groups",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postGroupsGroupIdGroupsAdd": {
+      "method": "POST",
+      "path": "/groups/{group-id}/groups.add",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postGroupsGroupIdGroupsDelete": {
+      "method": "POST",
+      "path": "/groups/{group-id}/groups.delete",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postGroupsGroupIdIndex": {
+      "method": "POST",
+      "path": "/groups/{group-id}/index",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postGroupsGroupIdMembers": {
+      "method": "POST",
+      "path": "/groups/{group-id}/members",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postGroupsGroupIdMembersAdd": {
+      "method": "POST",
+      "path": "/groups/{group-id}/members.add",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postGroupsGroupIdMembersDelete": {
+      "method": "POST",
+      "path": "/groups/{group-id}/members.delete",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postPluginsPluginIdGerritDisable": {
+      "method": "POST",
+      "path": "/plugins/{plugin-id}/gerrit~disable",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postPluginsPluginIdGerritEnable": {
+      "method": "POST",
+      "path": "/plugins/{plugin-id}/gerrit~enable",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postPluginsPluginIdGerritReload": {
+      "method": "POST",
+      "path": "/plugins/{plugin-id}/gerrit~reload",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postProjectsProjectIdAccess": {
+      "method": "POST",
+      "path": "/projects/{project-id}/access",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postProjectsProjectIdBranchesBranchIdCommit": {
+      "method": "POST",
+      "path": "/projects/{project-id}/branches/{branch-id}/commit",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postProjectsProjectIdBranchesDelete": {
+      "method": "POST",
+      "path": "/projects/{project-id}/branches:delete",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postProjectsProjectIdChangesDelete": {
+      "method": "POST",
+      "path": "/projects/{project-id}/changes:delete",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postProjectsProjectIdCheck": {
+      "method": "POST",
+      "path": "/projects/{project-id}/check",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postProjectsProjectIdCommitsCommitIdCherrypick": {
+      "method": "POST",
+      "path": "/projects/{project-id}/commits/{commit-id}/cherrypick",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postProjectsProjectIdConvertRefStorage": {
+      "method": "POST",
+      "path": "/projects/{project-id}/convert-ref-storage",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postProjectsProjectIdCreateChange": {
+      "method": "POST",
+      "path": "/projects/{project-id}/create.change",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postProjectsProjectIdGc": {
+      "method": "POST",
+      "path": "/projects/{project-id}/gc",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postProjectsProjectIdIndex": {
+      "method": "POST",
+      "path": "/projects/{project-id}/index",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postProjectsProjectIdIndexChanges": {
+      "method": "POST",
+      "path": "/projects/{project-id}/index.changes",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postProjectsProjectIdLabels": {
+      "method": "POST",
+      "path": "/projects/{project-id}/labels",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postProjectsProjectIdLabelsReview": {
+      "method": "POST",
+      "path": "/projects/{project-id}/labels:review",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postProjectsProjectIdMigrateLabels": {
+      "method": "POST",
+      "path": "/projects/{project-id}/migrate-labels",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postProjectsProjectIdMigrateLabelsReview": {
+      "method": "POST",
+      "path": "/projects/{project-id}/migrate-labels:review",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postProjectsProjectIdSubmitRequirements": {
+      "method": "POST",
+      "path": "/projects/{project-id}/submit_requirements",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postProjectsProjectIdSubmitRequirementsReview": {
+      "method": "POST",
+      "path": "/projects/{project-id}/submit_requirements:review",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postProjectsProjectIdTagsDelete": {
+      "method": "POST",
+      "path": "/projects/{project-id}/tags:delete",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putAccountsAccountId": {
+      "method": "PUT",
+      "path": "/accounts/{account-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putAccountsAccountIdActive": {
+      "method": "PUT",
+      "path": "/accounts/{account-id}/active",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putAccountsAccountIdAgreements": {
+      "method": "PUT",
+      "path": "/accounts/{account-id}/agreements",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putAccountsAccountIdDisplayname": {
+      "method": "PUT",
+      "path": "/accounts/{account-id}/displayname",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putAccountsAccountIdEmailsEmailId": {
+      "method": "PUT",
+      "path": "/accounts/{account-id}/emails/{email-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putAccountsAccountIdEmailsEmailIdAvatar": {
+      "method": "PUT",
+      "path": "/accounts/{account-id}/emails/{email-id}/avatar",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putAccountsAccountIdEmailsEmailIdPreferred": {
+      "method": "PUT",
+      "path": "/accounts/{account-id}/emails/{email-id}/preferred",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putAccountsAccountIdName": {
+      "method": "PUT",
+      "path": "/accounts/{account-id}/name",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putAccountsAccountIdPasswordHttp": {
+      "method": "PUT",
+      "path": "/accounts/{account-id}/password.http",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putAccountsAccountIdPreferences": {
+      "method": "PUT",
+      "path": "/accounts/{account-id}/preferences",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putAccountsAccountIdPreferencesDiff": {
+      "method": "PUT",
+      "path": "/accounts/{account-id}/preferences.diff",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putAccountsAccountIdPreferencesEdit": {
+      "method": "PUT",
+      "path": "/accounts/{account-id}/preferences.edit",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putAccountsAccountIdStarredChangesStarredChangeId": {
+      "method": "PUT",
+      "path": "/accounts/{account-id}/starred.changes/{starred-change-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putAccountsAccountIdStatus": {
+      "method": "PUT",
+      "path": "/accounts/{account-id}/status",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putAccountsAccountIdTokensTokenId": {
+      "method": "PUT",
+      "path": "/accounts/{account-id}/tokens/{token-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putAccountsAccountIdUsername": {
+      "method": "PUT",
+      "path": "/accounts/{account-id}/username",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putChangesChangeIdEditChangeEditId": {
+      "method": "PUT",
+      "path": "/changes/{change-id}/edit/{change-edit-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putChangesChangeIdEditIdentity": {
+      "method": "PUT",
+      "path": "/changes/{change-id}/edit:identity",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putChangesChangeIdEditMessage": {
+      "method": "PUT",
+      "path": "/changes/{change-id}/edit:message",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putChangesChangeIdMessage": {
+      "method": "PUT",
+      "path": "/changes/{change-id}/message",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putChangesChangeIdRevisionsRevisionIdDescription": {
+      "method": "PUT",
+      "path": "/changes/{change-id}/revisions/{revision-id}/description",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putChangesChangeIdRevisionsRevisionIdDrafts": {
+      "method": "PUT",
+      "path": "/changes/{change-id}/revisions/{revision-id}/drafts",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putChangesChangeIdRevisionsRevisionIdDraftsDraftCommentId": {
+      "method": "PUT",
+      "path": "/changes/{change-id}/revisions/{revision-id}/drafts/{draft-comment-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putChangesChangeIdRevisionsRevisionIdFilesFileIdReviewed": {
+      "method": "PUT",
+      "path": "/changes/{change-id}/revisions/{revision-id}/files/{file-id}/reviewed",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putChangesChangeIdTopic": {
+      "method": "PUT",
+      "path": "/changes/{change-id}/topic",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putConfigServerEmailConfirm": {
+      "method": "PUT",
+      "path": "/config/server/email.confirm",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putConfigServerPreferences": {
+      "method": "PUT",
+      "path": "/config/server/preferences",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putConfigServerPreferencesDiff": {
+      "method": "PUT",
+      "path": "/config/server/preferences.diff",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putConfigServerPreferencesEdit": {
+      "method": "PUT",
+      "path": "/config/server/preferences.edit",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putGroupsGroupId": {
+      "method": "PUT",
+      "path": "/groups/{group-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putGroupsGroupIdDescription": {
+      "method": "PUT",
+      "path": "/groups/{group-id}/description",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putGroupsGroupIdGroupsSubgroupId": {
+      "method": "PUT",
+      "path": "/groups/{group-id}/groups/{subgroup-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putGroupsGroupIdMembersMemberId": {
+      "method": "PUT",
+      "path": "/groups/{group-id}/members/{member-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putGroupsGroupIdName": {
+      "method": "PUT",
+      "path": "/groups/{group-id}/name",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putGroupsGroupIdOptions": {
+      "method": "PUT",
+      "path": "/groups/{group-id}/options",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putGroupsGroupIdOwner": {
+      "method": "PUT",
+      "path": "/groups/{group-id}/owner",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putPluginsPluginId": {
+      "method": "PUT",
+      "path": "/plugins/{plugin-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putProjectsProjectId": {
+      "method": "PUT",
+      "path": "/projects/{project-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putProjectsProjectIdAccessReview": {
+      "method": "PUT",
+      "path": "/projects/{project-id}/access:review",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putProjectsProjectIdBan": {
+      "method": "PUT",
+      "path": "/projects/{project-id}/ban",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putProjectsProjectIdBranchesBranchId": {
+      "method": "PUT",
+      "path": "/projects/{project-id}/branches/{branch-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putProjectsProjectIdConfig": {
+      "method": "PUT",
+      "path": "/projects/{project-id}/config",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putProjectsProjectIdConfigReview": {
+      "method": "PUT",
+      "path": "/projects/{project-id}/config:review",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putProjectsProjectIdDashboardsDashboardId": {
+      "method": "PUT",
+      "path": "/projects/{project-id}/dashboards/{dashboard-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putProjectsProjectIdDescription": {
+      "method": "PUT",
+      "path": "/projects/{project-id}/description",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putProjectsProjectIdHEAD": {
+      "method": "PUT",
+      "path": "/projects/{project-id}/HEAD",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putProjectsProjectIdLabelsLabelId": {
+      "method": "PUT",
+      "path": "/projects/{project-id}/labels/{label-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putProjectsProjectIdParent": {
+      "method": "PUT",
+      "path": "/projects/{project-id}/parent",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putProjectsProjectIdSubmitRequirementsSubmitRequirementId": {
+      "method": "PUT",
+      "path": "/projects/{project-id}/submit_requirements/{submit-requirement-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putProjectsProjectIdTagsTagId": {
+      "method": "PUT",
+      "path": "/projects/{project-id}/tags/{tag-id}",
+      "profiles": [
+        "full"
+      ]
+    }
+  },
+  "source_sha256": "327fbf19ef9fc232f4e7300560b22d31e26e6d1a09534a58eb9b70a390fe7fa8",
+  "version": 1
+}

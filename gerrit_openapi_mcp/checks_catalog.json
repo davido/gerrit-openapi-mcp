@@ -1,0 +1,78 @@
+{
+  "note": "Checks plugin: GET operations are included in read_only/agent; creating/updating checkers or runs and requesting reruns require full. Source changes require catalog review.",
+  "operations": {
+    "getChangesChangeIdRevisionsRevisionIdChecks": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/checks",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdChecksCheckId": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/checks/{check-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getPluginsChecksCheckers": {
+      "method": "GET",
+      "path": "/plugins/checks/checkers",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getPluginsChecksCheckersCheckerId": {
+      "method": "GET",
+      "path": "/plugins/checks/checkers/{checker-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "postChangesChangeIdRevisionsRevisionIdChecks": {
+      "method": "POST",
+      "path": "/changes/{change-id}/revisions/{revision-id}/checks",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdRevisionsRevisionIdChecksCheckId": {
+      "method": "POST",
+      "path": "/changes/{change-id}/revisions/{revision-id}/checks/{check-id}",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postChangesChangeIdRevisionsRevisionIdChecksCheckIdRerun": {
+      "method": "POST",
+      "path": "/changes/{change-id}/revisions/{revision-id}/checks/{check-id}/rerun",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postPluginsChecksCheckers": {
+      "method": "POST",
+      "path": "/plugins/checks/checkers",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postPluginsChecksCheckersCheckerId": {
+      "method": "POST",
+      "path": "/plugins/checks/checkers/{checker-id}",
+      "profiles": [
+        "full"
+      ]
+    }
+  },
+  "source_sha256": "a07dcc65655b9f2d4de7a4242457624875c13487bdd832cdb25b2473e7b9a06d",
+  "version": 1
+}

@@ -1,0 +1,489 @@
+[
+  {
+    "name": "getChangesChangeIdRevisionsRevisionIdChecks",
+    "description": "Retrieves all checks for a given revision and change.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "change-id": {
+          "type": "string"
+        },
+        "revision-id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "change-id",
+        "revision-id"
+      ]
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "changes"
+        ]
+      }
+    }
+  },
+  {
+    "name": "postChangesChangeIdRevisionsRevisionIdChecks",
+    "description": "Creates a new check.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "change-id": {
+          "type": "string"
+        },
+        "revision-id": {
+          "type": "string"
+        },
+        "checker_uuid": {
+          "type": "string",
+          "description": "The UUID of the checker. Must be specified for check creation. Optional only if updating a check and referencing the checker using the UUID in the URL."
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "FAILED",
+            "NOT_STARTED",
+            "SCHEDULED",
+            "RUNNING",
+            "SUCCESSFUL",
+            "NOT_RELEVANT"
+          ],
+          "description": "The state as string-serialized form of CheckState"
+        },
+        "message": {
+          "type": "string",
+          "description": "Short message explaining the check state."
+        },
+        "url": {
+          "type": "string",
+          "description": "A fully-qualified URL pointing to the result of the check on the checker's infrastructure."
+        },
+        "started": {
+          "type": "string",
+          "format": "gerrit-timestamp",
+          "description": "The timestamp of when the check started processing."
+        },
+        "finished": {
+          "type": "string",
+          "format": "gerrit-timestamp",
+          "description": "The timestamp of when the check finished processing."
+        },
+        "notify": {
+          "type": "string",
+          "enum": [
+            "NONE",
+            "OWNER",
+            "OWNER_REVIEWERS",
+            "ALL"
+          ],
+          "description": "Notify handling that defines to whom email notifications should be sent when the combined check state changes due to posting this check. Allowed values are NONE, OWNER, OWNER_REVIEWERS and ALL."
+        },
+        "notify_details": {
+          "additionalProperties": {
+            "properties": {
+              "accounts": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array",
+                "description": "A list of account IDs that identify the accounts that should be notified."
+              }
+            },
+            "type": "object"
+          },
+          "type": "object",
+          "description": "Additional information about whom to notify when the combined check state changes due to posting this check as a map of recipient type to NotifyInfo entity. Regardless of this setting there are no email notifications for posting checks on non-current patch sets."
+        }
+      },
+      "required": [
+        "change-id",
+        "revision-id"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "changes"
+        ]
+      }
+    }
+  },
+  {
+    "name": "getChangesChangeIdRevisionsRevisionIdChecksCheckId",
+    "description": "Retrieves a check.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "change-id": {
+          "type": "string"
+        },
+        "revision-id": {
+          "type": "string"
+        },
+        "check-id": {
+          "type": "string"
+        },
+        "O": {
+          "type": "string"
+        },
+        "o": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "change-id",
+        "revision-id",
+        "check-id"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "changes"
+        ]
+      }
+    }
+  },
+  {
+    "name": "postChangesChangeIdRevisionsRevisionIdChecksCheckId",
+    "description": "Updates a check. The semantics are the same as for CreateCheck.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "change-id": {
+          "type": "string"
+        },
+        "revision-id": {
+          "type": "string"
+        },
+        "check-id": {
+          "type": "string"
+        },
+        "checker_uuid": {
+          "type": "string",
+          "description": "The UUID of the checker. Must be specified for check creation. Optional only if updating a check and referencing the checker using the UUID in the URL."
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "FAILED",
+            "NOT_STARTED",
+            "SCHEDULED",
+            "RUNNING",
+            "SUCCESSFUL",
+            "NOT_RELEVANT"
+          ],
+          "description": "The state as string-serialized form of CheckState"
+        },
+        "message": {
+          "type": "string",
+          "description": "Short message explaining the check state."
+        },
+        "url": {
+          "type": "string",
+          "description": "A fully-qualified URL pointing to the result of the check on the checker's infrastructure."
+        },
+        "started": {
+          "type": "string",
+          "format": "gerrit-timestamp",
+          "description": "The timestamp of when the check started processing."
+        },
+        "finished": {
+          "type": "string",
+          "format": "gerrit-timestamp",
+          "description": "The timestamp of when the check finished processing."
+        },
+        "notify": {
+          "type": "string",
+          "enum": [
+            "NONE",
+            "OWNER",
+            "OWNER_REVIEWERS",
+            "ALL"
+          ],
+          "description": "Notify handling that defines to whom email notifications should be sent when the combined check state changes due to posting this check. Allowed values are NONE, OWNER, OWNER_REVIEWERS and ALL."
+        },
+        "notify_details": {
+          "additionalProperties": {
+            "properties": {
+              "accounts": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array",
+                "description": "A list of account IDs that identify the accounts that should be notified."
+              }
+            },
+            "type": "object"
+          },
+          "type": "object",
+          "description": "Additional information about whom to notify when the combined check state changes due to posting this check as a map of recipient type to NotifyInfo entity. Regardless of this setting there are no email notifications for posting checks on non-current patch sets."
+        }
+      },
+      "required": [
+        "change-id",
+        "revision-id",
+        "check-id"
+      ]
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "changes"
+        ]
+      }
+    }
+  },
+  {
+    "name": "postChangesChangeIdRevisionsRevisionIdChecksCheckIdRerun",
+    "description": "Reruns a check. As response the CheckInfo entity is returned that describes the created check.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "change-id": {
+          "type": "string"
+        },
+        "revision-id": {
+          "type": "string"
+        },
+        "check-id": {
+          "type": "string"
+        },
+        "notify": {
+          "type": "string",
+          "enum": [
+            "NONE",
+            "OWNER",
+            "OWNER_REVIEWERS",
+            "ALL"
+          ],
+          "description": "Notify handling that defines to whom email notifications should be sent when the combined check state changes due to rerunning this check. Allowed values are NONE, OWNER, OWNER_REVIEWERS and ALL. If not set, the default is OWNER."
+        },
+        "notify_details": {
+          "additionalProperties": {
+            "properties": {
+              "accounts": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array",
+                "description": "A list of account IDs that identify the accounts that should be notified."
+              }
+            },
+            "type": "object"
+          },
+          "type": "object",
+          "description": "Additional information about whom to notify when the combined check state changes due to rerunning this check as a map of recipient type to NotifyInfo entity. Regardless of this setting there are no email notifications for rerunning checks on non-current patch sets."
+        }
+      },
+      "required": [
+        "change-id",
+        "revision-id",
+        "check-id"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "changes"
+        ]
+      }
+    }
+  },
+  {
+    "name": "getPluginsChecksCheckers",
+    "description": "Retrieves all checkers.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "x-fastmcp-wrap-result": true
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "checkers"
+        ]
+      }
+    }
+  },
+  {
+    "name": "postPluginsChecksCheckers",
+    "description": "Creates a new checker.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string",
+          "description": "The UUID of the checker."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the checker."
+        },
+        "description": {
+          "type": "string",
+          "description": "The description of the checker."
+        },
+        "url": {
+          "type": "string",
+          "description": "The URL of the checker."
+        },
+        "repository": {
+          "type": "string",
+          "description": "The (exact) name of the repository for which the checker applies."
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "ENABLED",
+            "DISABLED"
+          ],
+          "description": "The status of the checker; one of ENABLED or DISABLED."
+        },
+        "blocking": {
+          "items": {
+            "type": "string",
+            "enum": [
+              "STATE_NOT_PASSING"
+            ]
+          },
+          "type": "array",
+          "description": "A list of conditions that describe when the checker should block change submission."
+        },
+        "query": {
+          "type": "string",
+          "description": "A query that limits changes for which the checker is relevant."
+        }
+      },
+      "required": []
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "checkers"
+        ]
+      }
+    }
+  },
+  {
+    "name": "getPluginsChecksCheckersCheckerId",
+    "description": "Retrieves a checker.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "checker-id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "checker-id"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "checkers"
+        ]
+      }
+    }
+  },
+  {
+    "name": "postPluginsChecksCheckersCheckerId",
+    "description": "Updates a checker.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "checker-id": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string",
+          "description": "The UUID of the checker."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the checker."
+        },
+        "description": {
+          "type": "string",
+          "description": "The description of the checker."
+        },
+        "url": {
+          "type": "string",
+          "description": "The URL of the checker."
+        },
+        "repository": {
+          "type": "string",
+          "description": "The (exact) name of the repository for which the checker applies."
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "ENABLED",
+            "DISABLED"
+          ],
+          "description": "The status of the checker; one of ENABLED or DISABLED."
+        },
+        "blocking": {
+          "items": {
+            "type": "string",
+            "enum": [
+              "STATE_NOT_PASSING"
+            ]
+          },
+          "type": "array",
+          "description": "A list of conditions that describe when the checker should block change submission."
+        },
+        "query": {
+          "type": "string",
+          "description": "A query that limits changes for which the checker is relevant."
+        }
+      },
+      "required": [
+        "checker-id"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "checkers"
+        ]
+      }
+    }
+  }
+]

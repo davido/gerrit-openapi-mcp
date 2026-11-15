@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "gerrit-checks-read-only": {
+      "command": "/usr/local/bin/uv",
+      "args": [
+        "--directory", "/Users/Davido/projects/gerrit-openapi-mcp-prototype",
+        "run", "--frozen", "gerrit-openapi-mcp",
+        "--api", "checks", "serve",
+        "--base-url", "https://gerrit.example.com/a/",
+        "--profile", "read_only"
+      ]
+    }
+  }
+}
