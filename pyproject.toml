@@ -2,6 +2,7 @@
 name = "gerrit-openapi-mcp"
 version = "0.1.0"
 description = "Direct Gerrit OpenAPI to MCP bridge, with explicit profiles"
+license = { file = "LICENSE.txt" }
 requires-python = ">=3.12"
 dependencies = [
   "fastmcp>=4.2,<5",
