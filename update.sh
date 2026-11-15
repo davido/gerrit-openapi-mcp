@@ -15,12 +15,12 @@
 #      Gerrit source_version shown in the manifest when cutting a release).
 #
 # Usage:
-#   ./scripts/update.sh                   # regenerate every configured API
-#   ./scripts/update.sh --refresh         # git pull ../gerrit-openapi first, then all
-#   ./scripts/update.sh checks            # just one API
-#   ./scripts/update.sh --refresh checks  # refresh, then one API
+#   ./update.sh                   # regenerate every configured API
+#   ./update.sh --refresh         # git pull ../gerrit-openapi first, then all
+#   ./update.sh checks            # just one API
+#   ./update.sh --refresh checks  # refresh, then one API
 set -euo pipefail
-cd "$(dirname "$0")/.."
+cd "$(dirname "$0")"
 
 refresh=0
 apis=()

@@ -10190,7 +10190,11 @@
           },
           "submit_whole_topic": {
             "type": "boolean",
-            "description": "A configuration if the whole topic is submitted."
+            "description": "Configuration that enforces the whole topic to be submitted. Deprecated; use enforce_whole_topic_submit."
+          },
+          "enforce_whole_topic_submit": {
+            "type": "boolean",
+            "description": "Configuration that enforces the whole topic to be submitted."
           },
           "mergeability_computation_behavior": {
             "type": "string",
@@ -15594,6 +15598,10 @@
               "$ref": "#/components/schemas/NotifyInfo"
             },
             "description": "Additional information about whom to notify about the update as a map of recipient type to NotifyInfo entity."
+          },
+          "submit_whole_topic": {
+            "type": "boolean",
+            "description": "If true, all open changes that share the topic of the submitted change are also submitted together in a single operation. Defaults to false."
           }
         }
       },
@@ -16287,6 +16295,6 @@
   "x-agent-profile": {
     "name": "read_only",
     "version": 1,
-    "source_sha256": "327fbf19ef9fc232f4e7300560b22d31e26e6d1a09534a58eb9b70a390fe7fa8"
+    "source_sha256": "1dfdb0175258fc48d36a8a1d418dc0a4cf0817de0c25f771f48623c7a340c854"
   }
 }

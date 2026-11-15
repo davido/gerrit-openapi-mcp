@@ -7706,6 +7706,10 @@
           },
           "type": "object",
           "description": "Additional information about whom to notify about the update as a map of recipient type to NotifyInfo entity."
+        },
+        "submit_whole_topic": {
+          "type": "boolean",
+          "description": "If true, all open changes that share the topic of the submitted change are also submitted together in a single operation. Defaults to false."
         }
       },
       "required": [
@@ -7924,6 +7928,10 @@
           },
           "type": "object",
           "description": "Additional information about whom to notify about the update as a map of recipient type to NotifyInfo entity."
+        },
+        "submit_whole_topic": {
+          "type": "boolean",
+          "description": "If true, all open changes that share the topic of the submitted change are also submitted together in a single operation. Defaults to false."
         }
       },
       "required": [
