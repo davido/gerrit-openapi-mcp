@@ -1,0 +1,20 @@
+{
+  "api": "code-owners",
+  "fastmcp": "3.4.11",
+  "source_version": "3.16.0-SNAPSHOT",
+  "source_sha256": "f1437b5849a90826b839a15ce268e17b898c9d6b159b49e138a0543ef3867da2",
+  "profiles": {
+    "full": {
+      "operations": 13,
+      "tools": 13
+    },
+    "read_only": {
+      "operations": 9,
+      "tools": 9
+    },
+    "agent": {
+      "operations": 9,
+      "tools": 9
+    }
+  }
+}

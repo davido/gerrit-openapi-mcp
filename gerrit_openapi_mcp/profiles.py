@@ -13,10 +13,12 @@ DEFAULT_CATALOG = Path(__file__).with_name("catalog.json")
 API_SPECS = {
     "core": DEFAULT_SPEC,
     "checks": DEFAULT_SPEC.parent.parent / "plugins/checks/openapi.json",
+    "code-owners": DEFAULT_SPEC.parent.parent / "plugins/code-owners/openapi.json",
 }
 API_CATALOGS = {
     "core": DEFAULT_CATALOG,
     "checks": Path(__file__).with_name("checks_catalog.json"),
+    "code-owners": Path(__file__).with_name("code_owners_catalog.json"),
 }
 
 

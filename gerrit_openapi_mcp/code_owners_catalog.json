@@ -1,0 +1,116 @@
+{
+  "note": "Code Owners plugin: GET operations are included in read_only/agent; config checks, branch renames and project-config updates require full. Source changes require catalog review.",
+  "operations": {
+    "getChangesChangeIdCodeOwnersStatus": {
+      "method": "GET",
+      "path": "/changes/{change-id}/code_owners.status",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdCodeOwnersPathId": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/code_owners/{path-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getChangesChangeIdRevisionsRevisionIdOwnedPaths": {
+      "method": "GET",
+      "path": "/changes/{change-id}/revisions/{revision-id}/owned_paths",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdBranchesBranchIdCodeOwnersBranchConfig": {
+      "method": "GET",
+      "path": "/projects/{project-id}/branches/{branch-id}/code_owners.branch_config",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdBranchesBranchIdCodeOwnersCheck": {
+      "method": "GET",
+      "path": "/projects/{project-id}/branches/{branch-id}/code_owners.check",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdBranchesBranchIdCodeOwnersConfigFiles": {
+      "method": "GET",
+      "path": "/projects/{project-id}/branches/{branch-id}/code_owners.config_files",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdBranchesBranchIdCodeOwnersConfigPathId": {
+      "method": "GET",
+      "path": "/projects/{project-id}/branches/{branch-id}/code_owners.config/{path-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdBranchesBranchIdCodeOwnersPathId": {
+      "method": "GET",
+      "path": "/projects/{project-id}/branches/{branch-id}/code_owners/{path-id}",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "getProjectsProjectIdCodeOwnersProjectConfig": {
+      "method": "GET",
+      "path": "/projects/{project-id}/code_owners.project_config",
+      "profiles": [
+        "full",
+        "read_only",
+        "agent"
+      ]
+    },
+    "postChangesChangeIdRevisionsRevisionIdCodeOwnersCheckConfig": {
+      "method": "POST",
+      "path": "/changes/{change-id}/revisions/{revision-id}/code_owners.check_config",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postProjectsProjectIdBranchesBranchIdCodeOwnersRename": {
+      "method": "POST",
+      "path": "/projects/{project-id}/branches/{branch-id}/code_owners.rename",
+      "profiles": [
+        "full"
+      ]
+    },
+    "postProjectsProjectIdCodeOwnersCheckConfig": {
+      "method": "POST",
+      "path": "/projects/{project-id}/code_owners.check_config",
+      "profiles": [
+        "full"
+      ]
+    },
+    "putProjectsProjectIdCodeOwnersProjectConfig": {
+      "method": "PUT",
+      "path": "/projects/{project-id}/code_owners.project_config",
+      "profiles": [
+        "full"
+      ]
+    }
+  },
+  "source_sha256": "f1437b5849a90826b839a15ce268e17b898c9d6b159b49e138a0543ef3867da2",
+  "version": 1
+}

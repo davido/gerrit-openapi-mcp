@@ -7,7 +7,7 @@ plugin implementation was inspected in `~/projects/checks`.
 
 ## Generate and serve
 
-From `~/projects/gerrit-openapi-mcp-prototype`:
+From `~/projects/gerrit-openapi-mcp`:
 
 ```bash
 uv run gerrit-openapi-mcp --api checks generate
@@ -52,7 +52,7 @@ template is in `examples/checks.mcp.json`:
     "gerrit-checks-read-only": {
       "command": "/usr/local/bin/uv",
       "args": [
-        "--directory", "/Users/Davido/projects/gerrit-openapi-mcp-prototype",
+        "--directory", "/Users/Davido/projects/gerrit-openapi-mcp",
         "run", "--frozen", "gerrit-openapi-mcp",
         "--api", "checks", "serve",
         "--base-url", "https://gerrit.example.com/a/",

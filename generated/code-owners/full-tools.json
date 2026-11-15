@@ -1,0 +1,637 @@
+[
+  {
+    "name": "getChangesChangeIdCodeOwnersStatus",
+    "description": "Gets the code owner statuses for the files in a change.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "change-id": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "integer"
+        },
+        "start": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "change-id"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "changes"
+        ]
+      }
+    }
+  },
+  {
+    "name": "postChangesChangeIdRevisionsRevisionIdCodeOwnersCheckCon",
+    "description": "Checks/validates the code owner config files in a revision that have been modified.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "change-id": {
+          "type": "string"
+        },
+        "revision-id": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string",
+          "description": "Glob that limits the validation to code owner config files that have a path that matches this glob. By default unset, which means that all modified code owner config files should be validated."
+        },
+        "verbosity": {
+          "type": "string",
+          "enum": [
+            "FATAL",
+            "ERROR",
+            "WARNING"
+          ],
+          "description": "Level that controls which code owner config file issues are returned. The following values are supported: FATAL - only fatal issues are returned, ERROR - only fatal and error issues are returned, WARNING - all issues (warning, error and fatal) are returned. If unset, WARNING is used."
+        }
+      },
+      "required": [
+        "change-id",
+        "revision-id"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "changes"
+        ]
+      }
+    }
+  },
+  {
+    "name": "getChangesChangeIdRevisionsRevisionIdCodeOwnersPathId",
+    "description": "Suggests accounts that are code owners of a file in a change revision.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "change-id": {
+          "type": "string"
+        },
+        "revision-id": {
+          "type": "string"
+        },
+        "path-id": {
+          "type": "string"
+        },
+        "O": {
+          "type": "string"
+        },
+        "debug": {
+          "type": "boolean"
+        },
+        "highest-score-only": {
+          "type": "boolean"
+        },
+        "limit": {
+          "type": "integer"
+        },
+        "o": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "resolve-all-users": {
+          "type": "boolean"
+        },
+        "seed": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "change-id",
+        "revision-id",
+        "path-id"
+      ]
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "changes"
+        ]
+      }
+    }
+  },
+  {
+    "name": "getChangesChangeIdRevisionsRevisionIdOwnedPaths",
+    "description": "Lists the files of the revision that are owned by the specified user (see user request parameter below).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "change-id": {
+          "type": "string"
+        },
+        "revision-id": {
+          "type": "string"
+        },
+        "check_reviewers": {
+          "type": "boolean"
+        },
+        "limit": {
+          "type": "integer"
+        },
+        "start": {
+          "type": "integer"
+        },
+        "user": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "change-id",
+        "revision-id"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "changes"
+        ]
+      }
+    }
+  },
+  {
+    "name": "getProjectsProjectIdBranchesBranchIdCodeOwnersBranchConf",
+    "description": "Gets the code owner branch configuration.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "project-id": {
+          "type": "string"
+        },
+        "branch-id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "project-id",
+        "branch-id"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "projects"
+        ]
+      }
+    }
+  },
+  {
+    "name": "getProjectsProjectIdBranchesBranchIdCodeOwnersCheck",
+    "description": "Checks the code ownership of a user for a path in a branch.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "project-id": {
+          "type": "string"
+        },
+        "branch-id": {
+          "type": "string"
+        },
+        "change": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "user": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "project-id",
+        "branch-id"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "projects"
+        ]
+      }
+    }
+  },
+  {
+    "name": "getProjectsProjectIdBranchesBranchIdCodeOwnersConfigPath",
+    "description": "Gets a code owner config for a path in a branch.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "project-id": {
+          "type": "string"
+        },
+        "branch-id": {
+          "type": "string"
+        },
+        "path-id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "project-id",
+        "branch-id",
+        "path-id"
+      ]
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "projects"
+        ]
+      }
+    }
+  },
+  {
+    "name": "getProjectsProjectIdBranchesBranchIdCodeOwnersConfigFile",
+    "description": "Lists the code owner config files in a branch.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "project-id": {
+          "type": "string"
+        },
+        "branch-id": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "include-non-parsable-files": {
+          "type": "boolean"
+        },
+        "path": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "project-id",
+        "branch-id"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "x-fastmcp-wrap-result": true
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "projects"
+        ]
+      }
+    }
+  },
+  {
+    "name": "postProjectsProjectIdBranchesBranchIdCodeOwnersRename",
+    "description": "Renames an email in all code owner config files in the branch.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "project-id": {
+          "type": "string"
+        },
+        "branch-id": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string",
+          "description": "Commit message that should be used for the commit that renames the email in the code owner config files. If not set the following default commit message is used: \"Rename email in code owner config files\""
+        },
+        "old_email": {
+          "type": "string",
+          "description": "The old email that should be replaced with the new email."
+        },
+        "new_email": {
+          "type": "string",
+          "description": "The new email that should be used to replace the old email."
+        }
+      },
+      "required": [
+        "project-id",
+        "branch-id"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "projects"
+        ]
+      }
+    }
+  },
+  {
+    "name": "getProjectsProjectIdBranchesBranchIdCodeOwnersPathId",
+    "description": "Lists the accounts that are code owners of a file or folder in a branch.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "project-id": {
+          "type": "string"
+        },
+        "branch-id": {
+          "type": "string"
+        },
+        "path-id": {
+          "type": "string"
+        },
+        "O": {
+          "type": "string"
+        },
+        "debug": {
+          "type": "boolean"
+        },
+        "highest-score-only": {
+          "type": "boolean"
+        },
+        "limit": {
+          "type": "integer"
+        },
+        "o": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "resolve-all-users": {
+          "type": "boolean"
+        },
+        "revision": {
+          "type": "string"
+        },
+        "seed": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "project-id",
+        "branch-id",
+        "path-id"
+      ]
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "projects"
+        ]
+      }
+    }
+  },
+  {
+    "name": "postProjectsProjectIdCodeOwnersCheckConfig",
+    "description": "Checks/validates the code owner config files in a project.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "project-id": {
+          "type": "string"
+        },
+        "validate_disabled_branches": {
+          "type": "boolean",
+          "description": "Whether code owner config files in branches for which the code owners functionality is disabled should be validated too. By default unset, false."
+        },
+        "branches": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "description": "List of branches for which code owner config files should be validated. The refs/heads/ prefix may be omitted. By default unset, which means that code owner config files in all branches should be validated."
+        },
+        "path": {
+          "type": "string",
+          "description": "Glob that limits the validation to code owner config files that have a path that matches this glob. By default unset, which means that all code owner config files should be validated."
+        },
+        "verbosity": {
+          "type": "string",
+          "enum": [
+            "FATAL",
+            "ERROR",
+            "WARNING"
+          ],
+          "description": "Level that controls which code owner config file issues are returned. The following values are supported: FATAL - only fatal issues are returned, ERROR - only fatal and error issues are returned, WARNING - all issues (warning, error and fatal) are returned. If unset, WARNING is used."
+        }
+      },
+      "required": [
+        "project-id"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "projects"
+        ]
+      }
+    }
+  },
+  {
+    "name": "getProjectsProjectIdCodeOwnersProjectConfig",
+    "description": "Gets the code owner project configuration.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "project-id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "project-id"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "projects"
+        ]
+      }
+    }
+  },
+  {
+    "name": "putProjectsProjectIdCodeOwnersProjectConfig",
+    "description": "Updates the code owner project configuration.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "project-id": {
+          "type": "string"
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "Whether the code owners functionality should be disabled/enabled for the project."
+        },
+        "disabled_branches": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "description": "List of branches for which the code owners functionality is disabled. Can be exact refs, ref patterns or regular expressions. Overrides any existing disabled branch configuration."
+        },
+        "file_extension": {
+          "type": "string",
+          "description": "The file extension that should be used for code owner config files in this project."
+        },
+        "required_approval": {
+          "type": "string",
+          "description": "The approval that is required from code owners. Must be specified in the format \"\\<label-name\\>+\\<label-value\\>\". If an empty string is provided the required approval configuration is unset."
+        },
+        "override_approvals": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "description": "The approvals that count as override for the code owners submit check. Must be specified in the format \"\\<label-name\\>+\\<label-value\\>\"."
+        },
+        "fallback_code_owners": {
+          "type": "string",
+          "enum": [
+            "NONE",
+            "ALL_USERS"
+          ],
+          "description": "Policy that controls who should own paths that have no code owners defined. Possible values are: NONE: Paths for which no code owners are defined are owned by no one. ALL_USERS: Paths for which no code owners are defined are owned by all users."
+        },
+        "global_code_owners": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "description": "List of emails of users that should be code owners globally across all branches."
+        },
+        "exempted_users": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "description": "List of emails of users that should be exempted from requiring code owners approvals."
+        },
+        "merge_commit_strategy": {
+          "type": "string",
+          "enum": [
+            "ALL_CHANGED_FILES",
+            "FILES_WITH_CONFLICT_RESOLUTION"
+          ],
+          "description": "Strategy that defines for merge commits which files require code owner approvals. Can be ALL_CHANGED_FILES or FILES_WITH_CONFLICT_RESOLUTION (see mergeCommitStrategy for an explanation of these values)."
+        },
+        "implicit_approvals": {
+          "type": "boolean",
+          "description": "Whether an implicit code owner approval from the last uploader is assumed."
+        },
+        "override_info_url": {
+          "type": "string",
+          "description": "URL for a page that provides project/host-specific information about how to request a code owner override."
+        },
+        "invalid_code_owner_config_info_url": {
+          "type": "string",
+          "description": "URL for a page that provides project/host-specific information about how to deal with invalid code owner config files."
+        },
+        "read_only": {
+          "type": "boolean",
+          "description": "Whether code owner config files are read-only."
+        },
+        "exempt_pure_reverts": {
+          "type": "boolean",
+          "description": "Whether pure revert changes are exempted from needing code owner approvals for submit."
+        },
+        "enable_validation_on_branch_creation": {
+          "type": "string",
+          "enum": [
+            "TRUE",
+            "FALSE",
+            "DRY_RUN",
+            "FORCED",
+            "FORCED_DRY_RUN"
+          ],
+          "description": "Policy for validating code owner config files when a branch is created."
+        },
+        "enable_validation_on_commit_received": {
+          "type": "string",
+          "enum": [
+            "TRUE",
+            "FALSE",
+            "DRY_RUN",
+            "FORCED",
+            "FORCED_DRY_RUN"
+          ],
+          "description": "Policy for validating code owner config files when a commit is received."
+        },
+        "enable_validation_on_submit": {
+          "type": "string",
+          "enum": [
+            "TRUE",
+            "FALSE",
+            "DRY_RUN",
+            "FORCED",
+            "FORCED_DRY_RUN"
+          ],
+          "description": "Policy for validating code owner config files when a change is submitted."
+        },
+        "reject_non_resolvable_code_owners": {
+          "type": "boolean",
+          "description": "Whether modifications of code owner config files that newly add non-resolvable code owners should be rejected on commit received and submit."
+        },
+        "reject_non_resolvable_imports": {
+          "type": "boolean",
+          "description": "Whether modifications of code owner config files that newly add non-resolvable imports should be rejected on commit received an submit."
+        },
+        "max_paths_in_change_messages": {
+          "type": "integer",
+          "description": "The maximum number of paths that are included in change messages. Setting the value to 0 disables including owned paths into change messages."
+        }
+      },
+      "required": [
+        "project-id"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "projects"
+        ]
+      }
+    }
+  }
+]

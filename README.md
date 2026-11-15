@@ -95,7 +95,7 @@ Example MCP host configuration:
     "gerrit-openapi-prototype": {
       "command": "/usr/local/bin/uv",
       "args": [
-        "--directory", "/Users/Davido/projects/gerrit-openapi-mcp-prototype",
+        "--directory", "/Users/Davido/projects/gerrit-openapi-mcp",
         "run", "--frozen", "gerrit-openapi-mcp", "serve",
         "--base-url", "https://gerrit.example.com/a/",
         "--profile", "agent"

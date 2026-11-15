@@ -1,0 +1,355 @@
+[
+  {
+    "name": "getChangesChangeIdCodeOwnersStatus",
+    "description": "Gets the code owner statuses for the files in a change.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "change-id": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "integer"
+        },
+        "start": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "change-id"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "changes"
+        ]
+      }
+    }
+  },
+  {
+    "name": "getChangesChangeIdRevisionsRevisionIdCodeOwnersPathId",
+    "description": "Suggests accounts that are code owners of a file in a change revision.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "change-id": {
+          "type": "string"
+        },
+        "revision-id": {
+          "type": "string"
+        },
+        "path-id": {
+          "type": "string"
+        },
+        "O": {
+          "type": "string"
+        },
+        "debug": {
+          "type": "boolean"
+        },
+        "highest-score-only": {
+          "type": "boolean"
+        },
+        "limit": {
+          "type": "integer"
+        },
+        "o": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "resolve-all-users": {
+          "type": "boolean"
+        },
+        "seed": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "change-id",
+        "revision-id",
+        "path-id"
+      ]
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "changes"
+        ]
+      }
+    }
+  },
+  {
+    "name": "getChangesChangeIdRevisionsRevisionIdOwnedPaths",
+    "description": "Lists the files of the revision that are owned by the specified user (see user request parameter below).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "change-id": {
+          "type": "string"
+        },
+        "revision-id": {
+          "type": "string"
+        },
+        "check_reviewers": {
+          "type": "boolean"
+        },
+        "limit": {
+          "type": "integer"
+        },
+        "start": {
+          "type": "integer"
+        },
+        "user": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "change-id",
+        "revision-id"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "changes"
+        ]
+      }
+    }
+  },
+  {
+    "name": "getProjectsProjectIdBranchesBranchIdCodeOwnersBranchConf",
+    "description": "Gets the code owner branch configuration.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "project-id": {
+          "type": "string"
+        },
+        "branch-id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "project-id",
+        "branch-id"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "projects"
+        ]
+      }
+    }
+  },
+  {
+    "name": "getProjectsProjectIdBranchesBranchIdCodeOwnersCheck",
+    "description": "Checks the code ownership of a user for a path in a branch.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "project-id": {
+          "type": "string"
+        },
+        "branch-id": {
+          "type": "string"
+        },
+        "change": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "user": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "project-id",
+        "branch-id"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "projects"
+        ]
+      }
+    }
+  },
+  {
+    "name": "getProjectsProjectIdBranchesBranchIdCodeOwnersConfigPath",
+    "description": "Gets a code owner config for a path in a branch.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "project-id": {
+          "type": "string"
+        },
+        "branch-id": {
+          "type": "string"
+        },
+        "path-id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "project-id",
+        "branch-id",
+        "path-id"
+      ]
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "projects"
+        ]
+      }
+    }
+  },
+  {
+    "name": "getProjectsProjectIdBranchesBranchIdCodeOwnersConfigFile",
+    "description": "Lists the code owner config files in a branch.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "project-id": {
+          "type": "string"
+        },
+        "branch-id": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "include-non-parsable-files": {
+          "type": "boolean"
+        },
+        "path": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "project-id",
+        "branch-id"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "x-fastmcp-wrap-result": true
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "projects"
+        ]
+      }
+    }
+  },
+  {
+    "name": "getProjectsProjectIdBranchesBranchIdCodeOwnersPathId",
+    "description": "Lists the accounts that are code owners of a file or folder in a branch.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "project-id": {
+          "type": "string"
+        },
+        "branch-id": {
+          "type": "string"
+        },
+        "path-id": {
+          "type": "string"
+        },
+        "O": {
+          "type": "string"
+        },
+        "debug": {
+          "type": "boolean"
+        },
+        "highest-score-only": {
+          "type": "boolean"
+        },
+        "limit": {
+          "type": "integer"
+        },
+        "o": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "resolve-all-users": {
+          "type": "boolean"
+        },
+        "revision": {
+          "type": "string"
+        },
+        "seed": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "project-id",
+        "branch-id",
+        "path-id"
+      ]
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "projects"
+        ]
+      }
+    }
+  },
+  {
+    "name": "getProjectsProjectIdCodeOwnersProjectConfig",
+    "description": "Gets the code owner project configuration.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "project-id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "project-id"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "_meta": {
+      "fastmcp": {
+        "tags": [
+          "projects"
+        ]
+      }
+    }
+  }
+]
