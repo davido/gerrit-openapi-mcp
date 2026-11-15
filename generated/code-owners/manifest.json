@@ -1,6 +1,6 @@
 {
   "api": "code-owners",
-  "fastmcp": "3.4.11",
+  "fastmcp": "4.2.0",
   "source_version": "3.16.0-SNAPSHOT",
   "source_sha256": "f1437b5849a90826b839a15ce268e17b898c9d6b159b49e138a0543ef3867da2",
   "profiles": {

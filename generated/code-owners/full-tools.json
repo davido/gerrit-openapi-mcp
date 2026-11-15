@@ -1,6 +1,7 @@
 [
   {
     "name": "getChangesChangeIdCodeOwnersStatus",
+    "title": "Getchangeschangeidcodeownersstatus",
     "description": "Gets the code owner statuses for the files in a change.",
     "inputSchema": {
       "type": "object",
@@ -33,6 +34,7 @@
   },
   {
     "name": "postChangesChangeIdRevisionsRevisionIdCodeOwnersCheckCon",
+    "title": "Postchangeschangeidrevisionsrevisionidcodeownerscheckcon",
     "description": "Checks/validates the code owner config files in a revision that have been modified.",
     "inputSchema": {
       "type": "object",
@@ -76,6 +78,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdCodeOwnersPathId",
+    "title": "Getchangeschangeidrevisionsrevisionidcodeownerspathid",
     "description": "Suggests accounts that are code owners of a file in a change revision.",
     "inputSchema": {
       "type": "object",
@@ -130,6 +133,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdOwnedPaths",
+    "title": "Getchangeschangeidrevisionsrevisionidownedpaths",
     "description": "Lists the files of the revision that are owned by the specified user (see user request parameter below).",
     "inputSchema": {
       "type": "object",
@@ -172,6 +176,7 @@
   },
   {
     "name": "getProjectsProjectIdBranchesBranchIdCodeOwnersBranchConf",
+    "title": "Getprojectsprojectidbranchesbranchidcodeownersbranchconf",
     "description": "Gets the code owner branch configuration.",
     "inputSchema": {
       "type": "object",
@@ -202,6 +207,7 @@
   },
   {
     "name": "getProjectsProjectIdBranchesBranchIdCodeOwnersCheck",
+    "title": "Getprojectsprojectidbranchesbranchidcodeownerscheck",
     "description": "Checks the code ownership of a user for a path in a branch.",
     "inputSchema": {
       "type": "object",
@@ -244,6 +250,7 @@
   },
   {
     "name": "getProjectsProjectIdBranchesBranchIdCodeOwnersConfigPath",
+    "title": "Getprojectsprojectidbranchesbranchidcodeownersconfigpath",
     "description": "Gets a code owner config for a path in a branch.",
     "inputSchema": {
       "type": "object",
@@ -274,6 +281,7 @@
   },
   {
     "name": "getProjectsProjectIdBranchesBranchIdCodeOwnersConfigFile",
+    "title": "Getprojectsprojectidbranchesbranchidcodeownersconfigfile",
     "description": "Lists the code owner config files in a branch.",
     "inputSchema": {
       "type": "object",
@@ -302,7 +310,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -314,6 +325,7 @@
   },
   {
     "name": "postProjectsProjectIdBranchesBranchIdCodeOwnersRename",
+    "title": "Postprojectsprojectidbranchesbranchidcodeownersrename",
     "description": "Renames an email in all code owner config files in the branch.",
     "inputSchema": {
       "type": "object",
@@ -356,6 +368,7 @@
   },
   {
     "name": "getProjectsProjectIdBranchesBranchIdCodeOwnersPathId",
+    "title": "Getprojectsprojectidbranchesbranchidcodeownerspathid",
     "description": "Lists the accounts that are code owners of a file or folder in a branch.",
     "inputSchema": {
       "type": "object",
@@ -413,6 +426,7 @@
   },
   {
     "name": "postProjectsProjectIdCodeOwnersCheckConfig",
+    "title": "Postprojectsprojectidcodeownerscheckconfig",
     "description": "Checks/validates the code owner config files in a project.",
     "inputSchema": {
       "type": "object",
@@ -463,6 +477,7 @@
   },
   {
     "name": "getProjectsProjectIdCodeOwnersProjectConfig",
+    "title": "Getprojectsprojectidcodeownersprojectconfig",
     "description": "Gets the code owner project configuration.",
     "inputSchema": {
       "type": "object",
@@ -489,6 +504,7 @@
   },
   {
     "name": "putProjectsProjectIdCodeOwnersProjectConfig",
+    "title": "Putprojectsprojectidcodeownersprojectconfig",
     "description": "Updates the code owner project configuration.",
     "inputSchema": {
       "type": "object",

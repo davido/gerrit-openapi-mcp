@@ -1,6 +1,6 @@
 {
   "api": "core",
-  "fastmcp": "3.4.11",
+  "fastmcp": "4.2.0",
   "source_version": "3.16.0-SNAPSHOT",
   "source_sha256": "327fbf19ef9fc232f4e7300560b22d31e26e6d1a09534a58eb9b70a390fe7fa8",
   "profiles": {

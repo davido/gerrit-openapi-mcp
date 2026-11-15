@@ -1,6 +1,7 @@
 [
   {
     "name": "getChangesChangeIdRevisionsRevisionIdChecks",
+    "title": "Getchangeschangeidrevisionsrevisionidchecks",
     "description": "Retrieves all checks for a given revision and change.",
     "inputSchema": {
       "type": "object",
@@ -27,6 +28,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdChecksCheckId",
+    "title": "Getchangeschangeidrevisionsrevisionidcheckscheckid",
     "description": "Retrieves a check.",
     "inputSchema": {
       "type": "object",
@@ -70,6 +72,7 @@
   },
   {
     "name": "getPluginsChecksCheckers",
+    "title": "Getpluginscheckscheckers",
     "description": "Retrieves all checkers.",
     "inputSchema": {
       "type": "object",
@@ -79,7 +82,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -91,6 +97,7 @@
   },
   {
     "name": "getPluginsChecksCheckersCheckerId",
+    "title": "Getpluginscheckscheckerscheckerid",
     "description": "Retrieves a checker.",
     "inputSchema": {
       "type": "object",

@@ -1,6 +1,7 @@
 [
   {
     "name": "getChangesChangeIdRevisionsRevisionIdChecks",
+    "title": "Getchangeschangeidrevisionsrevisionidchecks",
     "description": "Retrieves all checks for a given revision and change.",
     "inputSchema": {
       "type": "object",
@@ -27,6 +28,7 @@
   },
   {
     "name": "postChangesChangeIdRevisionsRevisionIdChecks",
+    "title": "Postchangeschangeidrevisionsrevisionidchecks",
     "description": "Creates a new check.",
     "inputSchema": {
       "type": "object",
@@ -117,6 +119,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdChecksCheckId",
+    "title": "Getchangeschangeidrevisionsrevisionidcheckscheckid",
     "description": "Retrieves a check.",
     "inputSchema": {
       "type": "object",
@@ -160,6 +163,7 @@
   },
   {
     "name": "postChangesChangeIdRevisionsRevisionIdChecksCheckId",
+    "title": "Postchangeschangeidrevisionsrevisionidcheckscheckid",
     "description": "Updates a check. The semantics are the same as for CreateCheck.",
     "inputSchema": {
       "type": "object",
@@ -250,6 +254,7 @@
   },
   {
     "name": "postChangesChangeIdRevisionsRevisionIdChecksCheckIdRerun",
+    "title": "Postchangeschangeidrevisionsrevisionidcheckscheckidrerun",
     "description": "Reruns a check. As response the CheckInfo entity is returned that describes the created check.",
     "inputSchema": {
       "type": "object",
@@ -310,6 +315,7 @@
   },
   {
     "name": "getPluginsChecksCheckers",
+    "title": "Getpluginscheckscheckers",
     "description": "Retrieves all checkers.",
     "inputSchema": {
       "type": "object",
@@ -319,7 +325,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -331,6 +340,7 @@
   },
   {
     "name": "postPluginsChecksCheckers",
+    "title": "Postpluginscheckscheckers",
     "description": "Creates a new checker.",
     "inputSchema": {
       "type": "object",
@@ -394,6 +404,7 @@
   },
   {
     "name": "getPluginsChecksCheckersCheckerId",
+    "title": "Getpluginscheckscheckerscheckerid",
     "description": "Retrieves a checker.",
     "inputSchema": {
       "type": "object",
@@ -420,6 +431,7 @@
   },
   {
     "name": "postPluginsChecksCheckersCheckerId",
+    "title": "Postpluginscheckscheckerscheckerid",
     "description": "Updates a checker.",
     "inputSchema": {
       "type": "object",

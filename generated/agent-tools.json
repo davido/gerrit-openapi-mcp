@@ -1,6 +1,7 @@
 [
   {
     "name": "getAccess",
+    "title": "Getaccess",
     "description": "Lists the access rights of one or more projects, named by the repeated project parameter.",
     "inputSchema": {
       "type": "object",
@@ -28,6 +29,7 @@
   },
   {
     "name": "getAccounts",
+    "title": "Getaccounts",
     "description": "Queries accounts visible to the caller. The query is given by the query parameter; use limit and start to page and o to request extra fields.",
     "inputSchema": {
       "type": "object",
@@ -59,7 +61,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -71,6 +76,7 @@
   },
   {
     "name": "getAccountsAccountId",
+    "title": "Getaccountsaccountid",
     "description": "Returns the details of one account as an AccountInfo entity.",
     "inputSchema": {
       "type": "object",
@@ -97,6 +103,7 @@
   },
   {
     "name": "getAccountsAccountIdActive",
+    "title": "Getaccountsaccountidactive",
     "description": "Checks if an account is active.",
     "inputSchema": {
       "type": "object",
@@ -109,11 +116,6 @@
         "account-id"
       ]
     },
-    "outputSchema": {
-      "type": "object",
-      "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
-    },
     "_meta": {
       "fastmcp": {
         "tags": [
@@ -124,6 +126,7 @@
   },
   {
     "name": "getAccountsAccountIdAgreements",
+    "title": "Getaccountsaccountidagreements",
     "description": "Gets a list of the user's signed contributor agreements.",
     "inputSchema": {
       "type": "object",
@@ -139,7 +142,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -151,6 +157,7 @@
   },
   {
     "name": "getAccountsAccountIdAvatar",
+    "title": "Getaccountsaccountidavatar",
     "description": "Retrieves the avatar image of the user.",
     "inputSchema": {
       "type": "object",
@@ -176,6 +183,7 @@
   },
   {
     "name": "getAccountsAccountIdAvatarChangeUrl",
+    "title": "Getaccountsaccountidavatarchangeurl",
     "description": "Retrieves the URL where the user can change the avatar image.",
     "inputSchema": {
       "type": "object",
@@ -191,7 +199,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -203,6 +214,7 @@
   },
   {
     "name": "getAccountsAccountIdCapabilities",
+    "title": "Getaccountsaccountidcapabilities",
     "description": "Returns the global capabilities that are enabled for the specified user.",
     "inputSchema": {
       "type": "object",
@@ -235,6 +247,7 @@
   },
   {
     "name": "getAccountsAccountIdCapabilitiesCapabilityId",
+    "title": "Getaccountsaccountidcapabilitiescapabilityid",
     "description": "Checks if a user has a certain global capability.",
     "inputSchema": {
       "type": "object",
@@ -254,7 +267,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -266,6 +282,7 @@
   },
   {
     "name": "getAccountsAccountIdDetail",
+    "title": "Getaccountsaccountiddetail",
     "description": "Retrieves the details of an account as an AccountDetailInfo entity.",
     "inputSchema": {
       "type": "object",
@@ -292,6 +309,7 @@
   },
   {
     "name": "getAccountsAccountIdEmails",
+    "title": "Getaccountsaccountidemails",
     "description": "Returns the email addresses that are configured for the specified user.",
     "inputSchema": {
       "type": "object",
@@ -307,7 +325,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -319,6 +340,7 @@
   },
   {
     "name": "getAccountsAccountIdEmailsEmailId",
+    "title": "Getaccountsaccountidemailsemailid",
     "description": "Retrieves an email address of a user.",
     "inputSchema": {
       "type": "object",
@@ -349,6 +371,7 @@
   },
   {
     "name": "getAccountsAccountIdExternalIds",
+    "title": "Getaccountsaccountidexternalids",
     "description": "Retrieves the external ids of a user account.",
     "inputSchema": {
       "type": "object",
@@ -364,7 +387,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -376,6 +402,7 @@
   },
   {
     "name": "getAccountsAccountIdGpgkeys",
+    "title": "Getaccountsaccountidgpgkeys",
     "description": "Returns the GPG keys of an account.",
     "inputSchema": {
       "type": "object",
@@ -402,6 +429,7 @@
   },
   {
     "name": "getAccountsAccountIdGpgkeysGpgKeyId",
+    "title": "Getaccountsaccountidgpgkeysgpgkeyid",
     "description": "Retrieves a GPG key of a user.",
     "inputSchema": {
       "type": "object",
@@ -432,6 +460,7 @@
   },
   {
     "name": "getAccountsAccountIdGroups",
+    "title": "Getaccountsaccountidgroups",
     "description": "Lists all groups that contain the specified user as a member.",
     "inputSchema": {
       "type": "object",
@@ -447,7 +476,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -459,6 +491,7 @@
   },
   {
     "name": "getAccountsAccountIdName",
+    "title": "Getaccountsaccountidname",
     "description": "Retrieves the full name of an account.",
     "inputSchema": {
       "type": "object",
@@ -474,7 +507,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -486,6 +522,7 @@
   },
   {
     "name": "getAccountsAccountIdOauthtoken",
+    "title": "Getaccountsaccountidoauthtoken",
     "description": "Returns a previously obtained OAuth access token.",
     "inputSchema": {
       "type": "object",
@@ -512,6 +549,7 @@
   },
   {
     "name": "getAccountsAccountIdPreferences",
+    "title": "Getaccountsaccountidpreferences",
     "description": "Retrieves the user's preferences.",
     "inputSchema": {
       "type": "object",
@@ -538,6 +576,7 @@
   },
   {
     "name": "getAccountsAccountIdPreferencesDiff",
+    "title": "Getaccountsaccountidpreferencesdiff",
     "description": "Retrieves the diff preferences of a user.",
     "inputSchema": {
       "type": "object",
@@ -564,6 +603,7 @@
   },
   {
     "name": "getAccountsAccountIdPreferencesEdit",
+    "title": "Getaccountsaccountidpreferencesedit",
     "description": "Retrieves the edit preferences of a user.",
     "inputSchema": {
       "type": "object",
@@ -590,6 +630,7 @@
   },
   {
     "name": "getAccountsAccountIdSshkeys",
+    "title": "Getaccountsaccountidsshkeys",
     "description": "Returns the SSH keys of an account.",
     "inputSchema": {
       "type": "object",
@@ -605,7 +646,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -617,6 +661,7 @@
   },
   {
     "name": "getAccountsAccountIdSshkeysSshKeyId",
+    "title": "Getaccountsaccountidsshkeyssshkeyid",
     "description": "Retrieves an SSH key of a user.",
     "inputSchema": {
       "type": "object",
@@ -647,6 +692,7 @@
   },
   {
     "name": "getAccountsAccountIdStarredChanges",
+    "title": "Getaccountsaccountidstarredchanges",
     "description": "Gets the changes that were starred with the default star by the identified user account.",
     "inputSchema": {
       "type": "object",
@@ -662,7 +708,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -674,6 +723,7 @@
   },
   {
     "name": "getAccountsAccountIdState",
+    "title": "Getaccountsaccountidstate",
     "description": "Retrieves the superset of all information related to an account. This information is useful to inspect issues with the account and its permissions. The account state is returned as an AccountStateInfo entity.",
     "inputSchema": {
       "type": "object",
@@ -700,6 +750,7 @@
   },
   {
     "name": "getAccountsAccountIdStatus",
+    "title": "Getaccountsaccountidstatus",
     "description": "Retrieves the status of an account.",
     "inputSchema": {
       "type": "object",
@@ -715,7 +766,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -727,6 +781,7 @@
   },
   {
     "name": "getAccountsAccountIdTokens",
+    "title": "Getaccountsaccountidtokens",
     "description": "Lists the token ids of an account as a list of AuthTokenInfos. The plain text token will never be returned.",
     "inputSchema": {
       "type": "object",
@@ -742,7 +797,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -754,6 +812,7 @@
   },
   {
     "name": "getAccountsAccountIdUsername",
+    "title": "Getaccountsaccountidusername",
     "description": "Retrieves the username of an account.",
     "inputSchema": {
       "type": "object",
@@ -769,7 +828,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -781,6 +843,7 @@
   },
   {
     "name": "getAccountsAccountIdWatchedProjects",
+    "title": "Getaccountsaccountidwatchedprojects",
     "description": "Retrieves all projects a user is watching.",
     "inputSchema": {
       "type": "object",
@@ -796,7 +859,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -808,6 +874,7 @@
   },
   {
     "name": "getChanges",
+    "title": "Getchanges",
     "description": "Queries changes visible to the caller. The query is given by the repeatable query parameter; use limit/start to page and o to request extra fields.",
     "inputSchema": {
       "type": "object",
@@ -848,7 +915,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -860,6 +930,7 @@
   },
   {
     "name": "getChangesChangeId",
+    "title": "Getchangeschangeid",
     "description": "Retrieves a single change as a ChangeInfo entity; request additional data with the o parameter.",
     "inputSchema": {
       "type": "object",
@@ -898,6 +969,7 @@
   },
   {
     "name": "getChangesChangeIdAttention",
+    "title": "Getchangeschangeidattention",
     "description": "Returns all users that are currently in the attention set. As response a list of AttentionSetInfo entity is returned.",
     "inputSchema": {
       "type": "object",
@@ -913,7 +985,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -925,6 +1000,7 @@
   },
   {
     "name": "getChangesChangeIdCheck",
+    "title": "Getchangeschangeidcheck",
     "description": "Performs consistency checks on the change, and returns a ChangeInfo entity with the problems field set to a list of ProblemInfo entities.",
     "inputSchema": {
       "type": "object",
@@ -951,6 +1027,7 @@
   },
   {
     "name": "getChangesChangeIdComments",
+    "title": "Getchangeschangeidcomments",
     "description": "Lists the published comments of all revisions of a change, grouped by file path.",
     "inputSchema": {
       "type": "object",
@@ -983,6 +1060,7 @@
   },
   {
     "name": "getChangesChangeIdCustomKeyedValues",
+    "title": "Getchangeschangeidcustomkeyedvalues",
     "description": "Gets the custom keyed values associated with a change.",
     "inputSchema": {
       "type": "object",
@@ -1009,6 +1087,7 @@
   },
   {
     "name": "getChangesChangeIdDetail",
+    "title": "Getchangeschangeiddetail",
     "description": "Retrieves a change with labels, detailed labels, detailed accounts, reviewer updates, and messages.",
     "inputSchema": {
       "type": "object",
@@ -1040,6 +1119,7 @@
   },
   {
     "name": "getChangesChangeIdDrafts",
+    "title": "Getchangeschangeiddrafts",
     "description": "Lists the draft comments of all revisions of the change that belong to the calling user.",
     "inputSchema": {
       "type": "object",
@@ -1072,6 +1152,7 @@
   },
   {
     "name": "getChangesChangeIdEdit",
+    "title": "Getchangeschangeidedit",
     "description": "Retrieves the change edit of the calling user, if one exists, as an EditInfo entity.",
     "inputSchema": {
       "type": "object",
@@ -1093,10 +1174,6 @@
         "change-id"
       ]
     },
-    "outputSchema": {
-      "type": "object",
-      "additionalProperties": true
-    },
     "_meta": {
       "fastmcp": {
         "tags": [
@@ -1107,6 +1184,7 @@
   },
   {
     "name": "getChangesChangeIdEditChangeEditId",
+    "title": "Getchangeschangeideditchangeeditid",
     "description": "Retrieves content of a file from a change edit.",
     "inputSchema": {
       "type": "object",
@@ -1126,11 +1204,6 @@
         "change-edit-id"
       ]
     },
-    "outputSchema": {
-      "type": "object",
-      "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
-    },
     "_meta": {
       "fastmcp": {
         "tags": [
@@ -1141,6 +1214,7 @@
   },
   {
     "name": "getChangesChangeIdEditChangeEditIdMeta",
+    "title": "Getchangeschangeideditchangeeditidmeta",
     "description": "Retrieves meta data of a file from a change edit. Currently only web links are returned.",
     "inputSchema": {
       "type": "object",
@@ -1171,6 +1245,7 @@
   },
   {
     "name": "getChangesChangeIdEditMessage",
+    "title": "Getchangeschangeideditmessage",
     "description": "Retrieves commit message from change edit.",
     "inputSchema": {
       "type": "object",
@@ -1189,7 +1264,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -1201,6 +1279,7 @@
   },
   {
     "name": "getChangesChangeIdFlows",
+    "title": "Getchangeschangeidflows",
     "description": "Lists the flows of a change that are visible to the caller.",
     "inputSchema": {
       "type": "object",
@@ -1216,7 +1295,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -1228,6 +1310,7 @@
   },
   {
     "name": "getChangesChangeIdFlowsActions",
+    "title": "Getchangeschangeidflowsactions",
     "description": "Lists the flows actions that are configured for the given change.",
     "inputSchema": {
       "type": "object",
@@ -1243,7 +1326,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -1255,6 +1341,7 @@
   },
   {
     "name": "getChangesChangeIdFlowsFlowId",
+    "title": "Getchangeschangeidflowsflowid",
     "description": "Gets a flow on the change.",
     "inputSchema": {
       "type": "object",
@@ -1285,6 +1372,7 @@
   },
   {
     "name": "getChangesChangeIdHashtags",
+    "title": "Getchangeschangeidhashtags",
     "description": "Gets the hashtags associated with a change.",
     "inputSchema": {
       "type": "object",
@@ -1300,7 +1388,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -1312,6 +1403,7 @@
   },
   {
     "name": "getChangesChangeIdIn",
+    "title": "Getchangeschangeidin",
     "description": "Retrieves the branches and tags in which a change is included. As result an IncludedInInfo entity is returned.",
     "inputSchema": {
       "type": "object",
@@ -1338,6 +1430,7 @@
   },
   {
     "name": "getChangesChangeIdIsFlowsEnabled",
+    "title": "Getchangeschangeidisflowsenabled",
     "description": "Returns whether flows are enabled for this change.",
     "inputSchema": {
       "type": "object",
@@ -1364,6 +1457,7 @@
   },
   {
     "name": "getChangesChangeIdMessage",
+    "title": "Getchangeschangeidmessage",
     "description": "Returns the commit message of the change (from the current patch set).",
     "inputSchema": {
       "type": "object",
@@ -1390,6 +1484,7 @@
   },
   {
     "name": "getChangesChangeIdMessages",
+    "title": "Getchangeschangeidmessages",
     "description": "Lists the messages of a change as ChangeMessageInfo entities.",
     "inputSchema": {
       "type": "object",
@@ -1405,7 +1500,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -1417,6 +1515,7 @@
   },
   {
     "name": "getChangesChangeIdMessagesChangeMessageId",
+    "title": "Getchangeschangeidmessageschangemessageid",
     "description": "As response a ChangeMessageInfo entity is returned.",
     "inputSchema": {
       "type": "object",
@@ -1447,6 +1546,7 @@
   },
   {
     "name": "getChangesChangeIdMetaDiff",
+    "title": "Getchangeschangeidmetadiff",
     "description": "Retrieves the difference between two historical states of a change by specifying the old=SHA-1 and the meta=SHA-1 parameters.",
     "inputSchema": {
       "type": "object",
@@ -1488,6 +1588,7 @@
   },
   {
     "name": "getChangesChangeIdPureRevert",
+    "title": "Getchangeschangeidpurerevert",
     "description": "Check if the given change is a pure revert of the change it references in revertOf. Optionally, the query parameter o can be passed in to specify a commit (SHA-1 in 40 digit hex representation) to check against. It takes precedence over revertOf. If the change has no reference in revertOf, the parameter is mandatory.",
     "inputSchema": {
       "type": "object",
@@ -1517,6 +1618,7 @@
   },
   {
     "name": "getChangesChangeIdQuery",
+    "title": "Getchangeschangeidquery",
     "description": "Evaluates whether the given change query expression matches the change.",
     "inputSchema": {
       "type": "object",
@@ -1549,6 +1651,7 @@
   },
   {
     "name": "getChangesChangeIdReviewers",
+    "title": "Getchangeschangeidreviewers",
     "description": "Lists the reviewers of a change as ReviewerInfo entities.",
     "inputSchema": {
       "type": "object",
@@ -1564,7 +1667,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -1576,6 +1682,7 @@
   },
   {
     "name": "getChangesChangeIdReviewersReviewerId",
+    "title": "Getchangeschangeidreviewersreviewerid",
     "description": "Retrieves a reviewer of a change.",
     "inputSchema": {
       "type": "object",
@@ -1595,7 +1702,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -1607,6 +1717,7 @@
   },
   {
     "name": "getChangesChangeIdReviewersReviewerIdVotes",
+    "title": "Getchangeschangeidreviewersrevieweridvotes",
     "description": "Lists the votes for a specific reviewer of the change.",
     "inputSchema": {
       "type": "object",
@@ -1637,6 +1748,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionId",
+    "title": "Getchangeschangeidrevisionsrevisionid",
     "description": "Retrieves a revision of a change.",
     "inputSchema": {
       "type": "object",
@@ -1667,6 +1779,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdActions",
+    "title": "Getchangeschangeidrevisionsrevisionidactions",
     "description": "Retrieves revision actions of the revision of a change.",
     "inputSchema": {
       "type": "object",
@@ -1697,6 +1810,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdArchive",
+    "title": "Getchangeschangeidrevisionsrevisionidarchive",
     "description": "Retrieves an archive of the files in a revision.",
     "inputSchema": {
       "type": "object",
@@ -1719,7 +1833,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -1731,6 +1848,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdComments",
+    "title": "Getchangeschangeidrevisionsrevisionidcomments",
     "description": "Lists the published comments of a revision, grouped by file path.",
     "inputSchema": {
       "type": "object",
@@ -1761,6 +1879,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdCommentsCommentId",
+    "title": "Getchangeschangeidrevisionsrevisionidcommentscommentid",
     "description": "Retrieves a published comment of a revision.",
     "inputSchema": {
       "type": "object",
@@ -1795,6 +1914,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdCommit",
+    "title": "Getchangeschangeidrevisionsrevisionidcommit",
     "description": "Retrieves the commit of a revision as a CommitInfo entity.",
     "inputSchema": {
       "type": "object",
@@ -1828,6 +1948,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdDescription",
+    "title": "Getchangeschangeidrevisionsrevisioniddescription",
     "description": "Retrieves the description of a patch set.",
     "inputSchema": {
       "type": "object",
@@ -1847,7 +1968,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -1859,6 +1983,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdDrafts",
+    "title": "Getchangeschangeidrevisionsrevisioniddrafts",
     "description": "Lists the draft comments of the calling user on a revision, grouped by file path.",
     "inputSchema": {
       "type": "object",
@@ -1889,6 +2014,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdDraftsDraftCommentI",
+    "title": "Getchangeschangeidrevisionsrevisioniddraftsdraftcommenti",
     "description": "Retrieves a draft comment of a revision that belongs to the calling user.",
     "inputSchema": {
       "type": "object",
@@ -1923,6 +2049,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdFiles",
+    "title": "Getchangeschangeidrevisionsrevisionidfiles",
     "description": "Lists the files that were added, modified, or deleted in a revision.",
     "inputSchema": {
       "type": "object",
@@ -1965,6 +2092,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdFilesFileIdBlame",
+    "title": "Getchangeschangeidrevisionsrevisionidfilesfileidblame",
     "description": "Gets the blame of a file from a certain revision.",
     "inputSchema": {
       "type": "object",
@@ -1991,7 +2119,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -2003,6 +2134,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdFilesFileIdContent",
+    "title": "Getchangeschangeidrevisionsrevisionidfilesfileidcontent",
     "description": "Gets the content of a file from a certain revision.",
     "inputSchema": {
       "type": "object",
@@ -2029,7 +2161,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -2041,6 +2176,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdFilesFileIdDiff",
+    "title": "Getchangeschangeidrevisionsrevisionidfilesfileiddiff",
     "description": "Gets the diff of a file from a certain revision.",
     "inputSchema": {
       "type": "object",
@@ -2093,6 +2229,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdFilesFileIdDownload",
+    "title": "Getchangeschangeidrevisionsrevisionidfilesfileiddownload",
     "description": "Downloads the content of a file from a certain revision, in a safe format that poses no risk for inadvertent execution of untrusted code.",
     "inputSchema": {
       "type": "object",
@@ -2119,7 +2256,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -2131,6 +2271,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdFixesFixIdPreview",
+    "title": "Getchangeschangeidrevisionsrevisionidfixesfixidpreview",
     "description": "Gets the diffs of all files for a certain \\{fix-id\\}. As response, a map of DiffInfo entities is returned that describes the diffs.",
     "inputSchema": {
       "type": "object",
@@ -2165,6 +2306,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdMergeable",
+    "title": "Getchangeschangeidrevisionsrevisionidmergeable",
     "description": "Returns whether a revision can be merged into the destination branch as a MergeableInfo entity.",
     "inputSchema": {
       "type": "object",
@@ -2198,6 +2340,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdMergelist",
+    "title": "Getchangeschangeidrevisionsrevisionidmergelist",
     "description": "Returns the list of commits that are being integrated into a target branch by a merge commit. By default the first parent is assumed to be uninteresting. By using the parent option another parent can be set as uninteresting (parents are 1-based).",
     "inputSchema": {
       "type": "object",
@@ -2230,6 +2373,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdPatch",
+    "title": "Getchangeschangeidrevisionsrevisionidpatch",
     "description": "Returns the formatted patch of a revision (base64-encoded unless the raw content type is requested).",
     "inputSchema": {
       "type": "object",
@@ -2267,7 +2411,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -2279,6 +2426,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdPortedComments",
+    "title": "Getchangeschangeidrevisionsrevisionidportedcomments",
     "description": "Ports comments of other revisions to the requested revision.",
     "inputSchema": {
       "type": "object",
@@ -2309,6 +2457,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdPortedDrafts",
+    "title": "Getchangeschangeidrevisionsrevisionidporteddrafts",
     "description": "Ports draft comments of other revisions to the requested revision.",
     "inputSchema": {
       "type": "object",
@@ -2339,6 +2488,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdRelated",
+    "title": "Getchangeschangeidrevisionsrevisionidrelated",
     "description": "Lists the changes related to a revision by ancestry as a RelatedChangesInfo entity.",
     "inputSchema": {
       "type": "object",
@@ -2375,6 +2525,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdReview",
+    "title": "Getchangeschangeidrevisionsrevisionidreview",
     "description": "Retrieves a change with the review-relevant fields (labels, messages) for a revision.",
     "inputSchema": {
       "type": "object",
@@ -2401,6 +2552,7 @@
   },
   {
     "name": "postChangesChangeIdRevisionsRevisionIdReview",
+    "title": "Postchangeschangeidrevisionsrevisionidreview",
     "description": "Applies a review to a revision: labels, comments, and messages from a ReviewInput entity.",
     "inputSchema": {
       "type": "object",
@@ -2471,6 +2623,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdReviewers",
+    "title": "Getchangeschangeidrevisionsrevisionidreviewers",
     "description": "Lists the reviewers of a revision.",
     "inputSchema": {
       "type": "object",
@@ -2490,7 +2643,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -2502,6 +2658,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdReviewersReviewerId",
+    "title": "Getchangeschangeidrevisionsrevisionidreviewersreviewerid",
     "description": "Retrieves a reviewer of a change.",
     "inputSchema": {
       "type": "object",
@@ -2525,7 +2682,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -2537,6 +2697,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdReviewersReviewerId_2",
+    "title": "Getchangeschangeidrevisionsrevisionidreviewersreviewerid 2",
     "description": "Lists the votes for a specific reviewer of the revision.",
     "inputSchema": {
       "type": "object",
@@ -2571,6 +2732,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdRobotcomments",
+    "title": "Getchangeschangeidrevisionsrevisionidrobotcomments",
     "description": "Lists the robot comments of a revision.",
     "inputSchema": {
       "type": "object",
@@ -2597,6 +2759,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdRobotcommentsRobotC",
+    "title": "Getchangeschangeidrevisionsrevisionidrobotcommentsrobotc",
     "description": "Retrieves a robot comment of a revision.",
     "inputSchema": {
       "type": "object",
@@ -2627,6 +2790,7 @@
   },
   {
     "name": "getChangesChangeIdRevisionsRevisionIdSubmitType",
+    "title": "Getchangeschangeidrevisionsrevisionidsubmittype",
     "description": "Gets the method the server will use to submit (merge) the change.",
     "inputSchema": {
       "type": "object",
@@ -2646,7 +2810,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -2658,6 +2825,7 @@
   },
   {
     "name": "getChangesChangeIdRobotcomments",
+    "title": "Getchangeschangeidrobotcomments",
     "description": "Lists the robot comments of all revisions of the change.",
     "inputSchema": {
       "type": "object",
@@ -2680,6 +2848,7 @@
   },
   {
     "name": "getChangesChangeIdSubmittedTogether",
+    "title": "Getchangeschangeidsubmittedtogether",
     "description": "Computes list of all changes which are submitted when Submit is called for this change, including the current change itself.",
     "inputSchema": {
       "type": "object",
@@ -2712,6 +2881,7 @@
   },
   {
     "name": "getChangesChangeIdSuggestReviewers",
+    "title": "Getchangeschangeidsuggestreviewers",
     "description": "Suggest the reviewers for a given query q and result limit n. If result limit is not passed, then the default 10 is used.",
     "inputSchema": {
       "type": "object",
@@ -2739,7 +2909,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -2751,6 +2924,7 @@
   },
   {
     "name": "getChangesChangeIdTopic",
+    "title": "Getchangeschangeidtopic",
     "description": "Retrieves the topic of a change.",
     "inputSchema": {
       "type": "object",
@@ -2766,7 +2940,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -2778,6 +2955,7 @@
   },
   {
     "name": "getChangesChangeIdValidationOptions",
+    "title": "Getchangeschangeidvalidationoptions",
     "description": "Retrieves the validation options that apply to the change.",
     "inputSchema": {
       "type": "object",
@@ -2804,6 +2982,7 @@
   },
   {
     "name": "getConfigServerCaches",
+    "title": "Getconfigservercaches",
     "description": "Lists the caches of the server. Caches defined by plugins are included.",
     "inputSchema": {
       "type": "object",
@@ -2827,6 +3006,7 @@
   },
   {
     "name": "getConfigServerCachesCacheId",
+    "title": "Getconfigservercachescacheid",
     "description": "Retrieves information about a cache.",
     "inputSchema": {
       "type": "object",
@@ -2853,6 +3033,7 @@
   },
   {
     "name": "getConfigServerCapabilities",
+    "title": "Getconfigservercapabilities",
     "description": "Lists the capabilities that are available in the system. There are two kinds of capabilities: core and plugin-owned capabilities.",
     "inputSchema": {
       "type": "object",
@@ -2873,6 +3054,7 @@
   },
   {
     "name": "getConfigServerExperiments",
+    "title": "Getconfigserverexperiments",
     "description": "Lists the experiments that are available in the system.",
     "inputSchema": {
       "type": "object",
@@ -2897,6 +3079,7 @@
   },
   {
     "name": "getConfigServerExperimentsExperimentId",
+    "title": "Getconfigserverexperimentsexperimentid",
     "description": "Retrieves the details of the experiment with the given name.",
     "inputSchema": {
       "type": "object",
@@ -2923,6 +3106,7 @@
   },
   {
     "name": "getConfigServerIndexes",
+    "title": "Getconfigserverindexes",
     "description": "Lists the indexes used by Gerrit. It provides details about the index versions, which index version is used to search and which versions are written to.",
     "inputSchema": {
       "type": "object",
@@ -2932,7 +3116,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -2944,6 +3131,7 @@
   },
   {
     "name": "getConfigServerIndexesIndexId",
+    "title": "Getconfigserverindexesindexid",
     "description": "Get an index used by Gerrit. It provides details about the index versions, which index version is used to search and which versions are written to.",
     "inputSchema": {
       "type": "object",
@@ -2970,6 +3158,7 @@
   },
   {
     "name": "getConfigServerIndexesIndexIdVersions",
+    "title": "Getconfigserverindexesindexidversions",
     "description": "Lists versions of an index used by Gerrit.",
     "inputSchema": {
       "type": "object",
@@ -2996,6 +3185,7 @@
   },
   {
     "name": "getConfigServerIndexesIndexIdVersionsIndexVersionId",
+    "title": "Getconfigserverindexesindexidversionsindexversionid",
     "description": "Get info about one version of an index used by Gerrit.",
     "inputSchema": {
       "type": "object",
@@ -3026,6 +3216,7 @@
   },
   {
     "name": "getConfigServerInfo",
+    "title": "Getconfigserverinfo",
     "description": "Returns the public configuration of the Gerrit server as a ServerInfo entity.",
     "inputSchema": {
       "type": "object",
@@ -3046,6 +3237,7 @@
   },
   {
     "name": "getConfigServerLabels",
+    "title": "Getconfigserverlabels",
     "description": "Lists the globally defined labels (labels that are added programmatically via the LabelType extension point).",
     "inputSchema": {
       "type": "object",
@@ -3055,7 +3247,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -3067,6 +3262,7 @@
   },
   {
     "name": "getConfigServerMetrics",
+    "title": "Getconfigservermetrics",
     "description": "Lists the metrics of the server, returning a map of metric name to a MetricInfo entity.",
     "inputSchema": {
       "type": "object",
@@ -3097,6 +3293,7 @@
   },
   {
     "name": "getConfigServerMetricsMetricId",
+    "title": "Getconfigservermetricsmetricid",
     "description": "Retrieves a single metric of the server. The metric name is used as the \\{metric-id\\} and must be URL-encoded because it may contain slashes.",
     "inputSchema": {
       "type": "object",
@@ -3126,6 +3323,7 @@
   },
   {
     "name": "getConfigServerPreferences",
+    "title": "Getconfigserverpreferences",
     "description": "Returns the default user preferences for the server.",
     "inputSchema": {
       "type": "object",
@@ -3146,6 +3344,7 @@
   },
   {
     "name": "getConfigServerPreferencesDiff",
+    "title": "Getconfigserverpreferencesdiff",
     "description": "Returns the default diff preferences for the server.",
     "inputSchema": {
       "type": "object",
@@ -3166,6 +3365,7 @@
   },
   {
     "name": "getConfigServerPreferencesEdit",
+    "title": "Getconfigserverpreferencesedit",
     "description": "Returns the default edit preferences for the server.",
     "inputSchema": {
       "type": "object",
@@ -3186,6 +3386,7 @@
   },
   {
     "name": "getConfigServerSubmitRequirements",
+    "title": "Getconfigserversubmitrequirements",
     "description": "Lists the globally defined submit requirements (submit requirements that are added programmatically via the SubmitRequirement extension point).",
     "inputSchema": {
       "type": "object",
@@ -3195,7 +3396,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -3207,6 +3411,7 @@
   },
   {
     "name": "getConfigServerSummary",
+    "title": "Getconfigserversummary",
     "description": "Retrieves a summary of the current server state.",
     "inputSchema": {
       "type": "object",
@@ -3231,6 +3436,7 @@
   },
   {
     "name": "getConfigServerTasks",
+    "title": "Getconfigservertasks",
     "description": "Lists the tasks from the background work queues that the Gerrit daemon is currently performing, or will perform in the near future.",
     "inputSchema": {
       "type": "object",
@@ -3247,7 +3453,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -3259,6 +3468,7 @@
   },
   {
     "name": "getConfigServerTasksTaskId",
+    "title": "Getconfigservertaskstaskid",
     "description": "Retrieves a task from the background work queue that the Gerrit daemon is currently performing, or will perform in the near future.",
     "inputSchema": {
       "type": "object",
@@ -3285,6 +3495,7 @@
   },
   {
     "name": "getConfigServerTopMenus",
+    "title": "Getconfigservertopmenus",
     "description": "Returns the list of additional top menu entries.",
     "inputSchema": {
       "type": "object",
@@ -3294,7 +3505,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -3306,6 +3520,7 @@
   },
   {
     "name": "getConfigServerVersion",
+    "title": "Getconfigserverversion",
     "description": "Returns the version of the Gerrit server.",
     "inputSchema": {
       "type": "object",
@@ -3326,6 +3541,7 @@
   },
   {
     "name": "getGroups",
+    "title": "Getgroups",
     "description": "Lists the internal groups visible to the caller.",
     "inputSchema": {
       "type": "object",
@@ -3394,6 +3610,7 @@
   },
   {
     "name": "getGroupsGroupId",
+    "title": "Getgroupsgroupid",
     "description": "Retrieves a single group as a GroupInfo entity.",
     "inputSchema": {
       "type": "object",
@@ -3420,6 +3637,7 @@
   },
   {
     "name": "getGroupsGroupIdDescription",
+    "title": "Getgroupsgroupiddescription",
     "description": "Retrieves the description of a group.",
     "inputSchema": {
       "type": "object",
@@ -3435,7 +3653,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -3447,6 +3668,7 @@
   },
   {
     "name": "getGroupsGroupIdDetail",
+    "title": "Getgroupsgroupiddetail",
     "description": "Retrieves a group with the direct members and the directly included groups.",
     "inputSchema": {
       "type": "object",
@@ -3473,6 +3695,7 @@
   },
   {
     "name": "getGroupsGroupIdGroups",
+    "title": "Getgroupsgroupidgroups",
     "description": "Lists the direct subgroups of a group.",
     "inputSchema": {
       "type": "object",
@@ -3488,7 +3711,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -3500,6 +3726,7 @@
   },
   {
     "name": "getGroupsGroupIdGroupsSubgroupId",
+    "title": "Getgroupsgroupidgroupssubgroupid",
     "description": "Retrieves a subgroup.",
     "inputSchema": {
       "type": "object",
@@ -3530,6 +3757,7 @@
   },
   {
     "name": "getGroupsGroupIdLogAudit",
+    "title": "Getgroupsgroupidlogaudit",
     "description": "Gets the audit log of a Gerrit internal group.",
     "inputSchema": {
       "type": "object",
@@ -3545,7 +3773,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -3557,6 +3788,7 @@
   },
   {
     "name": "getGroupsGroupIdMembers",
+    "title": "Getgroupsgroupidmembers",
     "description": "Lists the direct members of a Gerrit internal group.",
     "inputSchema": {
       "type": "object",
@@ -3575,7 +3807,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -3587,6 +3822,7 @@
   },
   {
     "name": "getGroupsGroupIdMembersMemberId",
+    "title": "Getgroupsgroupidmembersmemberid",
     "description": "Retrieves a group member.",
     "inputSchema": {
       "type": "object",
@@ -3617,6 +3853,7 @@
   },
   {
     "name": "getGroupsGroupIdName",
+    "title": "Getgroupsgroupidname",
     "description": "Retrieves the name of a group.",
     "inputSchema": {
       "type": "object",
@@ -3632,7 +3869,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -3644,6 +3884,7 @@
   },
   {
     "name": "getGroupsGroupIdOptions",
+    "title": "Getgroupsgroupidoptions",
     "description": "Retrieves the options of a group.",
     "inputSchema": {
       "type": "object",
@@ -3670,6 +3911,7 @@
   },
   {
     "name": "getGroupsGroupIdOwner",
+    "title": "Getgroupsgroupidowner",
     "description": "Retrieves the owner group of a Gerrit internal group.",
     "inputSchema": {
       "type": "object",
@@ -3696,6 +3938,7 @@
   },
   {
     "name": "getPlugins",
+    "title": "Getplugins",
     "description": "Lists the plugins installed on the Gerrit server. Only the enabled plugins are returned unless the all option is specified.",
     "inputSchema": {
       "type": "object",
@@ -3735,6 +3978,7 @@
   },
   {
     "name": "getPluginsPluginIdGerritStatus",
+    "title": "Getpluginspluginidgerritstatus",
     "description": "Retrieves the status of a plugin on the Gerrit server.",
     "inputSchema": {
       "type": "object",
@@ -3761,6 +4005,7 @@
   },
   {
     "name": "getProjects",
+    "title": "Getprojects",
     "description": "Lists the projects accessible by the caller, optionally filtered by prefix, regex, or substring.",
     "inputSchema": {
       "type": "object",
@@ -3823,6 +4068,7 @@
   },
   {
     "name": "getProjectsProjectId",
+    "title": "Getprojectsprojectid",
     "description": "Retrieves a single project as a ProjectInfo entity.",
     "inputSchema": {
       "type": "object",
@@ -3849,6 +4095,7 @@
   },
   {
     "name": "getProjectsProjectIdHEAD",
+    "title": "Getprojectsprojectidhead",
     "description": "Retrieves for a project the name of the branch to which HEAD points.",
     "inputSchema": {
       "type": "object",
@@ -3864,7 +4111,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -3876,6 +4126,7 @@
   },
   {
     "name": "getProjectsProjectIdAccess",
+    "title": "Getprojectsprojectidaccess",
     "description": "Lists the access rights for a single project.",
     "inputSchema": {
       "type": "object",
@@ -3902,6 +4153,7 @@
   },
   {
     "name": "getProjectsProjectIdBranches",
+    "title": "Getprojectsprojectidbranches",
     "description": "Lists the branches of a project as BranchInfo entities.",
     "inputSchema": {
       "type": "object",
@@ -3932,7 +4184,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -3944,6 +4199,7 @@
   },
   {
     "name": "getProjectsProjectIdBranchesBranchId",
+    "title": "Getprojectsprojectidbranchesbranchid",
     "description": "Retrieves a branch of a project. For the \"All-Users\" repository, the magic branch \"refs/users/self\" is automatically resolved to the user branch of the calling user.",
     "inputSchema": {
       "type": "object",
@@ -3974,6 +4230,7 @@
   },
   {
     "name": "getProjectsProjectIdBranchesBranchIdFilesFileIdContent",
+    "title": "Getprojectsprojectidbranchesbranchidfilesfileidcontent",
     "description": "Gets the content of a file from the HEAD revision of a certain branch.",
     "inputSchema": {
       "type": "object",
@@ -3997,7 +4254,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -4009,6 +4269,7 @@
   },
   {
     "name": "getProjectsProjectIdBranchesBranchIdFilesFileIdDiff",
+    "title": "Getprojectsprojectidbranchesbranchidfilesfileiddiff",
     "description": "Gets the diff for a single file between two commits. The base query parameter is required (same as Diff Between Commits).",
     "inputSchema": {
       "type": "object",
@@ -4052,6 +4313,7 @@
   },
   {
     "name": "getProjectsProjectIdBranchesBranchIdMergeable",
+    "title": "Getprojectsprojectidbranchesbranchidmergeable",
     "description": "Gets whether the source is mergeable with the target branch.",
     "inputSchema": {
       "type": "object",
@@ -4089,6 +4351,7 @@
   },
   {
     "name": "getProjectsProjectIdBranchesBranchIdReflog",
+    "title": "Getprojectsprojectidbranchesbranchidreflog",
     "description": "Gets the reflog of a certain branch.",
     "inputSchema": {
       "type": "object",
@@ -4119,7 +4382,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -4131,6 +4397,7 @@
   },
   {
     "name": "getProjectsProjectIdBranchesBranchIdSuggestReviewers",
+    "title": "Getprojectsprojectidbranchesbranchidsuggestreviewers",
     "description": "Suggest the reviewers for a given query q and result limit n. If result limit is not passed, then the default 10 is used.",
     "inputSchema": {
       "type": "object",
@@ -4162,7 +4429,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -4174,6 +4444,7 @@
   },
   {
     "name": "getProjectsProjectIdBranchesBranchIdValidationOptions",
+    "title": "Getprojectsprojectidbranchesbranchidvalidationoptions",
     "description": "Retrieves the validation options applicable for the given project and branch.",
     "inputSchema": {
       "type": "object",
@@ -4204,6 +4475,7 @@
   },
   {
     "name": "getProjectsProjectIdCheckAccess",
+    "title": "Getprojectsprojectidcheckaccess",
     "description": "This command runs access checks for other users. This requires the View Access global capability.",
     "inputSchema": {
       "type": "object",
@@ -4239,6 +4511,7 @@
   },
   {
     "name": "getProjectsProjectIdChildren",
+    "title": "Getprojectsprojectidchildren",
     "description": "List the direct child projects of a project.",
     "inputSchema": {
       "type": "object",
@@ -4260,7 +4533,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -4272,6 +4548,7 @@
   },
   {
     "name": "getProjectsProjectIdChildrenChildProjectId",
+    "title": "Getprojectsprojectidchildrenchildprojectid",
     "description": "Retrieves a child project. If a non-direct child project should be retrieved the parameter recursive must be set.",
     "inputSchema": {
       "type": "object",
@@ -4305,6 +4582,7 @@
   },
   {
     "name": "getProjectsProjectIdCommitsCommitId",
+    "title": "Getprojectsprojectidcommitscommitid",
     "description": "Retrieves a commit of a project.",
     "inputSchema": {
       "type": "object",
@@ -4335,6 +4613,7 @@
   },
   {
     "name": "getProjectsProjectIdCommitsCommitIdDiff",
+    "title": "Getprojectsprojectidcommitscommitiddiff",
     "description": "Lists the files that differ between two commits. This is useful for comparing commits across multiple changes (similar to a pull request diff).",
     "inputSchema": {
       "type": "object",
@@ -4371,6 +4650,7 @@
   },
   {
     "name": "getProjectsProjectIdCommitsCommitIdFiles",
+    "title": "Getprojectsprojectidcommitscommitidfiles",
     "description": "Lists the files that were modified, added or deleted in a commit.",
     "inputSchema": {
       "type": "object",
@@ -4404,6 +4684,7 @@
   },
   {
     "name": "getProjectsProjectIdCommitsCommitIdFilesFileIdContent",
+    "title": "Getprojectsprojectidcommitscommitidfilesfileidcontent",
     "description": "Gets the content of a file from a certain commit.",
     "inputSchema": {
       "type": "object",
@@ -4427,7 +4708,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -4439,6 +4723,7 @@
   },
   {
     "name": "getProjectsProjectIdCommitsCommitIdFilesFileIdDiff",
+    "title": "Getprojectsprojectidcommitscommitidfilesfileiddiff",
     "description": "Gets the diff for a single file between two commits. The base query parameter is required (same as Diff Between Commits).",
     "inputSchema": {
       "type": "object",
@@ -4482,6 +4767,7 @@
   },
   {
     "name": "getProjectsProjectIdCommitsCommitIdIn",
+    "title": "Getprojectsprojectidcommitscommitidin",
     "description": "Retrieves the branches and tags in which a change is included. As result an IncludedInInfo entity is returned.",
     "inputSchema": {
       "type": "object",
@@ -4512,6 +4798,7 @@
   },
   {
     "name": "getProjectsProjectIdCommitsIn",
+    "title": "Getprojectsprojectidcommitsin",
     "description": "Gets refs in which the specified commits were merged into. Returns a map of commits to sets of full ref names.",
     "inputSchema": {
       "type": "object",
@@ -4552,6 +4839,7 @@
   },
   {
     "name": "getProjectsProjectIdConfig",
+    "title": "Getprojectsprojectidconfig",
     "description": "Gets some configuration information about a project. Note that this config info is not simply the contents of project.config; it generally contains fields that may have been inherited from parent projects.",
     "inputSchema": {
       "type": "object",
@@ -4578,6 +4866,7 @@
   },
   {
     "name": "getProjectsProjectIdDashboards",
+    "title": "Getprojectsprojectiddashboards",
     "description": "List custom dashboards for a project.",
     "inputSchema": {
       "type": "object",
@@ -4596,7 +4885,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -4608,6 +4900,7 @@
   },
   {
     "name": "getProjectsProjectIdDashboardsDashboardId",
+    "title": "Getprojectsprojectiddashboardsdashboardid",
     "description": "Retrieves a project dashboard. The dashboard can be defined on that project or be inherited from a parent project.",
     "inputSchema": {
       "type": "object",
@@ -4641,6 +4934,7 @@
   },
   {
     "name": "getProjectsProjectIdDescription",
+    "title": "Getprojectsprojectiddescription",
     "description": "Retrieves the description of a project.",
     "inputSchema": {
       "type": "object",
@@ -4656,7 +4950,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -4668,6 +4965,7 @@
   },
   {
     "name": "getProjectsProjectIdLabels",
+    "title": "Getprojectsprojectidlabels",
     "description": "Lists the labels that are defined in this project.",
     "inputSchema": {
       "type": "object",
@@ -4689,7 +4987,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -4701,6 +5002,7 @@
   },
   {
     "name": "getProjectsProjectIdLabelsLabelId",
+    "title": "Getprojectsprojectidlabelslabelid",
     "description": "Retrieves the definition of a label that is defined in this project.",
     "inputSchema": {
       "type": "object",
@@ -4731,6 +5033,7 @@
   },
   {
     "name": "getProjectsProjectIdParent",
+    "title": "Getprojectsprojectidparent",
     "description": "Retrieves the name of a project's parent project. For the All-Projects root project an empty string is returned.",
     "inputSchema": {
       "type": "object",
@@ -4746,7 +5049,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -4758,6 +5064,7 @@
   },
   {
     "name": "getProjectsProjectIdStatisticsGit",
+    "title": "Getprojectsprojectidstatisticsgit",
     "description": "Return statistics for the repository of a project.",
     "inputSchema": {
       "type": "object",
@@ -4784,6 +5091,7 @@
   },
   {
     "name": "getProjectsProjectIdSubmitRequirements",
+    "title": "Getprojectsprojectidsubmitrequirements",
     "description": "Retrieves a list of all submit requirements for this project. The inherited parameter can be supplied to also list submit requirements from parent projects.",
     "inputSchema": {
       "type": "object",
@@ -4802,7 +5110,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -4814,6 +5125,7 @@
   },
   {
     "name": "getProjectsProjectIdSubmitRequirementsSubmitRequirementI",
+    "title": "Getprojectsprojectidsubmitrequirementssubmitrequirementi",
     "description": "Retrieves the definition of a submit requirement that is defined in this project.",
     "inputSchema": {
       "type": "object",
@@ -4844,6 +5156,7 @@
   },
   {
     "name": "getProjectsProjectIdSubmitRequirementsTemplates",
+    "title": "Getprojectsprojectidsubmitrequirementstemplates",
     "description": "Retrieves submit requirement templates configured in project.config and in its parent projects.",
     "inputSchema": {
       "type": "object",
@@ -4859,7 +5172,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -4871,6 +5187,7 @@
   },
   {
     "name": "getProjectsProjectIdSubmitRequirementsTemplatesSubmitReq",
+    "title": "Getprojectsprojectidsubmitrequirementstemplatessubmitreq",
     "description": "Retrieves a single effective submit requirement template for a project. The returned template may be defined in the project itself or inherited from one of its parent projects.",
     "inputSchema": {
       "type": "object",
@@ -4901,6 +5218,7 @@
   },
   {
     "name": "getProjectsProjectIdTags",
+    "title": "Getprojectsprojectidtags",
     "description": "List the tags of a project.",
     "inputSchema": {
       "type": "object",
@@ -4934,7 +5252,10 @@
     "outputSchema": {
       "type": "object",
       "additionalProperties": true,
-      "x-fastmcp-wrap-result": true
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "fastmcp": {
@@ -4946,6 +5267,7 @@
   },
   {
     "name": "getProjectsProjectIdTagsTagId",
+    "title": "Getprojectsprojectidtagstagid",
     "description": "Retrieves a tag of a project.",
     "inputSchema": {
       "type": "object",
