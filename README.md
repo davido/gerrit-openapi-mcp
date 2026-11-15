@@ -9,9 +9,7 @@ Gerrit extraction → core/openapi.json → pinned profile → FastMCP → MCP t
 ```
 
 The existing Gerrit MCP server and SDK checkouts are unchanged. This bridge
-is a separate local project, pinned to FastMCP **3.4.11** and Python 3.12.
-Current v4 documentation uses different dependencies/APIs; this is not a v4
-compatibility claim.
+is a separate local project, running on FastMCP **4.2** and Python 3.12+.
 
 ## Generated artifacts
 
@@ -128,10 +126,14 @@ Verification result: **44 tests passed**; Ruff checks and formatting passed.
 - The client-side change-screen example composes generated core and checks
   tools, including an empty checks list. Checks CLI generation is subprocess-tested.
 
-The tests also exercise **stock FastMCP 3.4.11 without the custom HTTP guard**.
-With `strict_input_validation=True`, it rejects +2 and other labels against the
-derived schema. In lax mode both reach the mock transport. Strict mode is
-explicitly enabled in the bridge.
+The tests also exercise **stock FastMCP 4.2 without the custom HTTP guard**.
+With `strict_input_validation=True`, 4.2 rejects only *undeclared top-level*
+tool arguments; it no longer clamps nested JSON Schema value bounds, so it
+forwards +2 and an unlisted `Verified` vote to the mock transport
+([#6457](https://github.com/PrefectHQ/fastmcp/issues/6457)). The bridge does
+not rely on the framework for this: its outgoing guard validates the final
+agent-review body and enforces the −1/0/+1 bound independently, before any
+request is sent.
 
 ## Existing upstream work and limits
 
@@ -139,16 +141,20 @@ The OpenAPI bridge, route exclusions, and tool naming already exist upstream.
 This project supplies Gerrit profiles and a small outgoing-request guard, rather
 than another OpenAPI parser or MCP implementation.
 
-The issue search found an open, version-specific report about nested validation
-in FastMCP 4.x: [#6457](https://github.com/PrefectHQ/fastmcp/issues/6457).
-That is not evidence that the tested 3.4.11 strict configuration has the same
-behavior. The bridge validates the final agent-review body independently and
-preserves strict integer handling.
+[#6457](https://github.com/PrefectHQ/fastmcp/issues/6457) reports that FastMCP
+4.x strict validation does not enforce nested JSON Schema value bounds. The
+bridge's tests confirm this on 4.2: stock `from_openapi` forwards +2. The
+−1/0/+1 bound is therefore enforced only by the bridge's outgoing guard, which
+validates the final agent-review body and preserves strict integer handling.
+`test_stock_fastmcp_does_not_enforce_nested_bound` pins the framework behavior
+so a future bump that restores the pre-dispatch clamp is noticed.
 
-The pinned release is newer than the documented 3.x fixes for
-[path traversal](https://github.com/PrefectHQ/fastmcp/security/advisories/GHSA-99xm-8q53-5c8p)
-and [undeclared parameter forwarding](https://github.com/PrefectHQ/fastmcp/security/advisories/GHSA-qvjc-pw7p-hvg5).
-This is not an audit of all upstream advisories or a production certification.
+FastMCP 4.2 is above both the
+[path-traversal](https://github.com/PrefectHQ/fastmcp/security/advisories/GHSA-99xm-8q53-5c8p)
+(fixed 3.4.9 / 4.1.0) and
+[undeclared-parameter-forwarding](https://github.com/PrefectHQ/fastmcp/security/advisories/GHSA-qvjc-pw7p-hvg5)
+(fixed 3.4.8 / 4.0.11) advisory lines. This is not an audit of all upstream
+advisories or a production certification.
 
 Output validation is intentionally disabled with `validate_output=False`;
 structured JSON remains available. Mixed success responses, binary downloads,
