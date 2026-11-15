@@ -2,13 +2,15 @@ import pytest
 from fastmcp import Client, FastMCP
 from fastmcp.skills import SkillsClientExtension
 
-from gerrit_openapi_mcp.skills import CHANGE_SCREEN, add_change_screen_skill
+from gerrit_openapi_mcp.skills import add_skills
+
+CHANGE_SCREEN = "gerrit-change-screen"
 
 
 @pytest.fixture
 def server():
     mcp = FastMCP("test")
-    assert add_change_screen_skill(mcp) is True
+    assert CHANGE_SCREEN in add_skills(mcp)
     return mcp
 
 

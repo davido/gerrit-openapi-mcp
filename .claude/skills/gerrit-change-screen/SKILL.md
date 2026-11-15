@@ -12,9 +12,10 @@ Trigger: the user asks to show/render the change screen for a Gerrit change, e.g
 
 1. Parse the change number `N` from the request (accept `637823`, `#637823`, or a
    full `…/c/project/+/637823/…` URL — use the numeric id).
-2. Fetch via the **gerrit-openapi** bridge server (`gerrit-openapi-read-only`, or
-   `gerrit-openapi-agent` if that's the one connected). Prefer a single composite
-   call if present, else the individual reads:
+2. Fetch via the mounted **gerrit** bridge (`serve-all`): core read tools are
+   unprefixed, and each plugin's tools are under its plugin name (`checks_…`).
+   A single-API `gerrit-openapi` core server also serves the core reads. Prefer
+   a single composite call if present, else the individual reads:
    - If a `getChangeScreen` tool exists → call it with `change-id: N`.
    - Otherwise:
      - `getChangesChangeIdDetail` — `change-id: N`,
@@ -31,16 +32,17 @@ Trigger: the user asks to show/render the change screen for a Gerrit change, e.g
      - `getChangesChangeIdSubmittedTogether` — `change-id: N` → submitted together.
        Shape: `{"result": [...]}` (note: `result`, **not** `changes`); each entry has
        `_number`, `subject`, `project`, `branch`.
-     - **Checks (only if a `gerrit-checks-*` MCP server is connected):**
-       `getChangesChangeIdRevisionsRevisionIdChecks` — `change-id: N`,
-       `revision-id: current` → `{"result": [...]}`, one entry per run. Each entry
-       already carries everything the screen needs — no second call required:
-       `checker_name`, `state` (`SUCCESSFUL`/`FAILED`/`RUNNING`/`SCHEDULED`/`NOT_STARTED`/
-       `NOT_RELEVANT`), `url` (CI console log link), `checker_description`, and
-       `submit_impact.required`. (The per-run `…ChecksCheckId` + `o:["CHECKER"]` call is
-       only needed for extra checker metadata the list omits.) Treat a missing-plugin or
-       permission error as an **error**, not an empty-successful list; if no checks server
-       is connected, skip this and keep the template's plugin note.
+     - **Checks (only if the checks plugin is mounted — the `checks_*` tools are
+       present):** `checks_getChangesChangeIdRevisionsRevisionIdChecks` —
+       `change-id: N`, `revision-id: current` → `{"result": [...]}`, one entry per
+       run. Each entry already carries everything the screen needs — no second call
+       required: `checker_name`, `state` (`SUCCESSFUL`/`FAILED`/`RUNNING`/`SCHEDULED`/
+       `NOT_STARTED`/`NOT_RELEVANT`), `url` (CI console log link), `checker_description`,
+       and `submit_impact.required`. (The per-run `checks_…ChecksCheckId` +
+       `o:["CHECKER"]` call is only needed for extra checker metadata the list omits.)
+       Treat a missing-plugin or permission error as an **error**, not an
+       empty-successful list; if the checks plugin is not mounted (no `checks_*`
+       tools), skip this and keep the template's plugin note.
    Tool params use the spec's literal hyphenated names (`change-id`, `revision-id`),
    and list params are arrays (`o: [...]`), not strings. Relation chain and submitted
    together each return nothing/404 for a standalone change — tolerate that and
@@ -57,9 +59,10 @@ Trigger: the user asks to show/render the change screen for a Gerrit change, e.g
      are documented in the template's top comment.
    - Apply the empty rules from step 2: omit the Relation chain / Submitted together
      panel entirely (heading included) when its list is empty.
-   - Checks tab: keep the template's plugin note unless a `gerrit-checks-*` MCP server
-     is connected; then replace the note with per-run rows (state → sev color, REQUIRED
-     chip when `submit_impact.required`) per the template's commented pattern.
+   - Checks tab: keep the template's plugin note unless the checks plugin is mounted
+     (the `checks_*` tools are present); then replace the note with per-run rows
+     (state → sev color, REQUIRED chip when `submit_impact.required`) per the
+     template's commented pattern.
    - Publish with the Artifact tool, favicon `🔭`. The template is already self-contained
      (inline CSS, no external assets) — keep it that way.
    If `template.html` is ever missing, fall back to authoring the same sections by hand:

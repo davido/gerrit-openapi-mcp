@@ -22,6 +22,12 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = ["gerrit_openapi_mcp"]
 
+# Ship the generated specs and skills inside the wheel so a `uvx --from git+...`
+# install serves without the sibling gerrit-openapi checkout or ~/.claude/skills.
+[tool.hatch.build.targets.wheel.force-include]
+"generated" = "gerrit_openapi_mcp/generated"
+".claude/skills" = "gerrit_openapi_mcp/skills_data"
+
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 asyncio_default_fixture_loop_scope = "function"
