@@ -33,16 +33,24 @@ Trigger: the user asks to show/render the change screen for a Gerrit change, e.g
        Shape: `{"result": [...]}` (note: `result`, **not** `changes`); each entry has
        `_number`, `subject`, `project`, `branch`.
      - **Checks (only if the checks plugin is mounted — the `checks_*` tools are
-       present):** `checks_getChangesChangeIdRevisionsRevisionIdChecks` —
-       `change-id: N`, `revision-id: current` → `{"result": [...]}`, one entry per
-       run. Each entry already carries everything the screen needs — no second call
-       required: `checker_name`, `state` (`SUCCESSFUL`/`FAILED`/`RUNNING`/`SCHEDULED`/
-       `NOT_STARTED`/`NOT_RELEVANT`), `url` (CI console log link), `checker_description`,
-       and `submit_impact.required`. (The per-run `checks_…ChecksCheckId` +
-       `o:["CHECKER"]` call is only needed for extra checker metadata the list omits.)
+       present):** two calls per revision, exactly as `examples/change_screen_data.py`
+       does — the list alone does **not** carry checker names or the required flag.
+       1. `checks_getChangesChangeIdRevisionsRevisionIdChecks` — `change-id: N`,
+          `revision-id: current` → `{"result": [...]}`, one entry per run. The list
+          carries `checker_uuid`, `state` (`SUCCESSFUL`/`FAILED`/`RUNNING`/`SCHEDULED`/
+          `NOT_STARTED`/`NOT_RELEVANT`), `url` (CI console log link), and timing. It
+          has **no `o` parameter**, so `checker_name`, `checker_description`,
+          `submit_impact`, and `blocking` — all documented "only set if checker
+          details are requested" — are absent here.
+       2. For each run, `checks_getChangesChangeIdRevisionsRevisionIdChecksCheckId` —
+          `change-id: N`, `revision-id: current`, `check-id: <the run's checker_uuid>`,
+          `o: ["CHECKER"]` → adds `checker_name`, `checker_description`, and
+          `submit_impact.required` (the REQUIRED flag). Merge it onto the run from
+          step 1. Skip this second call only if you need neither names nor required
+          status.
        Treat a missing-plugin or permission error as an **error**, not an
        empty-successful list; if the checks plugin is not mounted (no `checks_*`
-       tools), skip this and keep the template's plugin note.
+       tools), skip checks entirely and keep the template's plugin note.
    Tool params use the spec's literal hyphenated names (`change-id`, `revision-id`),
    and list params are arrays (`o: [...]`), not strings. Relation chain and submitted
    together each return nothing/404 for a standalone change — tolerate that and
