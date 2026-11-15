@@ -12,6 +12,7 @@ from fastmcp import Client
 
 from .bridge import bridge
 from .profiles import API_SPECS, PROFILES, derive, load_catalog, load_spec, operations
+from .skills import add_change_screen_skill
 
 
 async def generate(spec: dict, output: Path, *, api: str = "core"):
@@ -68,6 +69,9 @@ async def serve(spec: dict, profile: str, base_url: str, *, api: str = "core"):
         auth=auth,
         cookie=os.environ.get("GERRIT_COOKIE"),
     ) as server:
+        # The change-screen skill drives the core read tools; serve it alongside.
+        if api == "core":
+            add_change_screen_skill(server)
         await server.run_async(transport="stdio", show_banner=False)
 
 
