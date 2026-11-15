@@ -18,7 +18,7 @@ from fastmcp.skills.provider import SkillCatalogProvider
 
 # Folder name must equal each skill's SKILL.md `name`. A name listed here whose
 # folder is absent is simply skipped, so this list may lead the folders.
-SKILL_NAMES = ("gerrit-change-screen",)
+SKILL_NAMES = ("gerrit-change-screen", "gerrit-changes-list")
 
 
 def skills_dir() -> Path:

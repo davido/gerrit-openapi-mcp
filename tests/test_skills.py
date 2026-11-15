@@ -5,13 +5,20 @@ from fastmcp.skills import SkillsClientExtension
 from gerrit_openapi_mcp.skills import add_skills
 
 CHANGE_SCREEN = "gerrit-change-screen"
+CHANGES_LIST = "gerrit-changes-list"
 
 
 @pytest.fixture
 def server():
     mcp = FastMCP("test")
-    assert CHANGE_SCREEN in add_skills(mcp)
+    assert {CHANGE_SCREEN, CHANGES_LIST} <= set(add_skills(mcp))
     return mcp
+
+
+async def test_all_bundled_skills_discoverable(server):
+    async with Client(server, extensions=[SkillsClientExtension()]) as client:
+        names = {entry.frontmatter.name for entry in await client.list_skills()}
+    assert {CHANGE_SCREEN, CHANGES_LIST} <= names
 
 
 async def test_skill_is_discoverable_via_extension(server):
