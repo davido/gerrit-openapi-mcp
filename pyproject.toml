@@ -5,7 +5,7 @@ description = "Direct Gerrit OpenAPI to MCP bridge, with explicit profiles"
 requires-python = ">=3.12"
 dependencies = [
   "fastmcp>=4.2,<5",
-  "httpx>=0.28,<0.29",
+  "httpx2>=2.16,<3",
   "jsonschema>=4.23,<5",
 ]
 

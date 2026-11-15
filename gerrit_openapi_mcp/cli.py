@@ -7,7 +7,7 @@ import json
 import os
 from pathlib import Path
 
-import httpx
+import httpx2 as httpx  # the httpx fork FastMCP 4.2's OpenAPI client requires
 from fastmcp import Client
 
 from .bridge import bridge

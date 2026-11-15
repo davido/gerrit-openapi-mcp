@@ -5,7 +5,7 @@ import re
 from contextlib import asynccontextmanager
 from urllib.parse import parse_qsl, unquote
 
-import httpx
+import httpx2 as httpx  # the httpx fork FastMCP 4.2's OpenAPI client requires
 from fastmcp import FastMCP
 from fastmcp.server.providers.openapi import MCPType, RouteMap
 from jsonschema import Draft202012Validator
