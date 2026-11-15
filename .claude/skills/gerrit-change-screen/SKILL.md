@@ -33,21 +33,22 @@ Trigger: the user asks to show/render the change screen for a Gerrit change, e.g
        Shape: `{"result": [...]}` (note: `result`, **not** `changes`); each entry has
        `_number`, `subject`, `project`, `branch`.
      - **Checks (only if the checks plugin is mounted — the `checks_*` tools are
-       present):** two calls per revision, exactly as `examples/change_screen_data.py`
-       does — the list alone does **not** carry checker names or the required flag.
-       1. `checks_getChangesChangeIdRevisionsRevisionIdChecks` — `change-id: N`,
-          `revision-id: current` → `{"result": [...]}`, one entry per run. The list
-          carries `checker_uuid`, `state` (`SUCCESSFUL`/`FAILED`/`RUNNING`/`SCHEDULED`/
-          `NOT_STARTED`/`NOT_RELEVANT`), `url` (CI console log link), and timing. It
-          has **no `o` parameter**, so `checker_name`, `checker_description`,
-          `submit_impact`, and `blocking` — all documented "only set if checker
-          details are requested" — are absent here.
-       2. For each run, `checks_getChangesChangeIdRevisionsRevisionIdChecksCheckId` —
-          `change-id: N`, `revision-id: current`, `check-id: <the run's checker_uuid>`,
-          `o: ["CHECKER"]` → adds `checker_name`, `checker_description`, and
-          `submit_impact.required` (the REQUIRED flag). Merge it onto the run from
-          step 1. Skip this second call only if you need neither names nor required
-          status.
+       present):** `checks_getChangesChangeIdRevisionsRevisionIdChecks` —
+       `change-id: N`, `revision-id: current` → `{"result": [...]}`, one entry per
+       run. On gerrit-review.googlesource.com each entry already carries what the
+       screen needs: `checker_name`, `state` (`SUCCESSFUL`/`FAILED`/`RUNNING`/
+       `SCHEDULED`/`NOT_STARTED`/`NOT_RELEVANT`), `url` (CI console log link),
+       `checker_description`, and `submit_impact` (`submit_impact.required` drives
+       the REQUIRED chip). Render the Checks tab straight from this one response.
+       **Fallback for older/local checks builds:** these checker fields are
+       documented "only set if checker details are requested", and this list tool
+       has **no `o` parameter**, so some builds omit them. If a run comes back
+       **without `checker_name`**, fetch only that run's detail —
+       `checks_getChangesChangeIdRevisionsRevisionIdChecksCheckId`, `change-id: N`,
+       `revision-id: current`, `check-id: <the run's checker_uuid>`, `o: ["CHECKER"]`
+       — and merge `checker_name`/`checker_description`/`submit_impact` onto it. Only
+       call this for runs actually missing the fields; do not fan out when the list
+       already has them.
        Treat a missing-plugin or permission error as an **error**, not an
        empty-successful list; if the checks plugin is not mounted (no `checks_*`
        tools), skip checks entirely and keep the template's plugin note.
@@ -68,9 +69,19 @@ Trigger: the user asks to show/render the change screen for a Gerrit change, e.g
    - Apply the empty rules from step 2: omit the Relation chain / Submitted together
      panel entirely (heading included) when its list is empty.
    - Checks tab: keep the template's plugin note unless the checks plugin is mounted
-     (the `checks_*` tools are present); then replace the note with per-run rows
-     (state → sev color, REQUIRED chip when `submit_impact.required`) per the
-     template's commented pattern.
+     (the `checks_*` tools are present); then replace the note with the **Results
+     summary + per-run rows** per the template's commented pattern:
+     - Summary: bucket runs by `state` and fill the four category counts
+       (`{{CHK_ERROR}}`=FAILED, `{{CHK_WARNING}}`/`{{CHK_INFO}}`=reported results at
+       that severity — usually 0, `{{CHK_SUCCESS}}`=SUCCESSFUL); add class `zero` to any
+       count that is 0. State → sev color; REQUIRED chip when `submit_impact.required`.
+     - Timing: each row shows a duration from `finished − started`, formatted like
+       Gerrit — `Passed (M min S sec)` / `Failed (…)` for finished runs, `Running` when
+       unfinished; omit `.dur` when either timestamp is absent.
+     - The checks REST endpoint only returns **checker-backed** runs. UI-only
+       `ChecksProvider`s (e.g. "Conflict Markers", "If This Then That") register in
+       PolyGerrit directly and never hit REST, so the render legitimately lists fewer
+       runs than the live web UI — keep the template's `.checks-foot` note saying so.
    - Publish with the Artifact tool, favicon `🔭`. The template is already self-contained
      (inline CSS, no external assets) — keep it that way.
    If `template.html` is ever missing, fall back to authoring the same sections by hand:

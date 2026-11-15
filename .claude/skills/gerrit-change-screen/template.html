@@ -156,6 +156,16 @@
   .run .ext{color:var(--link);font-size:12px;}
   .sev{width:15px;height:15px;border-radius:50%;display:grid;place-items:center;font-size:10px;color:#fff;}
   .sev.ok{background:var(--green);} .sev.err{background:var(--red);} .sev.run{background:#80868b;}
+  .run .dur{color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums;}
+
+  .checks-results-title{font-size:15px;color:var(--ink-soft);font-weight:500;padding:16px 20px 2px;}
+  .checks-summary{display:flex;gap:22px;flex-wrap:wrap;padding:8px 20px 14px;border-bottom:1px solid var(--line-soft);margin-bottom:14px;}
+  .chk-cat{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--muted);}
+  .chk-cat b{color:var(--ink-soft);font-weight:600;}
+  .chk-cat.zero{opacity:.5;}
+  .chk-ic{width:16px;height:16px;border-radius:50%;display:grid;place-items:center;font-size:10px;color:#fff;}
+  .chk-ic.err{background:var(--red);} .chk-ic.warn{background:var(--amber);} .chk-ic.info{background:#5f6368;} .chk-ic.ok{background:var(--green);}
+  .checks-foot{padding:4px 20px 2px;color:var(--faint);font-size:11.5px;}
 
   .foot{display:flex;justify-content:space-between;padding:16px 20px 30px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
 </style>
@@ -340,16 +350,39 @@
 
     <!-- CHECKS -->
     <div class="tabpane" id="pane-checks">
-      <!-- DEFAULT (no checks MCP server connected): the plugin note. -->
+      <!-- DEFAULT (checks plugin NOT mounted — no checks_* tools present): the plugin note. -->
       <div style="padding:30px 20px;">
-        <div class="checks-note">ⓘ The <b>Checks</b> tab is served by the <b>checks</b> plugin — a separate OpenAPI catalog, not the core profile — so the skill does not fetch it unless a <code>gerrit-checks-*</code> MCP server is connected.</div>
+        <div class="checks-note">ⓘ The <b>Checks</b> tab is served by the <b>checks</b> plugin — a separate OpenAPI catalog, not the core profile — so the skill does not fetch it unless the <code>checks_*</code> tools are mounted.</div>
       </div>
-      <!-- WHEN a gerrit-checks-* server IS connected, replace the note with runs; REPEAT per run:
-      <div style="padding:16px 0;">
-        <div class="run"><span class="nm"><span class="sev ok">✓</span> CHECKER_NAME <span class="ext">⬈</span></span><span class="req">REQUIRED</span></div>
+      <!--
+        WHEN the checks plugin IS mounted (checks_* tools present), REPLACE the whole note <div> above with
+        the Results summary + run list below. Data comes from checks_getChangesChangeIdRevisionsRevisionIdChecks
+        (→ {"result": [...]}, one entry per run).
+
+        1) Severity summary — bucket every run by state and render the four categories with their counts.
+           Gerrit's buckets: Error = FAILED runs; Warning / Info = runs reporting results at that severity
+           (usually 0 for CI checkers); Success = SUCCESSFUL runs. RUNNING/SCHEDULED/NOT_STARTED are "running".
+           Add class "zero" (dims it) to any category whose count is 0. {{CHK_SUCCESS}} etc. are the counts.
+        2) Run rows — one per run. Duration is finished − started, formatted like Gerrit:
+           "Passed (M min S sec)" for SUCCESSFUL, "Failed (…)" for FAILED, "Running" when unfinished.
+           Keep .dur empty/omit when started or finished is missing (e.g. NOT_STARTED).
+
+      <div class="checks-results-title">Results — Patchset {{PATCHSET}}</div>
+      <div class="checks-summary">
+        <span class="chk-cat zero"><span class="chk-ic err">!</span>Error <b>{{CHK_ERROR}}</b></span>
+        <span class="chk-cat zero"><span class="chk-ic warn">▲</span>Warning <b>{{CHK_WARNING}}</b></span>
+        <span class="chk-cat zero"><span class="chk-ic info">i</span>Info <b>{{CHK_INFO}}</b></span>
+        <span class="chk-cat"><span class="chk-ic ok">✓</span>Success <b>{{CHK_SUCCESS}}</b></span>
       </div>
-           state → sev: SUCCESSFUL=ok, FAILED=err (+ class "failed" on .run), RUNNING/SCHEDULED/NOT_STARTED=run.
-           Show the "REQUIRED" chip only when submit_impact.required is true. Link ⬈ to the run url. -->
+      <div style="padding:0 0 6px;">
+           REPEAT per run (state → sev: SUCCESSFUL=ok, FAILED=err + class "failed" on .run,
+           RUNNING/SCHEDULED/NOT_STARTED=run; .req chip only when submit_impact.required; ⬈ links the run url):
+        <div class="run"><span class="nm"><span class="sev ok">✓</span> CHECKER_NAME <a class="ext" href="RUN_URL">⬈</a></span><span class="dur">Passed (M min S sec)</span><span class="req">REQUIRED</span></div>
+      </div>
+      <div class="checks-foot">Showing N checker-backed runs from the checks plugin REST API. UI-only providers
+        (e.g. “Conflict Markers”, “If This Then That”) register in PolyGerrit directly and are not exposed over
+        REST, so the Checks REST endpoint — and this render — list fewer runs than the live web UI.</div>
+      -->
     </div>
   </div>
 
