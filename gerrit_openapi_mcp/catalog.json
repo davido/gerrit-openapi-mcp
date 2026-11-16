@@ -410,9 +410,7 @@
       "method": "GET",
       "path": "/accounts/{account-id}/oauthtoken",
       "profiles": [
-        "full",
-        "read_only",
-        "agent"
+        "full"
       ]
     },
     "getAccountsAccountIdPreferences": {

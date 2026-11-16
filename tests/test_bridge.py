@@ -16,7 +16,7 @@ def source():
 
 
 @pytest.mark.parametrize(
-    "profile,count", [("full", 339), ("read_only", 161), ("agent", 162)]
+    "profile,count", [("full", 339), ("read_only", 160), ("agent", 161)]
 )
 async def test_actual_spec_registers_complete_profile(source, profile, count):
     def unexpected(request):
@@ -42,6 +42,8 @@ async def test_actual_spec_registers_complete_profile(source, profile, count):
         assert "postChangesChangeIdRevisionsRevisionIdSubmit" not in names
         assert "postChangesChangeIdAbandon" not in names
         assert not any(name.startswith("delete") for name in names)
+        # Secret-bearing read: the OAuth access token is reachable only in full.
+        assert "getAccountsAccountIdOauthtoken" not in names
 
 
 async def test_allowed_read_query_and_xssi_response(source):
