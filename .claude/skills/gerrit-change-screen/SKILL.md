@@ -21,12 +21,16 @@ Trigger: the user asks to show/render the change screen for a Gerrit change, e.g
      - `getChangesChangeIdDetail` — `change-id: N`,
        `o: ["LABELS","DETAILED_LABELS","CURRENT_REVISION","CURRENT_COMMIT","MESSAGES","DETAILED_ACCOUNTS","SUBMIT_REQUIREMENTS"]`
        → subject, status, owner, repo/branch, parent, strategy, labels + votes,
-       submit requirements, commit message, messages.
+       submit requirements, commit message, messages. Capture `current_revision`
+       from this response and use it as the `revision-id` for every
+       revision-scoped request below, so files, related and checks all match the
+       patch set the header shows (a patch set uploaded mid-render would
+       otherwise shift the literal `current`).
      - `getChangesChangeIdComments` — `change-id: N` → published review comments.
      - `getChangesChangeIdRevisionsRevisionIdFiles` — `change-id: N`,
-       `revision-id: current` → the file list (+ insertions/deletions).
+       `revision-id: <current_revision>` → the file list (+ insertions/deletions).
      - `getChangesChangeIdRevisionsRevisionIdRelated` — `change-id: N`,
-       `revision-id: current` → relation chain. Shape: `{"changes": [...]}`; each
+       `revision-id: <current_revision>` → relation chain. Shape: `{"changes": [...]}`; each
        entry has `_change_number`, `commit.subject`, `status`; the current change is
        the one whose `_change_number` matches the change's `_number`.
      - `getChangesChangeIdSubmittedTogether` — `change-id: N` → submitted together.
@@ -34,7 +38,7 @@ Trigger: the user asks to show/render the change screen for a Gerrit change, e.g
        `_number`, `subject`, `project`, `branch`.
      - **Checks (only if the checks plugin is mounted — the `checks_*` tools are
        present):** `checks_getChangesChangeIdRevisionsRevisionIdChecks` —
-       `change-id: N`, `revision-id: current` → `{"result": [...]}`, one entry per
+       `change-id: N`, `revision-id: <current_revision>` → `{"result": [...]}`, one entry per
        run. On gerrit-review.googlesource.com each entry already carries what the
        screen needs: `checker_name`, `state` (`SUCCESSFUL`/`FAILED`/`RUNNING`/
        `SCHEDULED`/`NOT_STARTED`/`NOT_RELEVANT`), `url` (CI console log link),
@@ -45,7 +49,7 @@ Trigger: the user asks to show/render the change screen for a Gerrit change, e.g
        has **no `o` parameter**, so some builds omit them. If a run comes back
        **without `checker_name`**, fetch only that run's detail —
        `checks_getChangesChangeIdRevisionsRevisionIdChecksCheckId`, `change-id: N`,
-       `revision-id: current`, `check-id: <the run's checker_uuid>`, `o: ["CHECKER"]`
+       `revision-id: <current_revision>`, `check-id: <the run's checker_uuid>`, `o: ["CHECKER"]`
        — and merge `checker_name`/`checker_description`/`submit_impact` onto it. Only
        call this for runs actually missing the fields; do not fan out when the list
        already has them.
