@@ -21,12 +21,12 @@ Runs on FastMCP **4.2** and Python 3.12+.
 Two plugins are also supported, each with its own source hash and operation
 catalog: **checks** (`--api checks`: 9 / 4 / 4 tools) and **code-owners**
 (`--api code-owners`: 13 / 9 / 9). For both, `read_only` and `agent` expose only
-reads; plugin writes require the explicit `full` profile.
+reads. Plugin writes require the explicit `full` profile.
 
 The `agent` profile removes every POST/PUT/DELETE except one revision review. Its
 review schema permits `message`, `comments`, `drafts`, `is_ai`, and a `labels`
-object bounded to `Code-Review` ∈ {−1, 0, +1} — no `on_behalf_of`, `ready`,
-reviewers, or other controls.
+object bounded to `Code-Review` ∈ {−1, 0, +1}. It has no `on_behalf_of`,
+`ready`, reviewers, or other controls.
 
 `gerrit_openapi_mcp/catalog.json` pins explicit method/path/profile decisions and
 a source hash. A changed spec (new operation or request field) stops generation
@@ -42,8 +42,8 @@ uv sync --python 3.12   # one-time
 ```
 
 `update.sh` regenerates every API over a mock transport (no Gerrit requests) and
-runs the suite. `--refresh` git-pulls the sibling spec first; a changed spec stops
-generation until its catalog is reviewed.
+runs the suite. `--refresh` git-pulls the sibling spec first. A changed spec
+stops generation until its catalog is reviewed.
 
 ## Serve
 
@@ -56,13 +56,13 @@ uv run gerrit-openapi-mcp serve --base-url https://gerrit.example.com/a/ --profi
 ```
 
 `serve-all` mounts core unprefixed and each plugin under its name (`checks_`,
-`code_owners_`); drop one the site lacks with `--checks-profile off`. It serves
-from the committed `generated/` specs — so `uvx --from git+...` is self-contained,
-no sibling checkout needed — and serves the change-screen and changes-list skills
-alongside the tools. Credentials come from `GERRIT_HTTP_USER` /
+`code_owners_`). Drop one the site lacks with `--checks-profile off`. It serves
+from the committed `generated/` specs, so `uvx --from git+...` is self-contained
+with no sibling checkout needed, and serves the change-screen and changes-list
+skills alongside the tools. Credentials come from `GERRIT_HTTP_USER` /
 `GERRIT_HTTP_PASSWORD` or `GERRIT_COOKIE` (server config, not tool arguments).
 
-Example host config — the committed `.mcp.json` wires `gerrit` (read-only),
+Example host config. The committed `.mcp.json` wires `gerrit` (read-only),
 `gerrit-agent` (the bounded review write), and `gerrit-full`:
 
 ```json
@@ -83,10 +83,10 @@ Example host config — the committed `.mcp.json` wires `gerrit` (read-only),
 
 ## Verified
 
-50 tests pass (Ruff + formatting clean): per-profile tool registration, the
+48 tests pass (Ruff + formatting clean): per-profile tool registration, the
 outgoing guard (origin/path/profile checks, the bounded −1/0/+1 review, ±2 and
 other writes rejected before any request reaches the wire, no redirect-following,
 XSSI handling), the drift gate, the mounted `serve-all` topology, and both served
 skills. The suite also pins that stock FastMCP 4.2 no longer clamps the nested
-bound ([#6457](https://github.com/PrefectHQ/fastmcp/issues/6457)) — so the guard,
+bound ([#6457](https://github.com/PrefectHQ/fastmcp/issues/6457)), so the guard,
 not the framework, enforces it.

@@ -14,7 +14,6 @@ from gerrit_openapi_mcp.profiles import (
     load_spec,
     operations,
 )
-from gerrit_openapi_mcp.screen import change_screen_data
 
 LIST = "getChangesChangeIdRevisionsRevisionIdChecks"
 GET = "getChangesChangeIdRevisionsRevisionIdChecksCheckId"
@@ -98,7 +97,7 @@ async def test_checks_catalog_and_profile_omission(source, profile, count):
         ),
     ],
 )
-async def test_checks_reads_preserve_paths_xssi_and_screen_fields(
+async def test_checks_reads_preserve_paths_and_xssi(
     source, name, args, payload, suffix
 ):
     requests = []
@@ -128,7 +127,6 @@ async def test_checks_reads_preserve_paths_xssi_and_screen_fields(
     )
     if name == GET:
         assert requests[0].url.params.get_list("o") == ["CHECKER"]
-        assert result.structured_content["submit_impact"]["required"] is True
 
 
 @pytest.mark.parametrize("profile", ["read_only", "agent"])
@@ -207,43 +205,3 @@ def test_checks_cli_offline_generation(source, tmp_path):
     assert manifest["profiles"]["full"]["tools"] == 9
     assert manifest["profiles"]["read_only"]["tools"] == 4
     assert json.loads((tmp_path / "agent-tools.json").read_text())
-
-
-@pytest.mark.parametrize("runs", [[], [CHECK]])
-async def test_change_screen_composes_generated_core_and_checks_tools(source, runs):
-    requests = []
-
-    def record(request):
-        requests.append(request)
-        if request.url.path.endswith("/detail"):
-            payload = {
-                "_number": 123,
-                "subject": "Example change",
-                "current_revision": "abc123",
-            }
-        elif request.url.path.endswith("/checks"):
-            payload = runs
-        else:
-            assert request.url.params.get_list("o") == ["CHECKER"]
-            payload = CHECK
-        return httpx.Response(200, json=payload)
-
-    transport = httpx.MockTransport(record)
-    async with (
-        bridge(
-            derive(load_spec(), "read_only"),
-            "https://gerrit.invalid/a/",
-            transport=transport,
-        ) as core,
-        bridge(
-            checks_spec(source), "https://gerrit.invalid/a/", transport=transport
-        ) as checks,
-        Client(core) as core_client,
-        Client(checks) as checks_client,
-    ):
-        data = await change_screen_data(core_client, checks_client, "123")
-    assert data["change"]["subject"] == "Example change"
-    assert data["revision"] == "abc123"
-    assert data["checks"] == runs
-    assert all(request.method == "GET" for request in requests)
-    assert len(requests) == 2 + len(runs)

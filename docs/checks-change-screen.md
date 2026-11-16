@@ -125,23 +125,6 @@ the operation. Gerrit may independently deny it even on a full connection.
 Gerrit's overall submit eligibility also depends on core labels and submit
 requirements; do not derive it solely from these rows.
 
-## Optional client-side data composition
-
-The included example calls generated MCP tools for core change detail and checks:
-
-```bash
-uv run python examples/change_screen_data.py \
-  --base-url https://gerrit.example.com/a/ --change-id 123
-```
-
-It resolves the current revision, lists runs, fetches each run's checker metadata,
-and prints `{"change": ..., "revision": ..., "checks": [...]}`. Use
-`--revision 17` to choose an explicit revision. Both clients are read-only.
-
-`screen.py` and this example are **client-side composition**, not served MCP
-tools. The running server exposes only `from_openapi`-generated operations. No
-`getChangeScreen` facade was added, and the existing screen was not modified.
-
 ## Current source limitations
 
 The plugin's `ListChecks` class declares `-o` and `-O`, but the generated list
