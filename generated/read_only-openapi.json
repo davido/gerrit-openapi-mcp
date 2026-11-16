@@ -1024,46 +1024,6 @@
         }
       }
     },
-    "/accounts/{account-id}/oauthtoken": {
-      "get": {
-        "operationId": "getAccountsAccountIdOauthtoken",
-        "summary": "Get OAuth Access Token",
-        "description": "Returns a previously obtained OAuth access token.",
-        "tags": [
-          "accounts"
-        ],
-        "parameters": [
-          {
-            "name": "account-id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/OAuthTokenInfo"
-                },
-                "example": {
-                  "username": "johndow",
-                  "resource_host": "gerrit.example.org",
-                  "access_token": "eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOi",
-                  "provider_id": "oauth-plugin:oauth-provider",
-                  "expires_at": "922337203775807",
-                  "type": "bearer"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/accounts/{account-id}/preferences": {
       "get": {
         "operationId": "getAccountsAccountIdPreferences",
@@ -10915,9 +10875,65 @@
       "CommentInput": {
         "type": "object",
         "properties": {
-          "enable_context": {
+          "unresolved": {
             "type": "boolean",
-            "description": "Whether to include the source lines around the comment as context in the response."
+            "description": "Whether or not the comment must be addressed by the user. This value will default to false if the comment is an orphan, or the value of the in_reply_to comment if it is supplied."
+          },
+          "patch_set": {
+            "type": "integer",
+            "description": "The patch set number for the comment; only set in contexts where + comments may be returned for multiple patch sets."
+          },
+          "id": {
+            "type": "string",
+            "description": "The URL encoded UUID of the comment if an existing draft comment should be updated."
+          },
+          "path": {
+            "type": "string",
+            "description": "The file path for which the inline comment should be added. + Doesn't need to be set if contained in a map where the key is the file path."
+          },
+          "side": {
+            "$ref": "#/components/schemas/Side",
+            "description": "The side on which the comment should be added. + Allowed values are REVISION and PARENT. + If not set, the default is REVISION."
+          },
+          "parent": {
+            "type": "integer",
+            "description": "The 1-based parent number. Used only for merge commits when side == PARENT. When not set the comment is for the auto-merge tree."
+          },
+          "line": {
+            "type": "integer",
+            "description": "The number of the line for which the comment should be added. + 0 if it is a file comment. + If neither line nor range is set, a file comment is added. + If range is set, this value is ignored in favor of the end_line of the range. + When updating a draft without path, the draft keeps its line."
+          },
+          "range": {
+            "$ref": "#/components/schemas/Range",
+            "description": "The range of the comment as a CommentRange entity."
+          },
+          "in_reply_to": {
+            "type": "string",
+            "description": "The URL encoded UUID of the comment to which this comment is a reply."
+          },
+          "updated": {
+            "type": "string",
+            "format": "gerrit-timestamp",
+            "description": "The timestamp of this comment. + Accepted but ignored."
+          },
+          "message": {
+            "type": "string",
+            "description": "The comment message. + If not set and an existing draft comment is updated, the existing draft comment is deleted."
+          },
+          "commit_id": {
+            "type": "string",
+            "description": "Hex commit SHA-1 (40 characters string) of the commit of the patchset to which this comment applies."
+          },
+          "fix_suggestions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FixSuggestionInfo"
+            },
+            "description": "Suggested fixes for this comment as a list of FixSuggestionInfo entities."
+          },
+          "is_ai": {
+            "type": "boolean",
+            "description": "Whether the comment was created by an AI agent. Not set if false."
           }
         }
       },
@@ -12029,19 +12045,19 @@
           },
           "name": {
             "type": "string",
-            "description": "See WebLinkInfo"
+            "description": "The text to be linkified."
           },
           "tooltip": {
             "type": "string",
-            "description": "See WebLinkInfo"
+            "description": "Tooltip to show when hovering over the link. Using \"Open in $NAME_OF_EXTERNAL_TOOL\" is a good option here."
           },
           "image_url": {
             "type": "string",
-            "description": "See WebLinkInfo"
+            "description": "URL to the icon of the link."
           },
           "url": {
             "type": "string",
-            "description": "See WebLinkInfo"
+            "description": "The link URL."
           }
         }
       },
@@ -14584,6 +14600,10 @@
           "commit_message": {
             "type": "string",
             "description": "Message that should be used to commit the change of the project description in the project.config file to the refs/meta/config branch."
+          },
+          "description": {
+            "type": "string",
+            "description": "The project description. + The project description will be deleted if not set."
           }
         }
       },
@@ -16295,6 +16315,6 @@
   "x-agent-profile": {
     "name": "read_only",
     "version": 1,
-    "source_sha256": "1dfdb0175258fc48d36a8a1d418dc0a4cf0817de0c25f771f48623c7a340c854"
+    "source_sha256": "e1ff2c3493181583a3a6fdbd48b0454fdb420531caaefa1ce696abd769ae3f8c"
   }
 }

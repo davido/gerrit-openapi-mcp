@@ -521,33 +521,6 @@
     }
   },
   {
-    "name": "getAccountsAccountIdOauthtoken",
-    "title": "Getaccountsaccountidoauthtoken",
-    "description": "Returns a previously obtained OAuth access token.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "account-id": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "account-id"
-      ]
-    },
-    "outputSchema": {
-      "type": "object",
-      "additionalProperties": true
-    },
-    "_meta": {
-      "fastmcp": {
-        "tags": [
-          "accounts"
-        ]
-      }
-    }
-  },
-  {
     "name": "getAccountsAccountIdPreferences",
     "title": "Getaccountsaccountidpreferences",
     "description": "Retrieves the user's preferences.",
@@ -2571,9 +2544,136 @@
           "additionalProperties": {
             "items": {
               "properties": {
-                "enable_context": {
+                "unresolved": {
                   "type": "boolean",
-                  "description": "Whether to include the source lines around the comment as context in the response."
+                  "description": "Whether or not the comment must be addressed by the user. This value will default to false if the comment is an orphan, or the value of the in_reply_to comment if it is supplied."
+                },
+                "patch_set": {
+                  "type": "integer",
+                  "description": "The patch set number for the comment; only set in contexts where + comments may be returned for multiple patch sets."
+                },
+                "id": {
+                  "type": "string",
+                  "description": "The URL encoded UUID of the comment if an existing draft comment should be updated."
+                },
+                "path": {
+                  "type": "string",
+                  "description": "The file path for which the inline comment should be added. + Doesn't need to be set if contained in a map where the key is the file path."
+                },
+                "side": {
+                  "type": "string",
+                  "enum": [
+                    "PARENT",
+                    "REVISION"
+                  ],
+                  "description": "The side on which the comment should be added. + Allowed values are REVISION and PARENT. + If not set, the default is REVISION."
+                },
+                "parent": {
+                  "type": "integer",
+                  "description": "The 1-based parent number. Used only for merge commits when side == PARENT. When not set the comment is for the auto-merge tree."
+                },
+                "line": {
+                  "type": "integer",
+                  "description": "The number of the line for which the comment should be added. + 0 if it is a file comment. + If neither line nor range is set, a file comment is added. + If range is set, this value is ignored in favor of the end_line of the range. + When updating a draft without path, the draft keeps its line."
+                },
+                "range": {
+                  "properties": {
+                    "start_line": {
+                      "type": "integer",
+                      "description": "The start line number of the range. (1-based)"
+                    },
+                    "start_character": {
+                      "type": "integer",
+                      "description": "The character position in the start line. (0-based)"
+                    },
+                    "end_line": {
+                      "type": "integer",
+                      "description": "The end line number of the range. (1-based)"
+                    },
+                    "end_character": {
+                      "type": "integer",
+                      "description": "The character position in the end line. (0-based)"
+                    }
+                  },
+                  "type": "object",
+                  "description": "The range of the comment as a CommentRange entity."
+                },
+                "in_reply_to": {
+                  "type": "string",
+                  "description": "The URL encoded UUID of the comment to which this comment is a reply."
+                },
+                "updated": {
+                  "type": "string",
+                  "format": "gerrit-timestamp",
+                  "description": "The timestamp of this comment. + Accepted but ignored."
+                },
+                "message": {
+                  "type": "string",
+                  "description": "The comment message. + If not set and an existing draft comment is updated, the existing draft comment is deleted."
+                },
+                "commit_id": {
+                  "type": "string",
+                  "description": "Hex commit SHA-1 (40 characters string) of the commit of the patchset to which this comment applies."
+                },
+                "fix_suggestions": {
+                  "items": {
+                    "properties": {
+                      "fix_id": {
+                        "type": "string",
+                        "description": "The UUID of the suggested fix. It will be generated automatically and hence will be ignored if it's set for input objects."
+                      },
+                      "description": {
+                        "type": "string",
+                        "description": "A description of the suggested fix."
+                      },
+                      "replacements": {
+                        "items": {
+                          "properties": {
+                            "path": {
+                              "type": "string",
+                              "description": "The path of the file which should be modified. Any file in the repository may be modified. The commit message can be modified via the magic file /COMMIT_MSG though only the part below the generated header of that magic file can be modified."
+                            },
+                            "range": {
+                              "properties": {
+                                "start_line": {
+                                  "type": "integer",
+                                  "description": "The start line number of the range. (1-based)"
+                                },
+                                "start_character": {
+                                  "type": "integer",
+                                  "description": "The character position in the start line. (0-based)"
+                                },
+                                "end_line": {
+                                  "type": "integer",
+                                  "description": "The end line number of the range. (1-based)"
+                                },
+                                "end_character": {
+                                  "type": "integer",
+                                  "description": "The character position in the end line. (0-based)"
+                                }
+                              },
+                              "type": "object",
+                              "description": "A CommentRange indicating which content of the file should be replaced. Lines in the file are assumed to be separated by the line feed character."
+                            },
+                            "replacement": {
+                              "type": "string",
+                              "description": "The content which should be used instead of the current one."
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "type": "array",
+                        "description": "A list of FixReplacementInfo entities indicating how the content of one or several files should be modified. Within a file, they should refer to non-overlapping regions."
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array",
+                  "description": "Suggested fixes for this comment as a list of FixSuggestionInfo entities."
+                },
+                "is_ai": {
+                  "type": "boolean",
+                  "description": "Whether the comment was created by an AI agent. Not set if false."
                 }
               },
               "type": "object"

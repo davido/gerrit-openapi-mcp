@@ -521,33 +521,6 @@
     }
   },
   {
-    "name": "getAccountsAccountIdOauthtoken",
-    "title": "Getaccountsaccountidoauthtoken",
-    "description": "Returns a previously obtained OAuth access token.",
-    "inputSchema": {
-      "type": "object",
-      "properties": {
-        "account-id": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "account-id"
-      ]
-    },
-    "outputSchema": {
-      "type": "object",
-      "additionalProperties": true
-    },
-    "_meta": {
-      "fastmcp": {
-        "tags": [
-          "accounts"
-        ]
-      }
-    }
-  },
-  {
     "name": "getAccountsAccountIdPreferences",
     "title": "Getaccountsaccountidpreferences",
     "description": "Retrieves the user's preferences.",
