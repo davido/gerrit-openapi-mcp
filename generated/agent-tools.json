@@ -20,6 +20,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getAccess",
       "fastmcp": {
         "tags": [
           "access"
@@ -67,6 +68,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getAccounts",
       "fastmcp": {
         "tags": [
           "accounts"
@@ -94,6 +96,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getAccountsAccountId",
       "fastmcp": {
         "tags": [
           "accounts"
@@ -117,6 +120,7 @@
       ]
     },
     "_meta": {
+      "gerritOperationId": "getAccountsAccountIdActive",
       "fastmcp": {
         "tags": [
           "accounts"
@@ -148,6 +152,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getAccountsAccountIdAgreements",
       "fastmcp": {
         "tags": [
           "accounts"
@@ -174,6 +179,7 @@
       ]
     },
     "_meta": {
+      "gerritOperationId": "getAccountsAccountIdAvatar",
       "fastmcp": {
         "tags": [
           "accounts"
@@ -205,6 +211,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getAccountsAccountIdAvatarChangeUrl",
       "fastmcp": {
         "tags": [
           "accounts"
@@ -238,6 +245,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getAccountsAccountIdCapabilities",
       "fastmcp": {
         "tags": [
           "accounts"
@@ -273,6 +281,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getAccountsAccountIdCapabilitiesCapabilityId",
       "fastmcp": {
         "tags": [
           "accounts"
@@ -300,6 +309,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getAccountsAccountIdDetail",
       "fastmcp": {
         "tags": [
           "accounts"
@@ -331,6 +341,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getAccountsAccountIdEmails",
       "fastmcp": {
         "tags": [
           "accounts"
@@ -362,6 +373,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getAccountsAccountIdEmailsEmailId",
       "fastmcp": {
         "tags": [
           "accounts"
@@ -393,6 +405,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getAccountsAccountIdExternalIds",
       "fastmcp": {
         "tags": [
           "accounts"
@@ -420,6 +433,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getAccountsAccountIdGpgkeys",
       "fastmcp": {
         "tags": [
           "accounts"
@@ -451,6 +465,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getAccountsAccountIdGpgkeysGpgKeyId",
       "fastmcp": {
         "tags": [
           "accounts"
@@ -482,6 +497,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getAccountsAccountIdGroups",
       "fastmcp": {
         "tags": [
           "accounts"
@@ -513,6 +529,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getAccountsAccountIdName",
       "fastmcp": {
         "tags": [
           "accounts"
@@ -540,6 +557,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getAccountsAccountIdPreferences",
       "fastmcp": {
         "tags": [
           "accounts"
@@ -567,6 +585,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getAccountsAccountIdPreferencesDiff",
       "fastmcp": {
         "tags": [
           "accounts"
@@ -594,6 +613,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getAccountsAccountIdPreferencesEdit",
       "fastmcp": {
         "tags": [
           "accounts"
@@ -625,6 +645,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getAccountsAccountIdSshkeys",
       "fastmcp": {
         "tags": [
           "accounts"
@@ -656,6 +677,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getAccountsAccountIdSshkeysSshKeyId",
       "fastmcp": {
         "tags": [
           "accounts"
@@ -687,6 +709,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getAccountsAccountIdStarredChanges",
       "fastmcp": {
         "tags": [
           "accounts"
@@ -714,6 +737,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getAccountsAccountIdState",
       "fastmcp": {
         "tags": [
           "accounts"
@@ -745,6 +769,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getAccountsAccountIdStatus",
       "fastmcp": {
         "tags": [
           "accounts"
@@ -776,6 +801,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getAccountsAccountIdTokens",
       "fastmcp": {
         "tags": [
           "accounts"
@@ -807,6 +833,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getAccountsAccountIdUsername",
       "fastmcp": {
         "tags": [
           "accounts"
@@ -838,6 +865,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getAccountsAccountIdWatchedProjects",
       "fastmcp": {
         "tags": [
           "accounts"
@@ -894,6 +922,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getChanges",
       "fastmcp": {
         "tags": [
           "changes"
@@ -933,6 +962,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeId",
       "fastmcp": {
         "tags": [
           "changes"
@@ -964,6 +994,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdAttention",
       "fastmcp": {
         "tags": [
           "changes"
@@ -991,6 +1022,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdCheck",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1024,6 +1056,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdComments",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1051,6 +1084,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdCustomKeyedValues",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1083,6 +1117,7 @@
       ]
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdDetail",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1116,6 +1151,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdDrafts",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1148,6 +1184,7 @@
       ]
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdEdit",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1178,6 +1215,7 @@
       ]
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdEditChangeEditId",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1209,6 +1247,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdEditChangeEditIdMeta",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1243,6 +1282,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdEditMessage",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1274,6 +1314,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdFlows",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1305,6 +1346,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdFlowsActions",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1336,6 +1378,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdFlowsFlowId",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1367,6 +1410,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdHashtags",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1394,6 +1438,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdIn",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1421,6 +1466,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdIsFlowsEnabled",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1448,6 +1494,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdMessage",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1479,6 +1526,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdMessages",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1510,6 +1558,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdMessagesChangeMessageId",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1552,6 +1601,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdMetaDiff",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1582,6 +1632,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdPureRevert",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1615,6 +1666,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdQuery",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1646,6 +1698,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdReviewers",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1681,6 +1734,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdReviewersReviewerId",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1712,6 +1766,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdReviewersReviewerIdVotes",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1743,6 +1798,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionId",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1774,6 +1830,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdActions",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1812,6 +1869,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdArchive",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1843,6 +1901,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdComments",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1878,6 +1937,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdCommentsCommentId",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1912,6 +1972,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdCommit",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1947,6 +2008,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdDescription",
       "fastmcp": {
         "tags": [
           "changes"
@@ -1978,6 +2040,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdDrafts",
       "fastmcp": {
         "tags": [
           "changes"
@@ -2013,6 +2076,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdDraftsDraftCommentId",
       "fastmcp": {
         "tags": [
           "changes"
@@ -2056,6 +2120,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdFiles",
       "fastmcp": {
         "tags": [
           "changes"
@@ -2098,6 +2163,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdFilesFileIdBlame",
       "fastmcp": {
         "tags": [
           "changes"
@@ -2140,6 +2206,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdFilesFileIdContent",
       "fastmcp": {
         "tags": [
           "changes"
@@ -2193,6 +2260,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdFilesFileIdDiff",
       "fastmcp": {
         "tags": [
           "changes"
@@ -2235,6 +2303,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdFilesFileIdDownload",
       "fastmcp": {
         "tags": [
           "changes"
@@ -2270,6 +2339,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdFixesFixIdPreview",
       "fastmcp": {
         "tags": [
           "changes"
@@ -2304,6 +2374,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdMergeable",
       "fastmcp": {
         "tags": [
           "changes"
@@ -2337,6 +2408,7 @@
       ]
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdMergelist",
       "fastmcp": {
         "tags": [
           "changes"
@@ -2390,6 +2462,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdPatch",
       "fastmcp": {
         "tags": [
           "changes"
@@ -2421,6 +2494,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdPortedComments",
       "fastmcp": {
         "tags": [
           "changes"
@@ -2452,6 +2526,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdPortedDrafts",
       "fastmcp": {
         "tags": [
           "changes"
@@ -2489,6 +2564,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdRelated",
       "fastmcp": {
         "tags": [
           "changes"
@@ -2516,6 +2592,7 @@
       ]
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdReview",
       "fastmcp": {
         "tags": [
           "changes"
@@ -2714,6 +2791,7 @@
       ]
     },
     "_meta": {
+      "gerritOperationId": "postChangesChangeIdRevisionsRevisionIdReview",
       "fastmcp": {
         "tags": [
           "changes"
@@ -2749,6 +2827,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdReviewers",
       "fastmcp": {
         "tags": [
           "changes"
@@ -2788,6 +2867,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdReviewersReviewerId",
       "fastmcp": {
         "tags": [
           "changes"
@@ -2823,6 +2903,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdReviewersReviewerIdVotes",
       "fastmcp": {
         "tags": [
           "changes"
@@ -2850,6 +2931,7 @@
       ]
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdRobotcomments",
       "fastmcp": {
         "tags": [
           "changes"
@@ -2881,6 +2963,7 @@
       ]
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdRobotcommentsRobotCommentId",
       "fastmcp": {
         "tags": [
           "changes"
@@ -2916,6 +2999,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdSubmitType",
       "fastmcp": {
         "tags": [
           "changes"
@@ -2939,6 +3023,7 @@
       ]
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRobotcomments",
       "fastmcp": {
         "tags": [
           "changes"
@@ -2972,6 +3057,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdSubmittedTogether",
       "fastmcp": {
         "tags": [
           "changes"
@@ -3015,6 +3101,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdSuggestReviewers",
       "fastmcp": {
         "tags": [
           "changes"
@@ -3046,6 +3133,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdTopic",
       "fastmcp": {
         "tags": [
           "changes"
@@ -3073,6 +3161,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdValidationOptions",
       "fastmcp": {
         "tags": [
           "changes"
@@ -3097,6 +3186,7 @@
       "required": []
     },
     "_meta": {
+      "gerritOperationId": "getConfigServerCaches",
       "fastmcp": {
         "tags": [
           "config"
@@ -3124,6 +3214,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getConfigServerCachesCacheId",
       "fastmcp": {
         "tags": [
           "config"
@@ -3145,6 +3236,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getConfigServerCapabilities",
       "fastmcp": {
         "tags": [
           "config"
@@ -3170,6 +3262,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getConfigServerExperiments",
       "fastmcp": {
         "tags": [
           "config"
@@ -3197,6 +3290,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getConfigServerExperimentsExperimentId",
       "fastmcp": {
         "tags": [
           "config"
@@ -3222,6 +3316,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getConfigServerIndexes",
       "fastmcp": {
         "tags": [
           "config"
@@ -3249,6 +3344,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getConfigServerIndexesIndexId",
       "fastmcp": {
         "tags": [
           "config"
@@ -3276,6 +3372,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getConfigServerIndexesIndexIdVersions",
       "fastmcp": {
         "tags": [
           "config"
@@ -3307,6 +3404,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getConfigServerIndexesIndexIdVersionsIndexVersionId",
       "fastmcp": {
         "tags": [
           "config"
@@ -3328,6 +3426,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getConfigServerInfo",
       "fastmcp": {
         "tags": [
           "config"
@@ -3353,6 +3452,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getConfigServerLabels",
       "fastmcp": {
         "tags": [
           "config"
@@ -3384,6 +3484,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getConfigServerMetrics",
       "fastmcp": {
         "tags": [
           "config"
@@ -3414,6 +3515,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getConfigServerMetricsMetricId",
       "fastmcp": {
         "tags": [
           "config"
@@ -3435,6 +3537,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getConfigServerPreferences",
       "fastmcp": {
         "tags": [
           "config"
@@ -3456,6 +3559,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getConfigServerPreferencesDiff",
       "fastmcp": {
         "tags": [
           "config"
@@ -3477,6 +3581,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getConfigServerPreferencesEdit",
       "fastmcp": {
         "tags": [
           "config"
@@ -3502,6 +3607,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getConfigServerSubmitRequirements",
       "fastmcp": {
         "tags": [
           "config"
@@ -3527,6 +3633,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getConfigServerSummary",
       "fastmcp": {
         "tags": [
           "config"
@@ -3559,6 +3666,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getConfigServerTasks",
       "fastmcp": {
         "tags": [
           "config"
@@ -3586,6 +3694,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getConfigServerTasksTaskId",
       "fastmcp": {
         "tags": [
           "config"
@@ -3611,6 +3720,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getConfigServerTopMenus",
       "fastmcp": {
         "tags": [
           "config"
@@ -3632,6 +3742,7 @@
       "required": []
     },
     "_meta": {
+      "gerritOperationId": "getConfigServerVersion",
       "fastmcp": {
         "tags": [
           "config"
@@ -3701,6 +3812,7 @@
       "required": []
     },
     "_meta": {
+      "gerritOperationId": "getGroups",
       "fastmcp": {
         "tags": [
           "groups"
@@ -3728,6 +3840,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getGroupsGroupId",
       "fastmcp": {
         "tags": [
           "groups"
@@ -3759,6 +3872,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getGroupsGroupIdDescription",
       "fastmcp": {
         "tags": [
           "groups"
@@ -3786,6 +3900,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getGroupsGroupIdDetail",
       "fastmcp": {
         "tags": [
           "groups"
@@ -3817,6 +3932,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getGroupsGroupIdGroups",
       "fastmcp": {
         "tags": [
           "groups"
@@ -3848,6 +3964,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getGroupsGroupIdGroupsSubgroupId",
       "fastmcp": {
         "tags": [
           "groups"
@@ -3879,6 +3996,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getGroupsGroupIdLogAudit",
       "fastmcp": {
         "tags": [
           "groups"
@@ -3913,6 +4031,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getGroupsGroupIdMembers",
       "fastmcp": {
         "tags": [
           "groups"
@@ -3944,6 +4063,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getGroupsGroupIdMembersMemberId",
       "fastmcp": {
         "tags": [
           "groups"
@@ -3975,6 +4095,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getGroupsGroupIdName",
       "fastmcp": {
         "tags": [
           "groups"
@@ -4002,6 +4123,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getGroupsGroupIdOptions",
       "fastmcp": {
         "tags": [
           "groups"
@@ -4029,6 +4151,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getGroupsGroupIdOwner",
       "fastmcp": {
         "tags": [
           "groups"
@@ -4069,6 +4192,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getPlugins",
       "fastmcp": {
         "tags": [
           "plugins"
@@ -4096,6 +4220,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getPluginsPluginIdGerritStatus",
       "fastmcp": {
         "tags": [
           "plugins"
@@ -4159,6 +4284,7 @@
       "required": []
     },
     "_meta": {
+      "gerritOperationId": "getProjects",
       "fastmcp": {
         "tags": [
           "projects"
@@ -4186,6 +4312,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectId",
       "fastmcp": {
         "tags": [
           "projects"
@@ -4217,6 +4344,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdHEAD",
       "fastmcp": {
         "tags": [
           "projects"
@@ -4244,6 +4372,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdAccess",
       "fastmcp": {
         "tags": [
           "projects"
@@ -4290,6 +4419,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdBranches",
       "fastmcp": {
         "tags": [
           "projects"
@@ -4321,6 +4451,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdBranchesBranchId",
       "fastmcp": {
         "tags": [
           "projects"
@@ -4360,6 +4491,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdBranchesBranchIdFilesFileIdContent",
       "fastmcp": {
         "tags": [
           "projects"
@@ -4404,6 +4536,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdBranchesBranchIdFilesFileIdDiff",
       "fastmcp": {
         "tags": [
           "projects"
@@ -4442,6 +4575,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdBranchesBranchIdMergeable",
       "fastmcp": {
         "tags": [
           "projects"
@@ -4488,6 +4622,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdBranchesBranchIdReflog",
       "fastmcp": {
         "tags": [
           "projects"
@@ -4535,6 +4670,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdBranchesBranchIdSuggestReviewers",
       "fastmcp": {
         "tags": [
           "projects"
@@ -4566,6 +4702,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdBranchesBranchIdValidationOptions",
       "fastmcp": {
         "tags": [
           "projects"
@@ -4602,6 +4739,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdCheckAccess",
       "fastmcp": {
         "tags": [
           "projects"
@@ -4639,6 +4777,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdChildren",
       "fastmcp": {
         "tags": [
           "projects"
@@ -4673,6 +4812,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdChildrenChildProjectId",
       "fastmcp": {
         "tags": [
           "projects"
@@ -4704,6 +4844,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdCommitsCommitId",
       "fastmcp": {
         "tags": [
           "projects"
@@ -4741,6 +4882,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdCommitsCommitIdDiff",
       "fastmcp": {
         "tags": [
           "projects"
@@ -4775,6 +4917,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdCommitsCommitIdFiles",
       "fastmcp": {
         "tags": [
           "projects"
@@ -4814,6 +4957,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdCommitsCommitIdFilesFileIdContent",
       "fastmcp": {
         "tags": [
           "projects"
@@ -4858,6 +5002,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdCommitsCommitIdFilesFileIdDiff",
       "fastmcp": {
         "tags": [
           "projects"
@@ -4889,6 +5034,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdCommitsCommitIdIn",
       "fastmcp": {
         "tags": [
           "projects"
@@ -4930,6 +5076,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdCommitsIn",
       "fastmcp": {
         "tags": [
           "projects"
@@ -4957,6 +5104,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdConfig",
       "fastmcp": {
         "tags": [
           "projects"
@@ -4991,6 +5139,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdDashboards",
       "fastmcp": {
         "tags": [
           "projects"
@@ -5025,6 +5174,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdDashboardsDashboardId",
       "fastmcp": {
         "tags": [
           "projects"
@@ -5056,6 +5206,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdDescription",
       "fastmcp": {
         "tags": [
           "projects"
@@ -5093,6 +5244,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdLabels",
       "fastmcp": {
         "tags": [
           "projects"
@@ -5124,6 +5276,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdLabelsLabelId",
       "fastmcp": {
         "tags": [
           "projects"
@@ -5155,6 +5308,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdParent",
       "fastmcp": {
         "tags": [
           "projects"
@@ -5182,6 +5336,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdStatisticsGit",
       "fastmcp": {
         "tags": [
           "projects"
@@ -5216,6 +5371,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdSubmitRequirements",
       "fastmcp": {
         "tags": [
           "projects"
@@ -5247,6 +5403,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdSubmitRequirementsSubmitRequirementId",
       "fastmcp": {
         "tags": [
           "projects"
@@ -5278,6 +5435,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdSubmitRequirementsTemplates",
       "fastmcp": {
         "tags": [
           "projects"
@@ -5309,6 +5467,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdSubmitRequirementsTemplatesSubmitRequirementTemplateId",
       "fastmcp": {
         "tags": [
           "projects"
@@ -5358,6 +5517,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdTags",
       "fastmcp": {
         "tags": [
           "projects"
@@ -5389,6 +5549,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdTagsTagId",
       "fastmcp": {
         "tags": [
           "projects"

@@ -11,6 +11,7 @@ from fastmcp.server.providers.openapi import MCPType, RouteMap
 from jsonschema import Draft202012Validator
 
 from .profiles import REVIEW, operations
+from .skills import OPERATION_ID_META
 
 
 class GuardedClient(httpx.AsyncClient):
@@ -151,9 +152,24 @@ async def bridge(spec: dict, base_url: str, *, transport=None, auth=None, cookie
             client=client,
             name="Gerrit OpenAPI bridge",
             route_maps=maps,
+            mcp_component_fn=_stamp_operation_id,
             strict_input_validation=True,
             # Response compatibility is not established for every endpoint.
             # Keep JSON structured, but avoid promising full output validation.
             validate_output=False,
         )
         yield server
+
+
+def _stamp_operation_id(route, component):
+    """from_openapi component hook: record the route's operationId in the tool's meta.
+
+    The route object is dropped when a server is mounted (serve-all wraps tools as
+    FastMCPProviderTool, losing ``_route``), but tool meta is copied onto the wrapper -- so
+    this lets the skills adapter recover the true operationId -> tool-name binding even after
+    mounting (see skills.OPERATION_ID_META)."""
+    operation_id = getattr(route, "operation_id", None)
+    if operation_id:
+        meta = dict(component.meta or {})
+        meta[OPERATION_ID_META] = operation_id
+        component.meta = meta

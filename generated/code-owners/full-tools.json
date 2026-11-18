@@ -25,6 +25,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdCodeOwnersStatus",
       "fastmcp": {
         "tags": [
           "changes"
@@ -69,6 +70,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "postChangesChangeIdRevisionsRevisionIdCodeOwnersCheckConfig",
       "fastmcp": {
         "tags": [
           "changes"
@@ -124,6 +126,7 @@
       ]
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdCodeOwnersPathId",
       "fastmcp": {
         "tags": [
           "changes"
@@ -167,6 +170,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdOwnedPaths",
       "fastmcp": {
         "tags": [
           "changes"
@@ -198,6 +202,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdBranchesBranchIdCodeOwnersBranchConfig",
       "fastmcp": {
         "tags": [
           "projects"
@@ -241,6 +246,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdBranchesBranchIdCodeOwnersCheck",
       "fastmcp": {
         "tags": [
           "projects"
@@ -272,6 +278,7 @@
       ]
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdBranchesBranchIdCodeOwnersConfigPathId",
       "fastmcp": {
         "tags": [
           "projects"
@@ -316,6 +323,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdBranchesBranchIdCodeOwnersConfigFiles",
       "fastmcp": {
         "tags": [
           "projects"
@@ -359,6 +367,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "postProjectsProjectIdBranchesBranchIdCodeOwnersRename",
       "fastmcp": {
         "tags": [
           "projects"
@@ -417,6 +426,7 @@
       ]
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdBranchesBranchIdCodeOwnersPathId",
       "fastmcp": {
         "tags": [
           "projects"
@@ -468,6 +478,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "postProjectsProjectIdCodeOwnersCheckConfig",
       "fastmcp": {
         "tags": [
           "projects"
@@ -495,6 +506,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getProjectsProjectIdCodeOwnersProjectConfig",
       "fastmcp": {
         "tags": [
           "projects"
@@ -643,6 +655,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "putProjectsProjectIdCodeOwnersProjectConfig",
       "fastmcp": {
         "tags": [
           "projects"

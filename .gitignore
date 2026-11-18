@@ -5,3 +5,9 @@ __pycache__/
 *.egg-info/
 *.py[cod]
 .DS_Store
+
+# Local-dev skills root. The host resolves GERRIT_AGENT_SKILLS_ROOT, else this
+# symlink to a sibling gerrit-agent-skills checkout. It is environment-specific
+# and would dangle in a clone-only checkout, so it is not tracked. A missing
+# link simply degrades the host to tools-only.
+.claude/skills

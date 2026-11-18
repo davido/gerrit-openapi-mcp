@@ -19,6 +19,7 @@
       ]
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdChecks",
       "fastmcp": {
         "tags": [
           "changes"
@@ -63,6 +64,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdChecksCheckId",
       "fastmcp": {
         "tags": [
           "changes"
@@ -88,6 +90,7 @@
       }
     },
     "_meta": {
+      "gerritOperationId": "getPluginsChecksCheckers",
       "fastmcp": {
         "tags": [
           "checkers"
@@ -115,6 +118,7 @@
       "additionalProperties": true
     },
     "_meta": {
+      "gerritOperationId": "getPluginsChecksCheckersCheckerId",
       "fastmcp": {
         "tags": [
           "checkers"

@@ -14,7 +14,7 @@ from fastmcp import Client, FastMCP
 from .bridge import bridge
 from .generated import load_generated_spec
 from .profiles import API_SPECS, PROFILES, derive, load_catalog, load_spec, operations
-from .skills import add_skills
+from .skills import add_skills, tool_bindings
 
 
 async def generate(spec: dict, output: Path, *, api: str = "core"):
@@ -74,9 +74,12 @@ async def serve(profile: str, base_url: str, *, api: str = "core"):
         auth=_upstream_auth(),
         cookie=os.environ.get("GERRIT_COOKIE"),
     ) as server:
-        # The change-screen skill drives the core read tools; serve it alongside.
-        if api == "core":
-            add_skills(server)
+        # Host configured skills in every serve mode (so the skills-root config is honored
+        # and validated here too), advertising only those whose required operations are served
+        # under their own name. Bindings come from the real provider's tools, so FastMCP's
+        # renames AND collision suffixes are reflected -- a reconstructed name set is not safe.
+        bindings = tool_bindings(await server.list_tools(run_middleware=False))
+        add_skills(server, bindings)
         await server.run_async(transport="stdio", show_banner=False)
 
 
@@ -121,7 +124,11 @@ async def serve_all(base_url: str, profiles: dict[str, str]):
         auth=_upstream_auth(),
         cookie=os.environ.get("GERRIT_COOKIE"),
     ) as server:
-        add_skills(server)
+        # Gate skills against the mounted server's real operationId -> tool-name bindings
+        # (ground truth): the mount namespaces plugin tools and FastMCP caps/suffixes names,
+        # so only a binding built from the actual tools reflects what a skill can call.
+        bindings = tool_bindings(await server.list_tools(run_middleware=False))
+        add_skills(server, bindings)
         await server.run_async(transport="stdio", show_banner=False)
 
 

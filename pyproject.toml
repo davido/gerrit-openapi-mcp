@@ -23,11 +23,13 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = ["gerrit_openapi_mcp"]
 
-# Ship the generated specs and skills inside the wheel so a `uvx --from git+...`
-# install serves without the sibling gerrit-openapi checkout or ~/.claude/skills.
+# Ship the generated specs inside the wheel so a `uvx --from git+...` install serves
+# without the sibling gerrit-openapi checkout. Skills are NOT bundled: this server is a
+# skill-agnostic host that serves whatever GERRIT_AGENT_SKILLS_ROOT points at
+# (or the .claude/skills dev symlink), so it must not force-include an external symlink
+# target -- doing so broke a clean-checkout wheel build.
 [tool.hatch.build.targets.wheel.force-include]
 "generated" = "gerrit_openapi_mcp/generated"
-".claude/skills" = "gerrit_openapi_mcp/skills_data"
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"

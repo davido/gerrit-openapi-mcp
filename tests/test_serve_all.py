@@ -3,7 +3,7 @@ import pytest
 from fastmcp import Client
 
 from gerrit_openapi_mcp.cli import mounted_server
-from gerrit_openapi_mcp.skills import add_skills
+from gerrit_openapi_mcp.skills import add_skills, tool_bindings
 
 # The tools the change-screen skill calls: core reads (bare) + the prefixed
 # checks read. If the mount changed names, this cross-check catches it.
@@ -52,12 +52,25 @@ async def test_plugin_off_is_omitted():
     assert any(n.startswith("code_owners_") for n in names)
 
 
-async def test_skill_served_on_mounted_server():
+async def test_skill_served_on_mounted_server(tmp_path, monkeypatch):
+    # Sibling-independent: a synthetic skill requiring a real core read op, gated against the
+    # mounted server's ACTUAL tool names (ground truth), served from a configured root.
+    root = tmp_path / "skills"
+    (root / "demo").mkdir(parents=True)
+    (root / "demo" / "SKILL.md").write_text(
+        "---\nname: demo\ndescription: Demo skill needing a core read.\n---\n# demo\n",
+        encoding="utf-8",
+    )
+    (root / "demo" / "requires.json").write_text(
+        '{"required": [{"operationId": "getChanges"}]}', encoding="utf-8"
+    )
+    monkeypatch.setenv("GERRIT_AGENT_SKILLS_ROOT", str(root))
     profiles = {"core": "read_only", "checks": "read_only", "code-owners": "read_only"}
     async with mounted_server(
         "https://gerrit.invalid", profiles, transport=httpx.MockTransport(_reject)
     ) as server:
-        assert "gerrit-change-screen" in add_skills(server)
+        bindings = tool_bindings(await server.list_tools(run_middleware=False))
+        assert "demo" in add_skills(server, bindings)
         async with Client(server) as client:
-            skill = await client.read_skill("skill://gerrit-change-screen/SKILL.md")
-    assert skill.name == "gerrit-change-screen"
+            skill = await client.read_skill("skill://demo/SKILL.md")
+    assert skill.name == "demo"
