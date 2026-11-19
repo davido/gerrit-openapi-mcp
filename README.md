@@ -17,16 +17,34 @@ Runs on FastMCP **4.2** and Python 3.12+.
 | `full` | 339 | Every operation in the pinned core document |
 | `read_only` | 160 | Cataloged GET operations; default when serving |
 | `agent` | 161 | Same reads plus one constrained revision review |
+| `review_draft` | 161 | Same reads plus one constrained draft-comment create |
 
 Two plugins are also supported, each with its own source hash and operation
-catalog: **checks** (`--api checks`: 9 / 4 / 4 tools) and **code-owners**
-(`--api code-owners`: 13 / 9 / 9). For both, `read_only` and `agent` expose only
-reads. Plugin writes require the explicit `full` profile.
+catalog: **checks** (`--api checks`: 9 / 4 / 4 / 4 tools) and **code-owners**
+(`--api code-owners`: 13 / 9 / 9 / 9), for `full` / `read_only` / `agent` /
+`review_draft`. For both plugins, `read_only`, `agent`, and `review_draft` expose
+only reads. Plugin writes require the explicit `full` profile.
 
 The `agent` profile removes every POST/PUT/DELETE except one revision review. Its
 review schema permits `message`, `comments`, `drafts`, `is_ai`, and a `labels`
 object bounded to `Code-Review` ∈ {−1, 0, +1}. It has no `on_behalf_of`,
 `ready`, reviewers, or other controls.
+
+The `review_draft` profile removes every POST/PUT/DELETE except creating a draft
+comment (`putChangesChangeIdRevisionsRevisionIdDrafts`). It never publishes,
+votes, or submits — `postChangesChangeIdRevisionsRevisionIdReview` is absent as a
+tool and rejected at the guard — and the create carries no query string, so a
+`?notify=` cannot ride along. The safety comes from the addressed endpoint plus
+the restricted route set, not from validating the draft body; the guard checks
+the operation, method, query, and content-type, not the full `DraftInput` schema.
+
+Draft update/delete are deferred for two reasons, and only the first is
+mechanical: their operationIds exceed FastMCP's 56-char tool-name cap and would
+need an alias; more importantly, create-only cannot overwrite or delete a draft a
+human is concurrently editing (Gerrit's draft update/delete have no
+optimistic-concurrency check). Adding an alias later would not resolve that
+concurrency problem. The profile backs a personal, create-only review assistant:
+an agent drafts inline comments the human later publishes.
 
 `gerrit_openapi_mcp/catalog.json` pins explicit method/path/profile decisions and
 a source hash. A changed spec (new operation or request field) stops generation
@@ -104,10 +122,11 @@ Example host config. The committed `.mcp.json` wires `gerrit` (read-only),
 
 ## Verified
 
-53 tests pass (Ruff + formatting clean): per-profile tool registration, the
-outgoing guard (origin/path/profile checks, the bounded −1/0/+1 review, ±2 and
-other writes rejected before any request reaches the wire, no redirect-following,
-XSSI handling), the drift gate, the mounted `serve-all` topology, and both served
+68 tests pass (Ruff + formatting clean): per-profile tool registration, the
+outgoing guard (origin/path/profile checks, the bounded −1/0/+1 review, the
+`review_draft` create-only write with publish/vote/submit and draft update/delete
+rejected before any request reaches the wire, no redirect-following, XSSI
+handling), the drift gate, the mounted `serve-all` topology, and both served
 skills. The suite also pins that stock FastMCP 4.2 no longer clamps the nested
 bound ([#6457](https://github.com/PrefectHQ/fastmcp/issues/6457)), so the guard,
 not the framework, enforces it.

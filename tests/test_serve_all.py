@@ -3,6 +3,7 @@ import pytest
 from fastmcp import Client
 
 from gerrit_openapi_mcp.cli import mounted_server
+from gerrit_openapi_mcp.profiles import CREATE_DRAFT
 from gerrit_openapi_mcp.skills import add_skills, tool_bindings
 
 # The tools the change-screen skill calls: core reads (bare) + the prefixed
@@ -42,6 +43,45 @@ async def test_mounted_server_merges_core_bare_and_plugins_prefixed():
     assert not any(n.startswith("core_") for n in names)
     # Every tool the change-screen skill calls resolves on the mounted server.
     assert CHANGE_SCREEN_TOOLS <= names
+
+
+async def test_mounted_review_draft_creates_draft_through_the_mount(tmp_path):
+    # The positive create path exercised through the real serve-all mount (not just
+    # GuardedClient): the create reaches the transport, and publish stays absent.
+    requests = []
+
+    def record(request):
+        requests.append(request)
+        return httpx.Response(
+            200,
+            content=b')]}\'\n{"id":"d1"}',
+            headers={"Content-Type": "application/json"},
+        )
+
+    async with (
+        mounted_server(
+            "https://gerrit.invalid",
+            {"core": "review_draft", "checks": "off", "code-owners": "off"},
+            transport=httpx.MockTransport(record),
+        ) as server,
+        Client(server) as client,
+    ):
+        names = {tool.name for tool in await client.list_tools()}
+        assert CREATE_DRAFT in names
+        assert "postChangesChangeIdRevisionsRevisionIdReview" not in names
+        result = await client.call_tool(
+            CREATE_DRAFT,
+            {
+                "change-id": "123",
+                "revision-id": "current",
+                "path": "a.txt",
+                "message": "m",
+            },
+        )
+    assert not result.is_error
+    assert len(requests) == 1
+    assert requests[0].method == "PUT"
+    assert requests[0].url.path.endswith("/changes/123/revisions/current/drafts")
 
 
 async def test_plugin_off_is_omitted():

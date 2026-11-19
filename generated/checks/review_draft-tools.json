@@ -1,0 +1,129 @@
+[
+  {
+    "name": "getChangesChangeIdRevisionsRevisionIdChecks",
+    "title": "Getchangeschangeidrevisionsrevisionidchecks",
+    "description": "Retrieves all checks for a given revision and change.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "change-id": {
+          "type": "string"
+        },
+        "revision-id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "change-id",
+        "revision-id"
+      ]
+    },
+    "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdChecks",
+      "fastmcp": {
+        "tags": [
+          "changes"
+        ]
+      }
+    }
+  },
+  {
+    "name": "getChangesChangeIdRevisionsRevisionIdChecksCheckId",
+    "title": "Getchangeschangeidrevisionsrevisionidcheckscheckid",
+    "description": "Retrieves a check.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "change-id": {
+          "type": "string"
+        },
+        "revision-id": {
+          "type": "string"
+        },
+        "check-id": {
+          "type": "string"
+        },
+        "O": {
+          "type": "string"
+        },
+        "o": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "change-id",
+        "revision-id",
+        "check-id"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "_meta": {
+      "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdChecksCheckId",
+      "fastmcp": {
+        "tags": [
+          "changes"
+        ]
+      }
+    }
+  },
+  {
+    "name": "getPluginsChecksCheckers",
+    "title": "Getpluginscheckscheckers",
+    "description": "Retrieves all checkers.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
+    },
+    "_meta": {
+      "gerritOperationId": "getPluginsChecksCheckers",
+      "fastmcp": {
+        "tags": [
+          "checkers"
+        ]
+      }
+    }
+  },
+  {
+    "name": "getPluginsChecksCheckersCheckerId",
+    "title": "Getpluginscheckscheckerscheckerid",
+    "description": "Retrieves a checker.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "checker-id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "checker-id"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "_meta": {
+      "gerritOperationId": "getPluginsChecksCheckersCheckerId",
+      "fastmcp": {
+        "tags": [
+          "checkers"
+        ]
+      }
+    }
+  }
+]

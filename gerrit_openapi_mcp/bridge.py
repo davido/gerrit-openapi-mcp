@@ -10,7 +10,7 @@ from fastmcp import FastMCP
 from fastmcp.server.providers.openapi import MCPType, RouteMap
 from jsonschema import Draft202012Validator
 
-from .profiles import REVIEW, operations
+from .profiles import CREATE_DRAFT, REVIEW, operations
 from .skills import OPERATION_ID_META
 
 
@@ -105,6 +105,19 @@ class GuardedClient(httpx.AsyncClient):
                 type(value) is not int for value in payload.get("labels", {}).values()
             ):
                 raise PermissionError("Votes must be integers, without coercion")
+        if self.profile == "review_draft" and request.method not in ("GET", "HEAD"):
+            # The only write is creating a draft. Safety rests on the addressed
+            # endpoint plus the restricted route set, NOT on validating the draft
+            # body: we check the operation, no query string (so ?notify= and the
+            # like cannot ride along), and JSON content-type. Update/delete are
+            # not in the profile's routes and are already rejected above.
+            if operation["operationId"] != CREATE_DRAFT or target.query:
+                raise PermissionError("Only draft creation is permitted")
+            if (
+                request.headers.get("content-type", "").split(";", 1)[0]
+                != "application/json"
+            ):
+                raise PermissionError("Draft creation requires JSON")
         # FastMCP supplies its own Request. HTTPX's cookie jar is not merged by send.
         # Only server-configured cookies may reach this bridge's upstream.
         if "Cookie" in self.headers:

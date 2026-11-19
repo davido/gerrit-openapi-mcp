@@ -15,6 +15,10 @@
     "agent": {
       "operations": 9,
       "tools": 9
+    },
+    "review_draft": {
+      "operations": 9,
+      "tools": 9
     }
   }
 }

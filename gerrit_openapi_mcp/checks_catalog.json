@@ -7,7 +7,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdChecksCheckId": {
@@ -16,7 +17,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getPluginsChecksCheckers": {
@@ -25,7 +27,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getPluginsChecksCheckersCheckerId": {
@@ -34,7 +37,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "postChangesChangeIdRevisionsRevisionIdChecks": {

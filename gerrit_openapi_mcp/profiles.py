@@ -6,8 +6,12 @@ import json
 from pathlib import Path
 
 METHODS = {"get", "post", "put", "delete", "patch", "head", "options"}
-PROFILES = ("full", "read_only", "agent")
+PROFILES = ("full", "read_only", "agent", "review_draft")
 REVIEW = "postChangesChangeIdRevisionsRevisionIdReview"
+# The single bounded write of the review_draft profile: create a new draft comment.
+# Its operationId is 43 chars (<= FastMCP's 56-char cap), so it needs no alias.
+# Draft update/delete (57/60 chars) are deferred with their alias work.
+CREATE_DRAFT = "putChangesChangeIdRevisionsRevisionIdDrafts"
 DEFAULT_SPEC = Path(__file__).resolve().parents[2] / "gerrit-openapi/core/openapi.json"
 DEFAULT_CATALOG = Path(__file__).with_name("catalog.json")
 API_SPECS = {

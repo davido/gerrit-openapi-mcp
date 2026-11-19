@@ -259,7 +259,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getAccounts": {
@@ -268,7 +269,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getAccountsAccountId": {
@@ -277,7 +279,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getAccountsAccountIdActive": {
@@ -286,7 +289,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getAccountsAccountIdAgreements": {
@@ -295,7 +299,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getAccountsAccountIdAvatar": {
@@ -304,7 +309,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getAccountsAccountIdAvatarChangeUrl": {
@@ -313,7 +319,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getAccountsAccountIdCapabilities": {
@@ -322,7 +329,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getAccountsAccountIdCapabilitiesCapabilityId": {
@@ -331,7 +339,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getAccountsAccountIdDetail": {
@@ -340,7 +349,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getAccountsAccountIdEmails": {
@@ -349,7 +359,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getAccountsAccountIdEmailsEmailId": {
@@ -358,7 +369,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getAccountsAccountIdExternalIds": {
@@ -367,7 +379,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getAccountsAccountIdGpgkeys": {
@@ -376,7 +389,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getAccountsAccountIdGpgkeysGpgKeyId": {
@@ -385,7 +399,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getAccountsAccountIdGroups": {
@@ -394,7 +409,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getAccountsAccountIdName": {
@@ -403,7 +419,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getAccountsAccountIdOauthtoken": {
@@ -419,7 +436,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getAccountsAccountIdPreferencesDiff": {
@@ -428,7 +446,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getAccountsAccountIdPreferencesEdit": {
@@ -437,7 +456,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getAccountsAccountIdSshkeys": {
@@ -446,7 +466,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getAccountsAccountIdSshkeysSshKeyId": {
@@ -455,7 +476,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getAccountsAccountIdStarredChanges": {
@@ -464,7 +486,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getAccountsAccountIdState": {
@@ -473,7 +496,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getAccountsAccountIdStatus": {
@@ -482,7 +506,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getAccountsAccountIdTokens": {
@@ -491,7 +516,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getAccountsAccountIdUsername": {
@@ -500,7 +526,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getAccountsAccountIdWatchedProjects": {
@@ -509,7 +536,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChanges": {
@@ -518,7 +546,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeId": {
@@ -527,7 +556,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdAttention": {
@@ -536,7 +566,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdCheck": {
@@ -545,7 +576,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdComments": {
@@ -554,7 +586,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdCustomKeyedValues": {
@@ -563,7 +596,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdDetail": {
@@ -572,7 +606,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdDrafts": {
@@ -581,7 +616,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdEdit": {
@@ -590,7 +626,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdEditChangeEditId": {
@@ -599,7 +636,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdEditChangeEditIdMeta": {
@@ -608,7 +646,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdEditMessage": {
@@ -617,7 +656,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdFlows": {
@@ -626,7 +666,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdFlowsActions": {
@@ -635,7 +676,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdFlowsFlowId": {
@@ -644,7 +686,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdHashtags": {
@@ -653,7 +696,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdIn": {
@@ -662,7 +706,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdIsFlowsEnabled": {
@@ -671,7 +716,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdMessage": {
@@ -680,7 +726,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdMessages": {
@@ -689,7 +736,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdMessagesChangeMessageId": {
@@ -698,7 +746,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdMetaDiff": {
@@ -707,7 +756,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdPureRevert": {
@@ -716,7 +766,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdQuery": {
@@ -725,7 +776,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdReviewers": {
@@ -734,7 +786,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdReviewersReviewerId": {
@@ -743,7 +796,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdReviewersReviewerIdVotes": {
@@ -752,7 +806,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionId": {
@@ -761,7 +816,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdActions": {
@@ -770,7 +826,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdArchive": {
@@ -779,7 +836,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdComments": {
@@ -788,7 +846,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdCommentsCommentId": {
@@ -797,7 +856,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdCommit": {
@@ -806,7 +866,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdDescription": {
@@ -815,7 +876,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdDrafts": {
@@ -824,7 +886,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdDraftsDraftCommentId": {
@@ -833,7 +896,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdFiles": {
@@ -842,7 +906,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdFilesFileIdBlame": {
@@ -851,7 +916,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdFilesFileIdContent": {
@@ -860,7 +926,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdFilesFileIdDiff": {
@@ -869,7 +936,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdFilesFileIdDownload": {
@@ -878,7 +946,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdFixesFixIdPreview": {
@@ -887,7 +956,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdMergeable": {
@@ -896,7 +966,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdMergelist": {
@@ -905,7 +976,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdPatch": {
@@ -914,7 +986,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdPortedComments": {
@@ -923,7 +996,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdPortedDrafts": {
@@ -932,7 +1006,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdRelated": {
@@ -941,7 +1016,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdReview": {
@@ -950,7 +1026,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdReviewers": {
@@ -959,7 +1036,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdReviewersReviewerId": {
@@ -968,7 +1046,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdReviewersReviewerIdVotes": {
@@ -977,7 +1056,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdRobotcomments": {
@@ -986,7 +1066,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdRobotcommentsRobotCommentId": {
@@ -995,7 +1076,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdSubmitType": {
@@ -1004,7 +1086,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRobotcomments": {
@@ -1013,7 +1096,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdSubmittedTogether": {
@@ -1022,7 +1106,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdSuggestReviewers": {
@@ -1031,7 +1116,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdTopic": {
@@ -1040,7 +1126,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdValidationOptions": {
@@ -1049,7 +1136,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getConfigServerCaches": {
@@ -1058,7 +1146,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getConfigServerCachesCacheId": {
@@ -1067,7 +1156,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getConfigServerCapabilities": {
@@ -1076,7 +1166,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getConfigServerExperiments": {
@@ -1085,7 +1176,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getConfigServerExperimentsExperimentId": {
@@ -1094,7 +1186,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getConfigServerIndexes": {
@@ -1103,7 +1196,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getConfigServerIndexesIndexId": {
@@ -1112,7 +1206,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getConfigServerIndexesIndexIdVersions": {
@@ -1121,7 +1216,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getConfigServerIndexesIndexIdVersionsIndexVersionId": {
@@ -1130,7 +1226,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getConfigServerInfo": {
@@ -1139,7 +1236,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getConfigServerLabels": {
@@ -1148,7 +1246,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getConfigServerMetrics": {
@@ -1157,7 +1256,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getConfigServerMetricsMetricId": {
@@ -1166,7 +1266,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getConfigServerPreferences": {
@@ -1175,7 +1276,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getConfigServerPreferencesDiff": {
@@ -1184,7 +1286,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getConfigServerPreferencesEdit": {
@@ -1193,7 +1296,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getConfigServerSubmitRequirements": {
@@ -1202,7 +1306,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getConfigServerSummary": {
@@ -1211,7 +1316,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getConfigServerTasks": {
@@ -1220,7 +1326,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getConfigServerTasksTaskId": {
@@ -1229,7 +1336,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getConfigServerTopMenus": {
@@ -1238,7 +1346,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getConfigServerVersion": {
@@ -1247,7 +1356,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getGroups": {
@@ -1256,7 +1366,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getGroupsGroupId": {
@@ -1265,7 +1376,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getGroupsGroupIdDescription": {
@@ -1274,7 +1386,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getGroupsGroupIdDetail": {
@@ -1283,7 +1396,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getGroupsGroupIdGroups": {
@@ -1292,7 +1406,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getGroupsGroupIdGroupsSubgroupId": {
@@ -1301,7 +1416,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getGroupsGroupIdLogAudit": {
@@ -1310,7 +1426,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getGroupsGroupIdMembers": {
@@ -1319,7 +1436,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getGroupsGroupIdMembersMemberId": {
@@ -1328,7 +1446,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getGroupsGroupIdName": {
@@ -1337,7 +1456,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getGroupsGroupIdOptions": {
@@ -1346,7 +1466,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getGroupsGroupIdOwner": {
@@ -1355,7 +1476,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getPlugins": {
@@ -1364,7 +1486,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getPluginsPluginIdGerritStatus": {
@@ -1373,7 +1496,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjects": {
@@ -1382,7 +1506,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectId": {
@@ -1391,7 +1516,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdAccess": {
@@ -1400,7 +1526,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdBranches": {
@@ -1409,7 +1536,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdBranchesBranchId": {
@@ -1418,7 +1546,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdBranchesBranchIdFilesFileIdContent": {
@@ -1427,7 +1556,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdBranchesBranchIdFilesFileIdDiff": {
@@ -1436,7 +1566,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdBranchesBranchIdMergeable": {
@@ -1445,7 +1576,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdBranchesBranchIdReflog": {
@@ -1454,7 +1586,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdBranchesBranchIdSuggestReviewers": {
@@ -1463,7 +1596,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdBranchesBranchIdValidationOptions": {
@@ -1472,7 +1606,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdCheckAccess": {
@@ -1481,7 +1616,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdChildren": {
@@ -1490,7 +1626,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdChildrenChildProjectId": {
@@ -1499,7 +1636,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdCommitsCommitId": {
@@ -1508,7 +1646,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdCommitsCommitIdDiff": {
@@ -1517,7 +1656,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdCommitsCommitIdFiles": {
@@ -1526,7 +1666,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdCommitsCommitIdFilesFileIdContent": {
@@ -1535,7 +1676,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdCommitsCommitIdFilesFileIdDiff": {
@@ -1544,7 +1686,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdCommitsCommitIdIn": {
@@ -1553,7 +1696,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdCommitsIn": {
@@ -1562,7 +1706,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdConfig": {
@@ -1571,7 +1716,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdDashboards": {
@@ -1580,7 +1726,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdDashboardsDashboardId": {
@@ -1589,7 +1736,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdDescription": {
@@ -1598,7 +1746,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdHEAD": {
@@ -1607,7 +1756,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdLabels": {
@@ -1616,7 +1766,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdLabelsLabelId": {
@@ -1625,7 +1776,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdParent": {
@@ -1634,7 +1786,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdStatisticsGit": {
@@ -1643,7 +1796,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdSubmitRequirements": {
@@ -1652,7 +1806,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdSubmitRequirementsSubmitRequirementId": {
@@ -1661,7 +1816,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdSubmitRequirementsTemplates": {
@@ -1670,7 +1826,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdSubmitRequirementsTemplatesSubmitRequirementTemplateId": {
@@ -1679,7 +1836,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdTags": {
@@ -1688,7 +1846,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdTagsTagId": {
@@ -1697,7 +1856,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "postAccountsAccountIdDraftsDelete": {
@@ -2496,7 +2656,8 @@
       "method": "PUT",
       "path": "/changes/{change-id}/revisions/{revision-id}/drafts",
       "profiles": [
-        "full"
+        "full",
+        "review_draft"
       ]
     },
     "putChangesChangeIdRevisionsRevisionIdDraftsDraftCommentId": {

@@ -7,7 +7,13 @@ from fastmcp import Client, FastMCP
 from fastmcp.exceptions import ToolError
 
 from gerrit_openapi_mcp.bridge import GuardedClient, bridge
-from gerrit_openapi_mcp.profiles import REVIEW, derive, load_spec, operations
+from gerrit_openapi_mcp.profiles import (
+    CREATE_DRAFT,
+    REVIEW,
+    derive,
+    load_spec,
+    operations,
+)
 
 
 @pytest.fixture(scope="module")
@@ -16,7 +22,8 @@ def source():
 
 
 @pytest.mark.parametrize(
-    "profile,count", [("full", 339), ("read_only", 160), ("agent", 161)]
+    "profile,count",
+    [("full", 339), ("read_only", 160), ("agent", 161), ("review_draft", 161)],
 )
 async def test_actual_spec_registers_complete_profile(source, profile, count):
     def unexpected(request):
@@ -34,7 +41,7 @@ async def test_actual_spec_registers_complete_profile(source, profile, count):
     assert len({tool.name for tool in tools}) == count
     if profile != "full":
         assert all(
-            method == "GET" or op["operationId"] == REVIEW
+            method == "GET" or op["operationId"] in (REVIEW, CREATE_DRAFT)
             for method, _, op in operations(spec)
         )
         names = {tool.name for tool in tools}
@@ -44,6 +51,90 @@ async def test_actual_spec_registers_complete_profile(source, profile, count):
         assert not any(name.startswith("delete") for name in names)
         # Secret-bearing read: the OAuth access token is reachable only in full.
         assert "getAccountsAccountIdOauthtoken" not in names
+
+
+async def test_review_draft_create_reaches_transport(source):
+    calls = []
+    transport = httpx.MockTransport(
+        lambda r: calls.append(r) or httpx.Response(200, json={"id": "d1"})
+    )
+    async with GuardedClient(
+        derive(source, "review_draft"),
+        base_url="https://gerrit.invalid",
+        transport=transport,
+    ) as client:
+        resp = await client.put(
+            "/changes/123/revisions/current/drafts",
+            json={"path": "a.txt", "message": "m"},
+        )
+    assert resp.status_code == 200 and len(calls) == 1
+
+
+@pytest.mark.parametrize(
+    "method,path,body",
+    [
+        # Publish: the bounded review write is NOT in review_draft.
+        ("POST", "/changes/123/revisions/current/review", {"message": "x"}),
+        # Draft update / delete are deferred (not in the profile's routes).
+        ("PUT", "/changes/123/revisions/current/drafts/abc", {"message": "x"}),
+        ("DELETE", "/changes/123/revisions/current/drafts/abc", None),
+        # Other writes stay rejected.
+        ("POST", "/changes/123/submit", {}),
+        ("POST", "/changes/123/abandon", {}),
+    ],
+)
+async def test_review_draft_rejects_non_create_writes(source, method, path, body):
+    calls = []
+    transport = httpx.MockTransport(
+        lambda r: calls.append(r) or httpx.Response(200, json={})
+    )
+    async with GuardedClient(
+        derive(source, "review_draft"),
+        base_url="https://gerrit.invalid",
+        transport=transport,
+    ) as client:
+        with pytest.raises(PermissionError):
+            await client.request(method, path, json=body)
+    assert not calls
+
+
+async def test_review_draft_rejects_query_on_create(source):
+    # A query string (e.g. ?notify=ALL) cannot ride along with the create write.
+    calls = []
+    transport = httpx.MockTransport(
+        lambda r: calls.append(r) or httpx.Response(200, json={})
+    )
+    async with GuardedClient(
+        derive(source, "review_draft"),
+        base_url="https://gerrit.invalid",
+        transport=transport,
+    ) as client:
+        with pytest.raises(PermissionError):
+            await client.put(
+                "/changes/123/revisions/current/drafts?notify=ALL",
+                json={"message": "x"},
+            )
+    assert not calls
+
+
+async def test_review_draft_excludes_publish_and_draft_mutators(source):
+    def unexpected(request):
+        pytest.fail("Listing tools attempted an HTTP request")
+
+    async with (
+        bridge(
+            derive(source, "review_draft"),
+            "https://gerrit.invalid",
+            transport=httpx.MockTransport(unexpected),
+        ) as server,
+        Client(server) as client,
+    ):
+        names = {tool.name for tool in await client.list_tools()}
+    assert CREATE_DRAFT in names  # the one bounded write is present
+    assert REVIEW not in names  # publish is absent-as-tool
+    assert not any(name.startswith("delete") for name in names)
+    # The 57/60-char update/delete draft ops are deferred and absent entirely.
+    assert "putChangesChangeIdRevisionsRevisionIdDraftsDraftCommentId" not in names
 
 
 async def test_allowed_read_query_and_xssi_response(source):

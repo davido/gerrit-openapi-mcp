@@ -42,7 +42,10 @@ def checks_spec(source, profile="read_only"):
     return derive(source, profile, load_catalog("checks"))
 
 
-@pytest.mark.parametrize("profile,count", [("full", 9), ("read_only", 4), ("agent", 4)])
+@pytest.mark.parametrize(
+    "profile,count",
+    [("full", 9), ("read_only", 4), ("agent", 4), ("review_draft", 4)],
+)
 async def test_checks_catalog_and_profile_omission(source, profile, count):
     def unexpected(request):
         pytest.fail("Listing checks tools attempted HTTP")

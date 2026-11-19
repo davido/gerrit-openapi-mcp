@@ -15,6 +15,10 @@
     "agent": {
       "operations": 161,
       "tools": 161
+    },
+    "review_draft": {
+      "operations": 161,
+      "tools": 161
     }
   }
 }

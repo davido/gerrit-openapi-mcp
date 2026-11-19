@@ -7,7 +7,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdCodeOwnersPathId": {
@@ -16,7 +17,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getChangesChangeIdRevisionsRevisionIdOwnedPaths": {
@@ -25,7 +27,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdBranchesBranchIdCodeOwnersBranchConfig": {
@@ -34,7 +37,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdBranchesBranchIdCodeOwnersCheck": {
@@ -43,7 +47,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdBranchesBranchIdCodeOwnersConfigFiles": {
@@ -52,7 +57,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdBranchesBranchIdCodeOwnersConfigPathId": {
@@ -61,7 +67,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdBranchesBranchIdCodeOwnersPathId": {
@@ -70,7 +77,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "getProjectsProjectIdCodeOwnersProjectConfig": {
@@ -79,7 +87,8 @@
       "profiles": [
         "full",
         "read_only",
-        "agent"
+        "agent",
+        "review_draft"
       ]
     },
     "postChangesChangeIdRevisionsRevisionIdCodeOwnersCheckConfig": {
