@@ -11,12 +11,29 @@
         },
         "revision-id": {
           "type": "string"
+        },
+        "O": {
+          "type": "string"
+        },
+        "o": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
         }
       },
       "required": [
         "change-id",
         "revision-id"
       ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "x-fastmcp-wrap-result": true,
+      "properties": {
+        "result": {}
+      }
     },
     "_meta": {
       "gerritOperationId": "getChangesChangeIdRevisionsRevisionIdChecks",
